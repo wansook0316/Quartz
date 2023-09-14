@@ -1,1 +1,12 @@
-# HOME
+
+# HI
+
+
+
+
+# Series
+
+
+- [[Bitcoin]]
+
+
