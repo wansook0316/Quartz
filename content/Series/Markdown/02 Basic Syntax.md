@@ -1,5 +1,5 @@
 ---
-title: 마크다운 문법
+title: Basic Syntax
 draft: false
 tags:
 - Markdown
