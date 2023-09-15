@@ -1,5 +1,9 @@
-# HI
+---
+title: Welcome!
+draft: false
+tags: null
+---
 
 # Series
 
-* [Bitcoin](Bitcoin.md)
+* [Markdown](Series/Markdown/index.md)

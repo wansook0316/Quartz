@@ -64,7 +64,12 @@ git init
 git remote add origin "https://github.com/wansook0316/Wansook.World" 
 ````
 
-# 
+# obsidian-export
+
+# Script
+
+chmod +x serve.sh
+chmod +x sync.sh
 
 # Reference
 
@@ -99,4 +104,4 @@ https://www.holaxprogramming.com/2017/05/15/github-page-and-custom-domain/
 
 1. install go. https://go.dev/
 
-1. [hugo 설치](../../hugo%20%EC%84%A4%EC%B9%98.md)
+1. hugo 설치
