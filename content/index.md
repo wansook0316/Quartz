@@ -1,13 +1,13 @@
 ---
-title: Welcome!
+title: Goal, Plan, Excute.
 draft: false
 tags: null
 ---
 
-# Knowleges
+## Knowleges
 
-# Publications
+## Publications
 
-# Logs
+## Logs
 
 * [Monthly Logs](Logs/Monthly/Monthly%20Logs.md)
