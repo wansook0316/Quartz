@@ -1,10 +1,10 @@
 ---
-title: Goal, Plan, Excute.
+title: Goal, Plan, Execute.
 draft: false
 tags: null
 ---
 
-## Knowleges
+## Knowledges
 
 ## Publications
 
