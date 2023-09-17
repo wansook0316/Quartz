@@ -3,8 +3,8 @@ const dv = this.DataviewAPI
 const escapePipe = s => new String(s).replace(/\|/, '\\|') // required for 
 const folder = "Logs/Monthly"
 const query = '"Logs/Monthly"'
-const representive = "Monthly Logs"
-const representative = "Monthly Logs"
+const representive = "Monthly"
+const representative = "Monthly"
 const pages = dv.pages(query).filter(p => p.file.name !== representative)
 
 const result = \[\]

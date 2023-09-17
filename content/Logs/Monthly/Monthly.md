@@ -1,5 +1,5 @@
 ---
-title: Monthly Logs
+title: Monthly
 thumbnail: ''
 draft: false
 tags:

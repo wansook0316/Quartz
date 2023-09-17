@@ -6,8 +6,11 @@ tags: null
 
 ## Knowledges
 
+* [Economics](Economics.md)
+* [Project Management](Project%20Management.md)
+
 ## Publications
 
 ## Logs
 
-* [Monthly Logs](Logs/Monthly/Monthly%20Logs.md)
+* [Monthly](Logs/Monthly/Monthly.md)
