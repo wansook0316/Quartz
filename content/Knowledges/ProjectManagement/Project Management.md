@@ -6,4 +6,4 @@ tags: null
 created: 2023-09-18
 ---
 
-* [Agile Estimating and Planning](Agile%20Estimating%20and%20Planning.md)
+* [Agile Estimating and Planning](Knowledges/ProjectManagement/AgileEstimatingAndPlanning/Agile%20Estimating%20and%20Planning)
