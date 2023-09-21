@@ -4,13 +4,16 @@ draft: false
 tags: null
 ---
 
-## Knowledges
+# Knowledges
 
 * [Economics](Economics.md)
+* [Development](Development.md)
 * [Project Management](Project%20Management.md)
+* [Bitcoin](Knowledges/Bitcoin/Bitcoin.md)
 
-## Publications
+# Channels
 
-## Logs
+# Logs
 
+* [Daily](Logs/Daily/Daily.md)
 * [Monthly](Logs/Monthly/Monthly.md)

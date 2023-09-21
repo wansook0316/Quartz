@@ -95,9 +95,9 @@ a {
   }
 
   & article {
-    & > h1 {
-      font-size: 2rem;
-    }
+    // & > h1 {
+    //   font-size: 2rem;
+    // }
 
     & li:has(> input[type="checkbox"]) {
       list-style-type: none;
