@@ -15,9 +15,13 @@ created: 2023-09-21
 * [C](C.md)
 * [Go](Go.md)
 
+# Tools
+
+* [Git](Git.md)
+
 # Paradigm
 
-* [Functional Programming](Knowledges/Development/FunctionalProgramming/Functional%20Programming.md)
+* [Functional Programming](Knowledges/Development/Functional%20Programming/Functional%20Programming.md)
 
 # Mind set
 
