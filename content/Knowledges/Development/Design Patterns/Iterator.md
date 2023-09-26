@@ -1,0 +1,209 @@
+---
+title: Iterator
+thumbnail: ''
+draft: false
+tags: null
+created: 2023-09-26
+---
+
+GoF의 디자인 패턴, 반복자 패턴에 대해 알아본다.
+
+해당 글은, [다음의 코드](https://github.com/wansook0316/DesignPattern-17-Iterator)를 기반으로 이해하는 것이 편리합니다.
+
+# 핵심 요약
+
+* 동일한 패턴의 데이터를 가지고 있는 것을 순회하기 위한 패턴
+* 즉, Container/Aggregator 라 불리는 자료구조에 대해 순회
+  * Array, Linked List, Tree, Graph, Table(DBMS)
+* 각 자료구조는 다음 데이터를 가져오는 방법이 달라짐 (구현 방식이 다르니)
+* 이를 하나의 패턴으로 처리할 수 있도록 한 것
+
+# 예시
+
+![](DesignPattern_19_Iterator_0.png)
+
+# Code
+
+## main
+
+````swift
+
+import Foundation
+
+internal func main() {
+    let items = [
+        Item(name: "Bitcoin", cost: 23000),
+        Item(name: "Tesla", cost: 170),
+        Item(name: "Jordan", cost: 200),
+        Item(name: "CyberTruck", cost: 50000)
+    ]
+
+    let array = Array(items: items)
+    let iterator = array.iterator
+
+    while iterator.next {
+        guard let current = iterator.current as? Item else {
+            break
+        }
+
+        print(current.description)
+    }
+
+}
+
+main()
+
+````
+
+## Object
+
+````swift
+import Foundation
+
+internal protocol Object {
+
+}
+
+````
+
+## Aggregator
+
+````swift
+import Foundation
+
+internal protocol Aggregator {
+
+    var iterator: Iterator { get }
+    
+}
+````
+
+## Iterator
+
+````swift
+import Foundation
+
+internal protocol Iterator {
+
+    var next: Bool { get }
+    
+    var current: Object? { get }
+
+}
+````
+
+## Loggable
+
+````swift
+import Foundation
+
+internal protocol Loggable {
+
+    var description: String { get }
+
+}
+
+````
+
+## Item
+
+````swift
+import Foundation
+
+internal class Item: Object {
+
+    internal init(name: String, cost: Int) {
+        self.name = name
+        self.cost = cost
+    }
+
+    private let name: String
+    private let cost: Int
+    
+}
+````
+
+## Array
+
+````swift
+import Foundation
+
+internal class Array: Aggregator, Object {
+
+    internal init(items: [Item]) {
+        self.items = items
+    }
+
+    internal var iterator: Iterator {
+        ArrayIterator(array: self)
+    }
+
+    internal var count: Int {
+        self.items.count
+    }
+
+    internal func item(at index: Int) -> Item? {
+        guard index < self.items.count else {
+            return nil
+        }
+        return self.items[index]
+    }
+
+    private var items = [Item]()
+
+}
+
+````
+
+## ArrayIterator
+
+````swift
+import Foundation
+
+internal class ArrayIterator: Iterator {
+
+    internal var next: Bool {
+        self.index += 1
+
+        return self.index < self.array.count
+    }
+
+    internal var current: Object? {
+        self.array.item(at: self.index)
+    }
+
+
+    internal init(array: Array) {
+        self.array = array
+        self.index = -1
+    }
+
+    private var array: Array
+    private var index: Int
+
+}
+````
+
+# 활용성
+
+* 객체 내부 표현 방식을 모르고도 집합 객체의 각 원소들에 접근하고 싶을 때
+* 집합 객체를 순회하는 다양한 방법을 지원하고 싶을 때
+* 서로 다른 집합 객체 구조에 대해서도 동일한 방법으로 순회하고 싶을 때
+
+# 결과
+
+1. 집합 객체의 다양한 순회방법을 제공한다.
+   * 다양한 Iterator를 추가하면 된다.
+1. Aggregater의 인터페이스를 단순화할 수 있다.
+
+# 생각해볼 점
+
+* 배열, 링크드리스트, 트리들과 같은 다양한 형태의 컨테이너에 대해
+* 표준화된 공통 API를 제공할 수 있다는 점이 핵심
+* 한개의 API만으로도 다양한 형태의 컨테이너 안 데이터에 접근할 수 있다.
+
+# Reference
+
+* [GoF의 디자인 패턴 - 재사용성을 지닌 객체지향 소프트웨어의 핵심요소](http://www.yes24.com/Product/Goods/17525598)
+* [GoF의 Design Pattern - 2. Iterator](https://www.youtube.com/watch?v=T3sXKtlr0Ow&list=PLe6NQuuFBu7FhPfxkjDd2cWnTy2y_w_jZ&index=2)
+* [DesignPattern-17-Iterator](https://github.com/wansook0316/DesignPattern-17-Iterator)

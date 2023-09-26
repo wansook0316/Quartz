@@ -19,9 +19,10 @@ created: 2023-09-21
 
 * [Git](Git.md)
 
-# Paradigm
+# Paradigm & Design
 
 * [Functional Programming](Knowledges/Development/Functional%20Programming/Functional%20Programming.md)
+* [Design Patterns](Design%20Patterns.md)
 
 # Mind set
 

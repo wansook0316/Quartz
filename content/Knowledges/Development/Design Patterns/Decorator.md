@@ -1,0 +1,157 @@
+---
+title: Decorator
+thumbnail: ''
+draft: false
+tags: null
+created: 2023-09-26
+---
+
+GoF의 디자인 패턴, 장식자 패턴에 대해 알아본다.
+
+해당 글은, [다음의 코드](https://github.com/wansook0316/DesignPattern-10-Decorator)를 기반으로 이해하는 것이 편리합니다.
+
+# 핵심 요약
+
+* 기능을 마치 장식 처럼 계속 추가할 수 있는 패턴
+* 기능을 **런타임에** 동적으로 변경 또는 확장할 수 있는 패턴
+* 주어진 상황 및 용도에 따라 어떤 객체에 책임을 덧붙이는 패턴
+* 기능 확장이 필요할 때 서브클래싱 대신 쓸 수 있는 유연한 대안이 될 수 있음
+* 게임 캐릭터에 추가적인 장비를 입힐때를 생각해보면 좋음 (런타임에 캐릭터 외관, 능력이 변경됨 == 기능확장)
+
+# 예시
+
+![](DesignPattern_12_Decorator_0.jpg)
+
+* `Strings`: 장식할 대상이 되는 class. 문자열을 여러개 가지고 있음
+* `Decorator`: 장식을 하는 interface
+* 여기서 보면, `Strings`와 `Decorator`가 같은 `Item` interface를 상속받도록 하여
+* **서로 다른 의도를 가진 두 클래스를 하나의 개념으로 다룰 수 있게 한다.**
+* 즉, 원래의 내용물(`String`)과 장식(`Decorator`)에 대한 구분을 없애 동일하게 다룰 수 있다.
+* 결과적으로 **장식에 장식을 계속해서 더하는 효과를 가져올 수 있다.**
+* [예제 코드](https://github.com/wansook0316/DesignPattern-10-Decorator)
+
+````
+// Strings
+HI H.I.~!
+I'm Wansook kun~!
+I'm iOS Developer!
+Design Pattern is not so good as much as before!
+````
+
+````
+// Side Decorator
+"HI H.I.~!"
+"I'm Wansook kun~!"
+"I'm iOS Developer!"
+"Design Pattern is not so good as much as before!"
+````
+
+````
+// Line Number Decorator
+00: HI H.I.~!
+01: I'm Wansook kun~!
+02: I'm iOS Developer!
+03: Design Pattern is not so good as much as before!
+````
+
+````
+// Box Number Decorator
++------------------------------------------------+
+|HI H.I.~!                                       |
+|I'm Wansook kun~!                               |
+|I'm iOS Developer!                              |
+|Design Pattern is not so good as much as before!|
++------------------------------------------------+
+````
+
+````swift
+internal func main() {
+    let strings = Strings()
+
+    strings.add(item: "HI H.I.~!")
+    strings.add(item: "I'm Wansook kun~!")
+    strings.add(item: "I'm iOS Developer!")
+    strings.add(item: "Design Pattern is not so good as much as before!")
+
+    var decorator: Item = SideDecorator(item: strings, side: "\"")
+    decorator = LineNumberDecorator(item: decorator)
+    decorator = BoxDecorator(item: decorator)
+    decorator.printContent()
+}
+
+// Mix
++------------------------------------------------------+
+|00: "HI H.I.~!"                                       |
+|01: "I'm Wansook kun~!"                               |
+|02: "I'm iOS Developer!"                              |
+|03: "Design Pattern is not so good as much as before!"|
++------------------------------------------------------+
+````
+
+# 동기
+
+* 내용은 동일한 상태에서 장식이 계속해서 달라붙어야 하는 경우
+  * 게임 캐릭터에 장비 달기
+* 동적으로 기능을 확장하고 싶은 경우
+* 상속을 사용하지 않고 기능확장을 하고 싶은 경우
+
+# 활용성
+
+* 동적으로 책임 추가 가능
+* 다른 객체에 영향을 주지 않고 확장 가능
+* "장식"이라는 말에 맞게, 제거되어도 무방한 책임을 추가해야 할 때 사용
+* 상속으로 서브클래싱하는 것이 실질적이지 못한 경우 사용
+
+# 구조
+
+![](DesignPattern_12_Decorator_1.png)
+
+# 참여자
+
+* Component(`Item`): 동적으로 추가할 서비스를 가질 가능성이 있는 객체들에 대한 인터페이스
+* ConcreteComponent(`Strings`): 실제로 정의되어야할 필요가 있는 클래스
+* Decorator(`Decorator`): 객체에 대한 참조자를 관리하면서 Component에 정의된 인터페이스를 만족하도록 인터페이스를 정의(?)
+* ConcreteDecorator(`BorderDecorator`, `ScrollDecorator`): Component에 적용할 장식을 실제로 구현하는 클래스
+
+# 협력 방법
+
+* Decorator 내부에서 자신이 가진 Component(`Item`)으로 먼저 요청을 전달한다.
+  * 즉, 먼저 내부 컨텐츠에 대한 작업을 끝내고 반환받는 것
+* 이후 Decorator에서 추가 연산을 수행한다.
+
+# 결과
+
+## 장점
+
+1. 상속보다 설계의 융통성을 가진다.
+1. 필요할 때만 기능을 사용한다. 즉, 상위 클래스에 기능이 누적되는 것을 막을 수 있다.
+1. 장식자와 그 장식자의 구성요소가 동일할 필요는 없다.
+   * [예제 코드](https://github.com/wansook0316/DesignPattern-10-Decorator)를 보면,
+   * 기본 내용물(`Strings`)에 decorator가 3번 중첩 적용되었다.
+   * 이 경우 각각의 decorator에는 `Item`이라는 구성요소를 가지고 있는데,
+   * 이 구성요소는 **모두 다르다.**
+   * 상위의 decorator를 `Item`으로 받고 있기 때문이다.
+   * 즉, 내용물(`Strings`)와 실제 decorator의 `item` 변수에 담긴 것과 동일할 필요가 없다.
+
+## 단점
+
+* 작은 규모의 객체들이 많이 생긴다. 자칫하면 오히려 이해가 어려워질 수 있다.
+
+# 관련 패턴과 차이점
+
+* 적응자(Adapter)
+  * 인터페이스 변경에 사용했었음
+  * 이녀석은 책임과 행동을 변화시킴
+* 복합체(Composite)
+  * 하나의 구성요소를 가지는 복합체로 볼 수 있다.
+  * 다만, 객체 합성이 아니고 행동을 추가하는데 보다 목적이 있다.
+* 전략(Strategy)
+  * 장식자: 겉모양 변경
+  * 전략: 객체의 내부 변화
+
+# Reference
+
+* [GoF의 디자인 패턴 - 재사용성을 지닌 객체지향 소프트웨어의 핵심요소](http://www.yes24.com/Product/Goods/17525598)
+* [GoF의 Design Pattern - 15. Decorator](https://www.youtube.com/watch?v=UTmY_oB4V8I&list=PLe6NQuuFBu7FhPfxkjDd2cWnTy2y_w_jZ&index=14)
+* [DesignPattern-10-Decorator](https://github.com/wansook0316/DesignPattern-10-Decorator)
+* [데코레이터 패턴](https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0_%ED%8C%A8%ED%84%B4)

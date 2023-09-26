@@ -1,0 +1,102 @@
+---
+title: Abstract Factory
+thumbnail: ''
+draft: false
+tags: null
+created: 2023-09-26
+---
+
+GoF의 디자인 패턴, 첫번째 추상 팩토리 패턴에 대해 알아본다.
+
+해당 글은, [다음의 코드](https://github.com/wansook0316/DesignPattern-01-AbstractFactory/tree/main)를 기반으로 이해하는 것이 편리합니다.
+
+# 핵심 요약
+
+ > 
+ > Factory의 추상화를 통해 여러 제품군에 맞는 하위 Component를 만드는 Factory를 여러개 만들어 변화에 쉽게 대응할 수 있도록 한 패턴
+
+* 서로 다른 제품군 (OS에 따라 변경되어야 하는 경우)을 만들 때 용이하다.
+* 공통 Component를 생성하는 Factory를 추상화하여 둔다.
+* 실제 Factory에서는 이를 구현하고 자신의 제품군에 맞는 구현체를 반환한다.
+* 새로운 제품군에 대해 개발해야 하는 경우 즉각적으로 대응할 수 있다.
+* 해당 API를 받아 사용하는 개발자 역시, 추상화된 Component만을 보고 작업을 이어나갈 수 있어 편리하다.
+* 다른 이름으로 "Kit"라고도 불린다.
+
+# 동기
+
+* 같은 프로젝트에서 여러 제품군을 만들어야 한다면 어떨까?
+* 예를 들어 같은 프로그램이나 웹, 윈도우, 맥, 리눅스와 같이 다양한 환경에서 제공되어야 한다면?
+
+# 활용성
+
+* 객체의 생성, 구성, 표현 방식과 무관하게 시스템을 **독립적으로 만들고자 할 때**
+* 여러 제품군 중 하나로 시스템을 설정해야 하고, 한번 구성한 제품을 다른 것으로 대체할 수 있을 때
+* 관련된 제품 객체들이 함께 사용되도록 설계되었고, 이 제약이 외부에서도 지켜지고 싶을 때
+
+# 구조
+
+![](DesignPattern_03_AbstractFactory_0.jpg)
+
+* 윈도우, 리눅스 환경에 맞추어, Button, TextEdit, CheckBox UIComponent를 생성하는 예시를 들어본다.
+
+# 참여자
+
+* AbstractFactory(`ComponentFactory`): 개념적 제품에 대한 객체를 생성하는 연산으로 인터페이스를 정의함
+* ConcreteFactory(`WindowsFactory`, `LinuxFactory`): 구체적인 제품에 대한 객체를 생성하는 연산을 구현함
+* AbstractProduct(`Button`, `CheckBox`, `TextEdit`): 개념적 제품 객체에 대한 인터페이스를 정의함
+* ConcreteFactory(`WindowsButton`, `LinuxButton`): 구체적으로 팩토리가 생성할 객체를 구현함
+* Client: AbstractFactory와 AbstractProduct에 선언된 인터페이스를 사용함
+
+# 협력 방법
+
+* ConcreteFactory 인스턴스 한개가 런타임에 만들어짐
+* ConcreteFactory에서는 특정 구현을 갖는 제품 객체를 생성함
+* 서로 다른 제품 객체를 사용하려면 ConcreteFactory 자체를 변경해야 함
+* AbstractFactory는 어떤 제품 객체를 생성해야 하는지에 대한 책임을 ConcreteFactory로 위임함
+
+# 결과
+
+## Pros
+
+1. 구체적인 클래스를 분리한다.
+   * 추상 팩토리 인터페이스를 통해서만 인스턴스를 조작한다.
+   * 그렇기 때문에 구체 팩토리 구현에서 분리된다.
+1. 제품군을 쉽게 대체할 수 있다.
+   * 어떤 구체 팩토리를 사용하냐에 따라 제품군을 한번에 변경할 수 있다.
+1. 제품 사이에 일관성을 증진시킨다.
+   * 하나의 구체 팩토리에서 그 맥락에 맞는 객체들을 생성하기 때문에 일관성이 생긴다.
+
+## Cons
+
+1. 새로운 종류의 제품을 제공하기 어렵다.
+   * 만약 macOS에서만 imageView를 제공한다고 하자.
+   * 추상 클래스에 createImageView를 작성하게 되면, 다른 제품군에서도 이를 구현해야 한다.
+     * 물론 방법은 있지만 일단은..
+   * 즉, 생성되는 제품은 추상 팩토리가 생성할 수 있는 제품 집합에 고정되어 있다.
+   * 혹은 반환되는 타입이 변경되면 이를 채택(혹은 언어에따라 상속)받는 서브 클래스 모두 변경되어야 한다.
+
+# 예시
+
+* [Github: DesignPattern: AbstractFactory](https://github.com/wansook0316/DesignPattern-01-AbstractFactory/tree/main)에서 commit을 따라가며 읽으면 도움이 된다.
+* 만약 새로운 제품군(MacOS)가 추가된다면 어떻게 될까?
+
+![](DesignPattern_03_AbstractFactory_1.jpg)
+
+* 이와 같이 추가해주면 된다. 환경에 독립적인 시스템이 갖추어졌다.
+
+# 잘 알려진 사용예
+
+* "Kit"이라는 단어를 프레임워크에서 들어보았다면, 이렇게 구현되어 있을 가능성이 높다.
+* 즉, OOKit은 추상 팩토리 클래스이다.
+
+# 관련 패턴
+
+* AbstractFactory 클래스는 Factory method pattern을 이용하여 구현된다.
+* Prototype을 이용하는 경우도 있다.
+* ConcreteFactory는 Singleton을 사용하는 경우가 많다.
+
+# Reference
+
+* [GoF의 디자인 패턴 - 재사용성을 지닌 객체지향 소프트웨어의 핵심요소](http://www.yes24.com/Product/Goods/17525598)
+* [GoF의 Design Pattern - 21. Abstract Factory](https://www.youtube.com/watch?v=pmKHiAIwhag&t=79)
+* [Github: DesignPattern: AbstractFactory](https://github.com/wansook0316/DesignPattern-01-AbstractFactory/tree/main)
