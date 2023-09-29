@@ -2,7 +2,10 @@
 title: Decorator
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- decorator
 created: 2023-09-26
 ---
 
@@ -139,13 +142,13 @@ internal func main() {
 
 # 관련 패턴과 차이점
 
-* 적응자(Adapter)
+* 적응자([Adapter](Adapter.md))
   * 인터페이스 변경에 사용했었음
   * 이녀석은 책임과 행동을 변화시킴
-* 복합체(Composite)
+* 복합체([Composite](Composite.md))
   * 하나의 구성요소를 가지는 복합체로 볼 수 있다.
   * 다만, 객체 합성이 아니고 행동을 추가하는데 보다 목적이 있다.
-* 전략(Strategy)
+* 전략([Strategy](Strategy.md))
   * 장식자: 겉모양 변경
   * 전략: 객체의 내부 변화
 

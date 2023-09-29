@@ -2,7 +2,10 @@
 title: Factory Method
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- factory-method
+- oop
+- design-pattern
 created: 2023-09-26
 ---
 
@@ -86,8 +89,8 @@ GoF의 디자인 패턴, 팩토리 메서드 패턴에 대해 알아본다.
 
 # 관련 패턴과 차이점
 
-* 추상 팩토리 패턴은 이 팩토리 메서드를 이용해서 구현할 때가 많음
-* 팩토리 메서드는 템플릿 메서드 패턴에서도 사용될 때가 많음
+* [Abstract Factory](Abstract%20Factory.md) 패턴은 이 팩토리 메서드를 이용해서 구현할 때가 많음
+* 팩토리 메서드는 [Template Method](Template%20Method.md) 패턴에서도 사용될 때가 많음
 
 # Reference
 

@@ -2,15 +2,19 @@
 title: Proxy
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- proxy
+- copy-on-write
+- eagar-loading
+- lazy-loading
 created: 2023-09-26
 ---
 
 GoF의 디자인 패턴, 프록시 패턴에 대해 알아본다.
 
 해당 글은, [다음의 코드](https://github.com/wansook0316/DesignPattern-13-Proxy)를 기반으로 이해하는 것이 편리합니다.
-
-이미 이전에 정리해 둔 [Proxy](https://velog.io/@wansook0316/Proxy)를 보고오면 더 좋습니다.
 
 # 핵심 요약
 
@@ -279,4 +283,4 @@ internal class BufferDisplay: Display {
 * [GoF의 디자인 패턴 - 재사용성을 지닌 객체지향 소프트웨어의 핵심요소](http://www.yes24.com/Product/Goods/17525598)
 * [GoF의 Design Pattern - 14. Proxy](https://www.youtube.com/watch?v=NoRPG06c48U&list=PLe6NQuuFBu7FhPfxkjDd2cWnTy2y_w_jZ&index=13)
 * [DesignPattern-13-Proxy](https://github.com/wansook0316/DesignPattern-13-Proxy)
-* [Proxy](https://velog.io/@wansook0316/Proxy)
+* [Proxy](Knowledges/Development/Object%20Oriented%20Programming/Proxy.md)

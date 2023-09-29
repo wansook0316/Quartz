@@ -2,7 +2,13 @@
 title: Emergence
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- emergence
+- test
+- refactoring
+- duplications
+- class
+- methods
 created: 2023-09-21
 ---
 

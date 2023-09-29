@@ -2,7 +2,9 @@
 title: C Grammar
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- C
+- grammar
 created: 2023-09-21
 ---
 

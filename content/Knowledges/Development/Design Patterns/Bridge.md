@@ -2,7 +2,10 @@
 title: Bridge
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- bridge
 created: 2023-09-26
 ---
 
@@ -177,9 +180,9 @@ internal class Publication: Draft {
 
 # 관련 패턴과 차이점
 
-* 추상 팩토리: 특정 Bridge를 생성하고 복합할 수 있도록 사용 가능
-* 적응자: 관련 없는 클래스들이 함께 동작하게 하기 위해 특화된 패턴, 클래스 설계가 끝나고 사용됨
-* 가교: 설계 초기 단계에 추상화 및 구현이 독립적으로 다양화되도록 만들 때 쓰인다.
+* [Abstract Factory](Abstract%20Factory.md): 특정 Bridge를 생성하고 복합할 수 있도록 사용 가능
+* [Adapter](Adapter.md): 관련 없는 클래스들이 함께 동작하게 하기 위해 특화된 패턴, 클래스 설계가 끝나고 사용됨
+* [Bridge](Bridge.md): 설계 초기 단계에 추상화 및 구현이 독립적으로 다양화되도록 만들 때 쓰인다.
 
 # Reference
 

@@ -2,7 +2,10 @@
 title: Collaboration
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- collaboration
+- programmer
+- pair-programming
 created: 2023-09-21
 ---
 

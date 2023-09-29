@@ -2,7 +2,11 @@
 title: Monad in programming
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- monad
+- unit
+- lift
+- functional-programming
 created: 2023-09-18
 ---
 
@@ -34,7 +38,7 @@ Monad는 어떻게 정의할 수 있을까?
 
 ![](AllAboutMonad_03_MonadInProgramming_1.png)
 
-* 자연성을 만족한다는 말은, 
+* 자연성을 만족한다는 말은,  ([Natural Transformation](Natural%20Transformation.md))
 * `f`를 적용한 후 `unit`함수를 적용한 것과
 * `unit`함수를 통해 `M<T>`를 `M<U>`로 바꾸고, `f`를 적용한 것이 같다는 말이다.
 
@@ -56,7 +60,7 @@ Monad는 어떻게 정의할 수 있을까?
 * `lift(lift(f))`를 적용한 후 `flat`함수를 적용한 것과
 * `flat` 함수를 적용하고 `lift(f)`를 적용한 것이 같다는 말이다.
 
-## Identity
+## [Identity](Identity.md)
 
 ![](AllAboutMonad_03_MonadInProgramming_4.png)
 
@@ -70,7 +74,7 @@ Monad는 어떻게 정의할 수 있을까?
 
 ![](AllAboutMonad_03_MonadInProgramming_5.png)
 
-* 이렇게 나온 `M<M<T>>`에 `flat`함수를 걸었을 때 결과는 `M<T>`로 나와야 한다는 것이 항등성이다.
+* 이렇게 나온 `M<M<T>>`에 `flat`함수를 걸었을 때 결과는 `M<T>`로 나와야 한다는 것이 항등성([Identity](Identity.md))이다.
 * 즉, 왼쪽과 오른쪽의 두식의 결과는 항등함수로 나와야 하며, 그 결과는 같아야 한다.
 
 # Associativity
@@ -227,47 +231,9 @@ extension Optional {
 }
 ````
 
-# 부가설명
-
-## Natural transformation
-
-* 앞에서 연산이 자연성(naturality)을 만족해야 한다고 했다.
-* 수학적 명확한 정의는 내 머리로 이해가 정확하게 안되서 첨부한다.
-
- > 
- > "자연성(naturality)"은 수학에서 함수나 변환자(transformer) 사이의 관계가 다른 수학적인 구조를 변형해도 변환의 특성을 유지하는 것을 의미합니다. 이러한 관계는 수학적인 구조 간에 일관성을 유지하며 변환을 적용할 수 있도록 해줍니다.
-
- > 
- > 예를 들어, 두 개의 함수 F와 G가 있고, 어떤 구조에서 F와 G를 적용할 때 일관성이 유지된다고 가정해봅시다. 그렇다면 이 두 함수 사이의 관계는 "자연성"을 가진다고 할 수 있습니다. 즉, 어떤 변환을 적용하더라도 결과가 일관성 있게 유지되는 것입니다.
-
-## Identity
-
-모나드(Monad)의 항등성(identity law)은 함수형 프로그래밍에서 모나드가 가져야 하는 중요한 특성 중 하나입니다. 모나드는 데이터 형식을 다루는 추상적인 개념으로, 값을 감싸거나 조작하는 데 사용됩니다. 이 때 모나드의 항등성은 모나드의 동작을 보다 안정적이고 일관적으로 만들어줍니다.
-
-모나드의 항등성은 크게 두 가지 관점에서 설명될 수 있습니다
-
-### Left Identity (왼쪽 항등성)
-
-어떤 값을 모나드로 감싼 후에 해당 모나드를 특정 함수에 적용하는 것과, 그 값을 바로 그 함수에 적용하는 것은 같아야 합니다. 즉, m이라는 모나드와 함수 f가 있다면, 아래와 같은 관계가 성립해야 합니다
-
-````swift
-flatMap(unit(x), f) == f(x)
-````
-
-여기서 unit(x)는 값을 모나드로 감싸는 역할을 하는 함수입니다. flatMap은 모나드의 값을 함수에 적용하는 연산을 나타내며, f는 임의의 함수를 나타냅니다.
-
-### Right Identity (오른쪽 항등성
-
-모나드에 값을 적용한 뒤에 모나드를 벗겨낸 결과와, 그 값을 바로 모나드에 감싸지 않은 결과는 같아야 합니다. 즉, m이라는 모나드와 함수 f가 있다면, 아래와 같은 관계가 성립해야 합니다:
-
-````swift
-flatMap(m, unit) == m
-````
-
-여기서 unit은 값을 모나드로 감싸는 역할을 하는 함수입니다.
-
 # Reference
 
 * [모나드의 모든 것](https://www.youtube.com/@antel588)
 * [FunctionalProgramming](https://github.com/wansook0316/FunctionalProgramming)
-* [Natural_transformation](https://en.wikipedia.org/wiki/Natural_transformation)
+* [Natural Transformation](Natural%20Transformation.md)
+* [Identity](Identity.md)

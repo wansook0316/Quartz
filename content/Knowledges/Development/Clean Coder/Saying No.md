@@ -2,7 +2,9 @@
 title: Saying No
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- refusal
+- team
 created: 2023-09-21
 ---
 

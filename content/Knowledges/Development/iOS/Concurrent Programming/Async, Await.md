@@ -2,7 +2,10 @@
 title: Async, Await
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- async
+- await
+- concurrency
 created: 2023-09-22
 ---
 

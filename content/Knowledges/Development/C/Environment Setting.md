@@ -2,7 +2,8 @@
 title: Environment Setting
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- C
 created: 2023-09-21
 ---
 

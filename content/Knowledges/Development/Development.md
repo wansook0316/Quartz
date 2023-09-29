@@ -21,8 +21,9 @@ created: 2023-09-21
 
 # Paradigm & Design
 
+* [Object Oriented Programming](Object%20Oriented%20Programming.md)
 * [Functional Programming](Knowledges/Development/Functional%20Programming/Functional%20Programming.md)
-* [Design Patterns](Design%20Patterns.md)
+* [Design Patterns](Knowledges/Development/Design%20Patterns/Design%20Patterns.md)
 
 # Mind set
 

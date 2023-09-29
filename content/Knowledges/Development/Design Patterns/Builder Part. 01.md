@@ -2,7 +2,10 @@
 title: Builder Part. 01
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- builder
+- oop
+- design-pattern
 created: 2023-09-26
 ---
 

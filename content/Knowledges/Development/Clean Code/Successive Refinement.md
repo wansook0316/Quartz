@@ -2,7 +2,9 @@
 title: Successive Refinement
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- java
+- clean-code
 created: 2023-09-21
 ---
 

@@ -2,7 +2,9 @@
 title: Boundary
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- boundary
+- interface
 created: 2023-09-21
 ---
 

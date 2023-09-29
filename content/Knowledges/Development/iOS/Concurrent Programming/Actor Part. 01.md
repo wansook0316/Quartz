@@ -2,7 +2,9 @@
 title: Actor Part. 01
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- concurrency
+- actor
 created: 2023-09-22
 ---
 

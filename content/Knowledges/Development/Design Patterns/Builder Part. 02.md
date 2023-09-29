@@ -2,7 +2,10 @@
 title: Builder Part. 02
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- builder
+- design-pattern
+- abstract-factory
 created: 2023-09-26
 ---
 
@@ -95,11 +98,11 @@ internal func main() {
 
 # 관련 패턴과 차이점
 
-* 복잡한 객체를 생성해야 한다면 추상 팩토리 패턴은 빌더 패턴과 유사할 수 있다.
+* 복잡한 객체를 생성해야 한다면 [추상 팩토리 패턴](Abstract%20Factory.md)은 빌더 패턴과 유사할 수 있다.
 * 근본적인 차이가 있다면, **빌더 패턴은 복잡한 객체의 단계별 생성에 중점을 둔다는 것이다.**
-* 반면 **추상 팩토리 패턴은 제품의 유사군이 존재할 때 유연한 설계에 중점을 둔다는 것이다.** 
+* 반면 **[추상 팩토리 패턴](Abstract%20Factory.md)은 제품의 유사군이 존재할 때 유연한 설계에 중점을 둔다는 것이다.** 
 * 빌더 패턴은 생성의 마지막에 제품을 반환한다.
-* 추상 팩토리 패턴은 즉시 제품을 반환한다.
+* [추상 팩토리 패턴](Abstract%20Factory.md)은 즉시 제품을 반환한다.
 
 # Reference
 
@@ -107,3 +110,4 @@ internal func main() {
 * [GoF의 Design Pattern - 19. Builder (1/2)](https://www.youtube.com/watch?v=_GCiJAFU2DU&list=PLe6NQuuFBu7FhPfxkjDd2cWnTy2y_w_jZ&index=18)
 * [GoF의 Design Pattern - 19. Builder (2/2)](https://www.youtube.com/watch?v=sg_6GWRBRas&list=PLe6NQuuFBu7FhPfxkjDd2cWnTy2y_w_jZ&index=19)
 * [Github: DesignPattern: Builder-02](https://github.com/wansook0316/DesignPattern-03-Builder-second)
+* [Abstract Factory](Abstract%20Factory.md)

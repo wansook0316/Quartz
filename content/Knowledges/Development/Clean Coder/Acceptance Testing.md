@@ -2,7 +2,11 @@
 title: Acceptance Testing
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- acceptance-testing
+- test
+- CI
+- continuous-integration
 created: 2023-09-21
 ---
 

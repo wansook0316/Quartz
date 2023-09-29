@@ -2,7 +2,10 @@
 title: Template Method
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- template-method
+- oop
+- design-pattern
 created: 2023-09-26
 ---
 

@@ -2,7 +2,10 @@
 title: Estimation
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- estimation
+- commitment
+- planning-poker
 created: 2023-09-21
 ---
 

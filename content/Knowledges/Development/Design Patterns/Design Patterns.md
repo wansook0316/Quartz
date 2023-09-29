@@ -20,9 +20,9 @@ created: 2023-09-22
 * [Abstract Factory](Abstract%20Factory)
 * [Builder Part. 01](Builder%20Part.%2001)
 * [Builder Part. 02](Builder%20Part.%2002)
-* [Factory Method](Factory%20Method)
+* [Factory Method](Knowledges/Development/Design%20Patterns/Factory%20Method.md)
 * [Prototype](Prototype)
-* [Singleton](Singleton)
+* [Singleton](Knowledges/Development/Design%20Patterns/Singleton.md)
 
 # Structural Patterns (구조 패턴)
 
@@ -32,17 +32,17 @@ created: 2023-09-22
 * [Decorator](Decorator)
 * [Facade](Facade)
 * [Flyweight](Flyweight)
-* [Proxy](Proxy)
+* [Proxy](Knowledges/Development/Design%20Patterns/Proxy.md)
 
 # Behavioral Patterns (행동 패턴)
 
-* [Chain of Responsibility](Chain%20of%20Responsibility)
+* [Chain of Responsibility](Knowledges/Development/Design%20Patterns/Chain%20of%20Responsibility.md)
 * [Command](Command)
 * [Interpreter](Interpreter)
 * [Iterator](Iterator)
 * [Mediator](Mediator)
 * [Memento](Memento)
-* [Observer](Observer) 
+* [Observer](Knowledges/Development/Design%20Patterns/Observer.md) 
 * [State](State)
 * [Strategy](Strategy)
 * [Template Method](Template%20Method)

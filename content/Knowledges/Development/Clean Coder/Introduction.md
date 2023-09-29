@@ -2,7 +2,9 @@
 title: Introduction
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- clean-coder
+- professionalism
 created: 2023-09-21
 ---
 

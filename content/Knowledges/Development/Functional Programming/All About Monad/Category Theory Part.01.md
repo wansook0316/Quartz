@@ -2,7 +2,11 @@
 title: Category Theory Part.01
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- category-theory
+- category
+- group-theory
+- functional-programming
 created: 2023-09-18
 ---
 
@@ -23,7 +27,7 @@ created: 2023-09-18
 
 # 그림으로 보기
 
-![](AllAboutMonad_10_CategoryTheoryPart01_0%202.png)
+![](AllAboutMonad_10_CategoryTheoryPart01_2.png)
 
 * 원소는 무엇이 될 수 있을까?
 * 특정 값 (3)도 될 수 있을 것이고, 집합 자체가 될 수도 있다.

@@ -2,7 +2,11 @@
 title: Error Handling
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- error
+- exception
+- try-catch
+- 'null'
 created: 2023-09-21
 ---
 
@@ -141,7 +145,7 @@ public List<RecordedGrip> retrieveSection(String sectionName) {
 
 어떤 비용이 드는지 생각해보자.
 
-![](CleanCode_07_ErrorHandling_0.png)
+null
 
 1. 특정 메소드에서 checked exception을 throw하고
 1. 3단계(메소드 콜) 위의 메소드에서 그 exception을 catch한다면

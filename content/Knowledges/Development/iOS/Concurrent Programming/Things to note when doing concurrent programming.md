@@ -2,7 +2,12 @@
 title: Things to note when doing concurrent programming
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- NSLock
+- concurrency
+- Dispatch-Barrier
+- deadlock
+- semaphore
 created: 2023-09-22
 ---
 

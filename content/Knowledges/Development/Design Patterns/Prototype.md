@@ -2,7 +2,10 @@
 title: Prototype
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- prototype
+- design-pattern
+- oop
 created: 2023-09-26
 ---
 

@@ -2,7 +2,12 @@
 title: Functor in Programming
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- functor
+- type-constructor
+- Optinal
+- Result
+- functional-programming
 created: 2023-09-18
 ---
 

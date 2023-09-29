@@ -2,7 +2,8 @@
 title: Hugo
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- go
 created: 2023-09-19
 ---
 

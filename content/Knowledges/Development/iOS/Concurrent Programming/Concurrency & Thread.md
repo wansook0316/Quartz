@@ -2,7 +2,9 @@
 title: Concurrency & Thread
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- concurrency
+- thread
 created: 2023-09-22
 ---
 

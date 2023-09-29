@@ -2,7 +2,8 @@
 title: Practicing
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- practicing
 created: 2023-09-21
 ---
 

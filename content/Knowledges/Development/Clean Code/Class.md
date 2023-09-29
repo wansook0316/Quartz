@@ -2,7 +2,12 @@
 title: Class
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- class
+- capsulation
+- abstract-data-types
+- SOLID
+- cohesion
 created: 2023-09-21
 ---
 

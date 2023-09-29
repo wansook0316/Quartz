@@ -2,7 +2,10 @@
 title: Command
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- command
 created: 2023-09-26
 ---
 

@@ -2,7 +2,9 @@
 title: Grand Central Dispatch
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- GCD
+- grand-central-dispatch
 created: 2023-09-22
 ---
 

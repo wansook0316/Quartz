@@ -2,7 +2,8 @@
 title: Smell and Heuristics
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- heuristics
 created: 2023-09-21
 ---
 

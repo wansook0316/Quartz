@@ -2,7 +2,10 @@
 title: Singleton
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- singleton
+- oop
+- design-pattern
 created: 2023-09-26
 ---
 

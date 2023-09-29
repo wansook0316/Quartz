@@ -6,6 +6,8 @@ tags:
 - publish-subscribe
 - pub-sub
 - design-pattern
+- observer
+- oop
 created: 2023-09-26
 ---
 

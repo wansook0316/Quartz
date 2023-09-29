@@ -2,7 +2,9 @@
 title: System
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- system
+- clean-code
 created: 2023-09-21
 ---
 

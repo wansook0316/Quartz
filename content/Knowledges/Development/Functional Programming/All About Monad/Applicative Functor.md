@@ -2,7 +2,10 @@
 title: Applicative Functor
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- applicative-functor
+- functor
+- functional-programming
 created: 2023-09-18
 ---
 

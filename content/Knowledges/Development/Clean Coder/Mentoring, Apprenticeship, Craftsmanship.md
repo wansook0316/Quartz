@@ -2,7 +2,10 @@
 title: Mentoring, Apprenticeship, Craftsmanship
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- metoring
+- craftsmanship
+- apprenticeship
 created: 2023-09-21
 ---
 

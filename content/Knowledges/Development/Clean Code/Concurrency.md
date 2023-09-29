@@ -2,7 +2,13 @@
 title: Concurrency
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- concurrency
+- producer-consumer
+- readers-writers
+- dining-philosophers
+- thread
+- multi-thread
 created: 2023-09-21
 ---
 

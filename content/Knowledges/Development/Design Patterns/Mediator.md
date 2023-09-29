@@ -2,7 +2,10 @@
 title: Mediator
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- mediator
+- design-pattern
 created: 2023-09-26
 ---
 

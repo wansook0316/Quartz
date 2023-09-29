@@ -2,7 +2,8 @@
 title: Combine In Practice
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- combine
 created: 2023-09-22
 ---
 

@@ -2,7 +2,10 @@
 title: Abstract Factory
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- abstract-factory
 created: 2023-09-26
 ---
 
@@ -91,9 +94,9 @@ GoF의 디자인 패턴, 첫번째 추상 팩토리 패턴에 대해 알아본�
 
 # 관련 패턴
 
-* AbstractFactory 클래스는 Factory method pattern을 이용하여 구현된다.
-* Prototype을 이용하는 경우도 있다.
-* ConcreteFactory는 Singleton을 사용하는 경우가 많다.
+* AbstractFactory 클래스는 [Factory Method](Knowledges/Development/Design%20Patterns/Factory%20Method.md) pattern을 이용하여 구현된다.
+* [Prototype](Prototype.md)을 이용하는 경우도 있다.
+* ConcreteFactory는 [Singleton](Knowledges/Development/Design%20Patterns/Singleton.md)을 사용하는 경우가 많다.
 
 # Reference
 

@@ -2,7 +2,10 @@
 title: Functor in Category Theory
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- functor
+- category-theory
+- functional-programming
 created: 2023-09-18
 ---
 

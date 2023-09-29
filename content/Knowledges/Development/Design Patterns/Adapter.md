@@ -2,7 +2,10 @@
 title: Adapter
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- wrapper
+- design-pattern
 created: 2023-09-26
 ---
 
@@ -36,7 +39,7 @@ GoF의 디자인 패턴, 적응자 패턴에 대해 알아본다.
 
 # 다른 이름
 
-* Wrapper
+* [Wrapper](Wrapper.md)
 
 # 활용성
 
@@ -59,12 +62,12 @@ GoF의 디자인 패턴, 적응자 패턴에 대해 알아본다.
 
 # 관련 패턴과 차이점
 
-* 가교(Bridge) 패턴과 유사하다.
+* 가교([Bridge](Bridge.md)) 패턴과 유사하다.
 * 하지만 사용 목적이 다르다.
-* 적응자 패턴: 존재하는 객체의 인터페이스를 변경
-* 가교 패턴: 구현과 추상 개념을 분리, 그 결과로 확장성을 높히기 위함
-* 장식자 패턴: 인터페이스 변경 없이 새로운 행동 추가 가능토록함
-* 프록시 패턴: 다른 객체에 대한 대리인 역할을 수행, 하지만 인터페이스 변경 책임은 없음
+* [Adapter](Adapter.md): 존재하는 객체의 인터페이스를 변경
+* [Bridge](Bridge.md): 구현과 추상 개념을 분리, 그 결과로 확장성을 높히기 위함
+* [Decorator](Decorator.md): 인터페이스 변경 없이 새로운 행동 추가 가능토록함
+* [Proxy](Knowledges/Development/Design%20Patterns/Proxy.md): 다른 객체에 대한 대리인 역할을 수행, 하지만 인터페이스 변경 책임은 없음
 
 # Reference
 

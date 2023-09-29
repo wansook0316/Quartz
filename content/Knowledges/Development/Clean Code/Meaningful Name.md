@@ -2,7 +2,8 @@
 title: Meaningful Name
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- naming
 created: 2023-09-21
 ---
 

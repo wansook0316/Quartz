@@ -2,7 +2,12 @@
 title: Operation Queue
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operation-queue
+- KVO
+- KVC
+- key-value-observing
+- key-value-coding
 created: 2023-09-22
 ---
 

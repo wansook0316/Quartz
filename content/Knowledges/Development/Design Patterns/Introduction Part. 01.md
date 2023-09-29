@@ -103,116 +103,116 @@ GOF의 디자인 패턴 1장, 서론을 정리해봅니다.
 
 이 책에서는 23개의 패턴를 소개한다.
 
-1. Abstract Factory
+1. [Abstract Factory](Abstract%20Factory.md)
 
 * 구체적 클래스를 지정하지 않음
 * 관련성이 있는 객체들의 집합을 생성
 * 혹은 독립적인 객체들의 집합을 생성
 * 이러한 인터페이스를 제공
 
-2. Adapter
+2. [Adapter](Adapter.md)
 
 * 클래스의 인터페이스를 사용자가 기대하는 다른 인터페이스로 변환
 * 호환성이 없는 인터페이스 때문에 함께 동작이 불가한 클래스를 묶어줌
 
-3. Bridge
+3. [Bridge](Bridge.md)
 
 * 구현부에서 추상층을 분리하여, 독립적으로 변형할 수 있게 하는 패턴
 
-4. Builder
+4. [Builder](Builder.md)
 
 * 복합 객체의 생성 과정과 표현 방법을 분리
 * 생성 객체가 분리되어 동일한 생성 절차를 가짐에도 다른 결과를 만들 수 있게 해줌
 
-5. Chain of Responsibility
+5. [Chain of Responsibility](Knowledges/Development/Design%20Patterns/Chain%20of%20Responsibility.md)
 
 * 요청을 받는 객체를 연쇄적으로 묶어, 실제 요청을 처리할 객체를 만날 때까지 전달하는 패턴
-* iOS의 Responder chanin
+* iOS의 Responder chain
 
-6. Command
+6. [Command](Command.md)
 
 * 요청 자체를 캡슐화하여 여러 기능을 실행할 수 있는 재사용성이 높은 클래스를 만드는 패턴
 
-7. Composite
+7. [Composite](Composite.md)
 
 * 객체들의 관계를 트리 구조로 구성하여 부분-전체를 표현함
 * 사용자가 단일 객체, 복합 객체를 모두 동일하게 다룰 수 있음
 
-8. Decorator
+8. [Decorator](Decorator.md)
 
 * 주어진 상황 및 용도에 따라 특정 객체에 책임을 덧붙이는 패턴
 * 기능 확장이 필요할 때 서브클래싱 대신 사용할 수 있는 유연한 대안이 될 수 있음
 
-9. Facade
+9. [Facade](Facade.md)
 
 * 서브시스템에 있는 인터페이스 집합에 대해 하나의 통합된 인터페이스를 제공하는 패턴
 * 서브시스템을 좀더 사용하기 편하게 만드는 상위 수준의 인터페이스를 제공
 
-10. Factory Method
+10. [Factory Method](Knowledges/Development/Design%20Patterns/Factory%20Method.md)
 
 * 객체 생성 인터페이스는 미리 정의
 * 다만, 인스턴스를 만들 클래스의 결정은 서브클래스에서 정하는 패턴
 
-11. Flyweight
+11. [Flyweight](Flyweight.md)
 
 * 크기가 작은 객체가 여러개 있을 때, 공유를 통해 효율적으로 지원하는 패턴
 * 텍스트 입력기
 
-12. Interpreter
+12. [Interpreter](Interpreter.md)
 
 * 주어진 언어에 대해, 그 언어의 문법을 위한 표현 수단을 정의
 * 그리고 그 표현 수단을 사용하여 해당 언어로 작성된 문자를 해석하는 해석기를 정의하는 패턴
 
-13. Iterator
+13. [Iterator](Iterator.md)
 
 * 내부 표현부를 노출하지 않고, 어떤 객체 집한에 속한 원소를 순차적으로 접근할 수 있는 방법을 제공
 
-14. Mediator
+14. [Mediator](Mediator.md)
 
 * 한 집합에 속한 객체들의 상호작용을 캡슐화
 * 서로를 참조하지 안혿록 함으로서 결합도를 줄일 수 있다.
 
-15. Memento
+15. [Memento](Memento.md)
 
 * 특정 객체의 내부 상태를 잡아내고 실체화함
 * 후에 해당 객체가 내부 상태를 기반으로 되돌아올 수 있도록 하는 패턴
 
-16. Observer
+16. [Observer](Knowledges/Development/Design%20Patterns/Observer.md)
 
 * 객체 사이 일대다 관계를 정의함
 * 특정 객체의 상태가 변경될 때, 묶인 객체들이 변화를 통지받고 자동으로 갱신되게 하는 패턴
 
-17. Prototype
+17. [Prototype](Prototype.md)
 
 * 생성할 객체의 종류를 명세하는데 원형이 되는 예시물을 이용
 * 그리고 이 원형을 복사하여 새로운 객체를 생성하는 패턴
 
-18. Proxy
+18. [Proxy](Knowledges/Development/Design%20Patterns/Proxy.md)
 
 * 특정 객체로 접근하는 것을 통제하기 위해 객체의 대리자, placeholder를 제공하는 패턴
 
-19. Singleton
+19. [Singleton](Knowledges/Development/Design%20Patterns/Singleton.md)
 
 * 특정 클래스의 인스턴스를 오직 하나임을 보장
 * 전역적인 접촉점을 제공하는 패턴
 
-20. State
+20. [State](State.md)
 
 * 객체의 내부 상태에 따라 스스로 행동을 변경할 수 있게끔 허가하는 패턴
 * 이렇게 하면 객체가 자신의 클래스를 바꾸는 것처럼 보임
 
-21. Strategy
+21. [Strategy](Strategy.md)
 
 * 동일 계열의 알고리즘군을 정의하고, 알고리즘을 캡슐화함
 * 그리고 이것들이 상호교환가능하도록 만들어 사용자에 상관없이 독립적으로 알고리즘을 변경할 수 있도록 함
 
-22. Template Method
+22. [Template Method](Template%20Method.md)
 
 * 알고리즘의 뼈대만 정의함
 * 각 단계에서 수행할 구체적 처리는 서브클래스 쪽으로 미루는 패턴
 * 즉, 구조는 두되, 알고리즘 처리를 서브클래스에서 재정의
 
-23. Visitor
+23. [Visitor](Visitor.md)
 
 * 객체 구조를 이루는 원소에 대해 수행할 연산을 표현하는 패턴
 * 연산을 적용할 원소의 클래스를 변경하지 않고도 새로운 연산을 정의할 수 있음

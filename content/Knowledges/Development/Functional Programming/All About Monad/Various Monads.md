@@ -2,7 +2,9 @@
 title: Various Monads
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- monad
+- functional-programming
 created: 2023-09-18
 ---
 

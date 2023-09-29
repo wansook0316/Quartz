@@ -2,7 +2,10 @@
 title: Core Value
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- core-value
+- clean-code
+- summary
 created: 2023-09-21
 ---
 

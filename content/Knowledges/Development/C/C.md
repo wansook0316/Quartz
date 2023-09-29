@@ -2,7 +2,9 @@
 title: C
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- C
+- programming-language
 created: 2023-09-21
 ---
 

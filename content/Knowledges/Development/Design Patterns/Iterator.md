@@ -2,7 +2,10 @@
 title: Iterator
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- iterator
+- design-pattern
+- oop
 created: 2023-09-26
 ---
 

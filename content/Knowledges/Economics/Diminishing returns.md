@@ -2,7 +2,8 @@
 title: 수확 체감의 원칙
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- returns
 created: 2023-09-17
 ---
 

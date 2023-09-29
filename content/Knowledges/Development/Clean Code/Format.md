@@ -2,7 +2,10 @@
 title: Format
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- format
+- clean-code
+- code
 created: 2023-09-21
 ---
 

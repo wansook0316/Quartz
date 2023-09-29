@@ -2,7 +2,11 @@
 title: High Demensional lift
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- functor
+- lift
+- high-demensional-lift
+- functional-programming
 created: 2023-09-18
 ---
 

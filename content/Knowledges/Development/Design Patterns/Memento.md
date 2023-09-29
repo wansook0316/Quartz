@@ -2,7 +2,12 @@
 title: Memento
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- memento
+- NScoding
+- NSObject
 created: 2023-09-26
 ---
 

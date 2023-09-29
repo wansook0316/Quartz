@@ -2,7 +2,11 @@
 title: Behind the Scenes Part. 01
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- GCD
+- grand-central-dispatch
+- concurrency
+- thread
 created: 2023-09-22
 ---
 

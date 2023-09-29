@@ -2,7 +2,10 @@
 title: Object Data Structure
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- data-structure
+- law-of-Demeter
+- heuristics
 created: 2023-09-21
 ---
 
@@ -153,7 +156,7 @@ public class Circle implements Shape {
 
 ## 요약
 
-# 디미터 법칙
+# 디미터 법칙(Law of Demeter)
 
  > 
  > 모듈은 자신이 조작하는 객체의 속사정을 몰라야 한다.

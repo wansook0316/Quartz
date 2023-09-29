@@ -1,7 +1,7 @@
 #!/bin/bash
 
 content_name="content"
-vault_name="World"
+vault_name="Wansook.World.Obsidian"
 
 echo "==== 모든 $content_name folder의 내용을 지웁니다. ===="
 rm -r "./$content_name"/*

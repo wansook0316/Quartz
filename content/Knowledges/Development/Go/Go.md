@@ -4,6 +4,7 @@ thumbnail: ''
 draft: false
 tags:
 - programming-language
+- go
 created: 2023-09-19
 ---
 
@@ -19,7 +20,7 @@ created: 2023-09-19
 
 # 단점
 
-* [Byte code](Byte%20code) 생성 언어가 아니다.
+* [Byte code](Byte%20code.md) 생성 언어가 아니다.
 * 그렇기 때문에 바이너리만 배포할 경우 각 타깃 머신에 맞춰 컴파일해야한다.
 * 추가 단점은 아직 이해하지 못함.
 

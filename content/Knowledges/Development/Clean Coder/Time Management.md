@@ -2,7 +2,9 @@
 title: Time Management
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- time
+- management
 created: 2023-09-21
 ---
 

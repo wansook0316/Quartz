@@ -2,7 +2,12 @@
 title: Pressure
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- pressure
+- discipline
+- pair-programming
+- TDD
+- test-driven-development
 created: 2023-09-21
 ---
 

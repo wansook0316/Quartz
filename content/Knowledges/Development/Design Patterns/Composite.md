@@ -2,7 +2,10 @@
 title: Composite
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- composite
 created: 2023-09-26
 ---
 

@@ -2,7 +2,9 @@
 title: Closure To Combine
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- closure
+- combine
 created: 2023-09-22
 ---
 

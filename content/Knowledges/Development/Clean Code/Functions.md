@@ -2,7 +2,8 @@
 title: Functions
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- functions
 created: 2023-09-21
 ---
 

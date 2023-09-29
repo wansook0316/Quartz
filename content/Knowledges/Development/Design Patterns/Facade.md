@@ -2,7 +2,10 @@
 title: Facade
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- facade
+- design-pattern
+- oop
 created: 2023-09-26
 ---
 
@@ -154,12 +157,12 @@ internal func main() {
 
 # 관련 패턴과 차이점
 
-* 추상 팩토리(Abstract Factory)
+* 추상 팩토리([Abstract Factory](Abstract%20Factory.md))
   * 서브 시스템에 독립적인 방법으로 객체 생성 인터페이스를 제공하기 위해 함께 사용 가능
-* 중재자(Mediator) - 기존에 존재하는 클래스의 기능성을 추상화하는 면에서 유사, 하지만
+* 중재자([Mediator](Mediator.md)) - 기존에 존재하는 클래스의 기능성을 추상화하는 면에서 유사, 하지만
   * 중재자: 객체들간의 협력 관계를 추상화하여 기능의 집중을 막자.
-  * 퍼사드: 서브시스템 인터페이스 자체를 추상화하여 사용을 용이하게 하자.
-* 단일체(Singleton) - 하나만 있어도 되면 싱글톤으로 구현
+  * [Facade](Facade.md): 서브시스템 인터페이스 자체를 추상화하여 사용을 용이하게 하자.
+* 단일체([Singleton](Knowledges/Development/Design%20Patterns/Singleton.md)) - 하나만 있어도 되면 싱글톤으로 구현
 
 # 생각해볼 점
 

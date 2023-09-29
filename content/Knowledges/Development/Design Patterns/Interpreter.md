@@ -2,7 +2,10 @@
 title: Interpreter
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- interpreter
 created: 2023-09-26
 ---
 
@@ -464,7 +467,7 @@ cmd: LEFT
 
 * 파서에 국한되어 사용하기 좋아보이는 패턴이다.
 * 이걸 패턴이라 할 수 있는지도 약간 의문이 든다.
-* Command 패턴의 응용이라고 보는 것이 더 좋을 듯
+* [Command](Command.md) 패턴의 응용이라고 보는 것이 더 좋을 듯
 * 파서와 같은 역할을 하는 무언가를 만들어야 한다면 한번쯤 생각해 볼만 하다.
 * **컴파일러 구현에 널리 사용된다고 한다.**
 

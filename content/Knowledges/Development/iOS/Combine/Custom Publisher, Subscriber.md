@@ -2,7 +2,10 @@
 title: Custom Publisher, Subscriber
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- combine
+- publisher
+- subscriber
 created: 2023-09-22
 ---
 

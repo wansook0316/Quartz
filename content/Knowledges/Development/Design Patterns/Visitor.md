@@ -2,7 +2,10 @@
 title: Visitor
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- visitor
+- design-pattern
 created: 2023-09-26
 ---
 

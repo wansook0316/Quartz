@@ -2,7 +2,11 @@
 title: Category Theory Prolog
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- category
+- category-theory
+- monad
+- functional-programming
 created: 2023-09-18
 ---
 

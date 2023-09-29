@@ -2,7 +2,10 @@
 title: State
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- state
+- oop
+- design-pattern
 created: 2023-09-26
 ---
 

@@ -2,7 +2,10 @@
 title: Testing Strategies
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- testing
+- strategy
+- QA
 created: 2023-09-21
 ---
 

@@ -2,15 +2,16 @@
 title: Chain of Responsibility
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- oop
+- design-pattern
+- chain-of-responsibility
 created: 2023-09-26
 ---
 
 GoF의 디자인 패턴, 책임연쇄 패턴에 대해 알아본다.
 
 해당 글은, [다음의 코드](https://github.com/wansook0316/DesignPattern-14-ChainOfResponsibility)를 기반으로 이해하는 것이 편리합니다.
-
-이미 이전에 정리해 둔 [Chain Of Responsibility](https://velog.io/@wansook0316/Chain-Of-Responsibility)를 보고오면 더 좋습니다.
 
 # 핵심 요약
 
@@ -215,9 +216,9 @@ internal func 기존의위키피디아에서나오는책임연쇄패턴() {
 
 # 관련 패턴과 차이점
 
-* 전략: 어떻게 동작하는 방법을 분리
-* 명령: 어떤 동작을 분리
-* 책임연쇄: 메시지 수신과 송신을 분리
+* [Strategy](Strategy.md): 어떻게 동작하는 방법을 분리
+* [Command](Command.md): 어떤 동작을 분리
+* [Chain of Responsibility](Knowledges/Development/Design%20Patterns/Chain%20of%20Responsibility.md): 메시지 수신과 송신을 분리
 
 # 생각해볼 점
 
@@ -230,4 +231,4 @@ internal func 기존의위키피디아에서나오는책임연쇄패턴() {
 * [GoF의 디자인 패턴 - 재사용성을 지닌 객체지향 소프트웨어의 핵심요소](http://www.yes24.com/Product/Goods/17525598)
 * [GoF의 Design Pattern - 16. Chain of Responsibility](https://www.youtube.com/watch?v=FAHEWQD6EVE&list=PLe6NQuuFBu7FhPfxkjDd2cWnTy2y_w_jZ&index=15)
 * [DesignPattern-14-ChainOfResponsibility](https://github.com/wansook0316/DesignPattern-14-ChainOfResponsibility)
-* [Chain Of Responsibility](https://velog.io/@wansook0316/Chain-Of-Responsibility)
+* [Chain of Responsibility](Knowledges/Development/Object%20Oriented%20Programming/Chain%20of%20Responsibility.md)

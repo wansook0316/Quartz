@@ -2,7 +2,9 @@
 title: Saying Yes
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- approval
+- commitment
 created: 2023-09-21
 ---
 
