@@ -681,8 +681,6 @@ class CustomCombineViewController: UIViewController {
 
 # Reference
 
-틀린 정보나 궁금한 점이 있다면 언제든 [Twitter](https://twitter.com/WansookDev)로 연락주세요! 감사합니다.
-
 * [Introducing Combine](https://developer.apple.com/videos/play/wwdc2019/722)
 * [Combine](https://developer.apple.com/documentation/combine)
 * [Composing Reactive Animations](http://conal.net/fran/tutorial.htm)

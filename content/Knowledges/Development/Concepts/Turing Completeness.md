@@ -2,7 +2,9 @@
 title: Turing Completeness
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- turing-completeness
+- turing-machine
 created: 2023-10-01
 ---
 

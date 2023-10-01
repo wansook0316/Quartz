@@ -4,12 +4,13 @@ thumbnail: ''
 draft: false
 tags:
 - functions
+- naming
 created: 2023-09-21
 ---
 
 # Intro
 
-프로그래밍 초창기에는 `System =  Routine + Subroutine` 이었다. Fortran, PL/1시절에는 `System = Program + SubProgram + Function` 이었다.지금은 Function만 남았다. 즉, \*\*어떠한 프로그램이든 기본 단위는 함수다. \*\*코드를 읽다보면 다음과 같은 특징들을 가지는 코드를 읽게 된다.
+프로그래밍 초창기에는 `System = Routine + Subroutine` 이었다. Fortran, PL/1시절에는 `System = Program + SubProgram + Function` 이었다.지금은 Function만 남았다. 즉, \*\*어떠한 프로그램이든 기본 단위는 함수다. \*\*코드를 읽다보면 다음과 같은 특징들을 가지는 코드를 읽게 된다.
 
 * 길이가 길다.
 * 코드가 중복되어 있다.

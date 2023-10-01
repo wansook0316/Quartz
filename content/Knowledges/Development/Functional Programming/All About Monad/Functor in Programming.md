@@ -8,6 +8,7 @@ tags:
 - Result
 - functional-programming
 - Optional
+- generic
 created: 2023-09-18
 ---
 

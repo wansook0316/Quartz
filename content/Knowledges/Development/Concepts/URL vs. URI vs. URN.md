@@ -2,7 +2,10 @@
 title: URL vs. URI vs. URN
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- URL
+- URI
+- URN
 created: 2023-10-01
 ---
 

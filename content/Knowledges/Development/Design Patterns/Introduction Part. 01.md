@@ -2,7 +2,8 @@
 title: Introduction Part. 01
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- design-pattern
 created: 2023-09-26
 ---
 

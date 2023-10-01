@@ -8,6 +8,8 @@ tags:
 - cancellable
 - subject
 - publisher
+- monad
+- functor
 created: 2023-09-22
 ---
 
@@ -95,7 +97,7 @@ publisher는 type 2가지를 정의해야 한다. ValueType과 ErrorType이다.
 
 ## Publisher 생성 방법
 
-### Notifivation
+### Notification
 
 ````swift
 let myNotification = Notification.name("MyNotification")

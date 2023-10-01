@@ -63,10 +63,6 @@ Fast-forward
 
 이렇게 merge를 마치고 나면 master에는 합쳐진 commit이 반영되고 새로운 commit C6가 만들어진다. 보통 `Merge ~`로 시작하는 commit의 정체가 이녀석이다.
 
-# 마무리
-
-이렇게 간단하게 fast-forward에 대해 알아보았다. 다음에는 merge가 어떤 원리로 이루어지는 지에 대해 알아보려 한다. 끝!
-
 # Reference
 
 * [3.2 Git 브랜치 - 브랜치와 Merge 의 기초](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EC%99%80-Merge-%EC%9D%98-%EA%B8%B0%EC%B4%88)

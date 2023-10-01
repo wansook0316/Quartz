@@ -50,7 +50,7 @@ try {
 
 * Swift에서는 `defer`를 잘쓰면 되겠다. 
 
-## C#
+## C
 
 ````c#
 static void WriteByte(string path, byte b)

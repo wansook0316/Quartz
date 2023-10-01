@@ -15,7 +15,6 @@ created: 2023-09-18
 ## 문서에 제공할만한 매개변수 이름을 선택하자.
 
 * 파라미터 이름을 숨겨 보이지 않는 경우에도 설명에 있어서는 중요하다.
-* 
 
 ````swift
 /// Return an `Array` containing the elements of `self`

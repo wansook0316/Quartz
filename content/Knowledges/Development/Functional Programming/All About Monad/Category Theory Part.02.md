@@ -13,6 +13,7 @@ tags:
 - initial-object
 - epimorphism
 - functional-programming
+- currying
 created: 2023-09-18
 ---
 

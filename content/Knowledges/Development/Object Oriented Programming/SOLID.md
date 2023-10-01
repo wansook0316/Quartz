@@ -5,6 +5,11 @@ draft: false
 tags:
 - oop
 - SOLID
+- OCP
+- SRP
+- LSP
+- ISP
+- DI
 created: 2023-09-29
 ---
 

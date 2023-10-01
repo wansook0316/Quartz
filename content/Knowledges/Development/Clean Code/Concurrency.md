@@ -9,6 +9,9 @@ tags:
 - dining-philosophers
 - thread
 - multi-thread
+- SRP
+- locktime
+- semaphore
 created: 2023-09-21
 ---
 

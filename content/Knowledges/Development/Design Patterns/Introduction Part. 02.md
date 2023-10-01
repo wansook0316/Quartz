@@ -2,7 +2,11 @@
 title: Introduction Part. 02
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- composition
+- design-pattern
+- oop
+- inheritance
 created: 2023-09-26
 ---
 

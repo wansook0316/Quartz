@@ -72,24 +72,24 @@ public class LocalClassExample {
   * 즉, method, `LocalClassExample` 등
   * 하지만 non-static으로 상위 class가 사용되었을 경우만 가능하다.
 
-### Anonymous Class
+### Anonymous Class\```java
 
-````java
 button.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        ...
-    }
+public void actionPerformed(ActionEvent e) {
+...
 }
+}
+
 ````
 
-* 이름이 없는 지역 클래스와 같다.
-* Swift의 Closure와 비슷하게, 선언과 동시에 초기화가 이루어진다.
-* 위와 같이 GUI 애플리케이션에서 컴포넌트에 이벤트 리스너를 등록할 때 사용된다.
-* 
+- 이름이 없는 지역 클래스와 같다.
+- Swift의 Closure와 비슷하게, 선언과 동시에 초기화가 이루어진다.
+- 위와 같이 GUI 애플리케이션에서 컴포넌트에 이벤트 리스너를 등록할 때 사용된다.
+- 
 
 ## static nested class
 
-````java
+```java
 class OuterClass {
     private final int age;
 

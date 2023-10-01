@@ -2,7 +2,8 @@
 title: URI
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- URI
 created: 2023-10-01
 ---
 

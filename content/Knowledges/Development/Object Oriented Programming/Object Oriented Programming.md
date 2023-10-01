@@ -8,11 +8,11 @@ created: 2023-09-29
 
 # Bear
 
-3. [Spaghetti Code](Spaghetti%20Code)
-3. [Coupling](Coupling.md)
-3. [Cohesion](Cohesion.md)
-3. [OOP Implement Pattern](OOP%20Implement%20Pattern)
-3. [SOLID Principle](SOLID%20Principle)
+1. [Spaghetti Code](Spaghetti%20Code)
+1. [Coupling](Coupling.md)
+1. [Cohesion](Cohesion.md)
+1. [OOP Implement Pattern](OOP%20Implement%20Pattern)
+1. [SOLID Principle](SOLID%20Principle)
 
 # Pocu
 

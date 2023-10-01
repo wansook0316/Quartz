@@ -8,6 +8,8 @@ tags:
 - design-pattern
 - wrapper
 - adapter
+- Data-Transfer-Object
+- DTO
 created: 2023-09-29
 ---
 

@@ -2,7 +2,8 @@
 title: Parameter
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- parameter
 created: 2023-10-01
 ---
 

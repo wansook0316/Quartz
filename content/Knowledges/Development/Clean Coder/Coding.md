@@ -5,6 +5,7 @@ draft: false
 tags:
 - coding
 - SOLID
+- mind
 created: 2023-09-21
 ---
 
