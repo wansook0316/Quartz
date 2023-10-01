@@ -2,8 +2,7 @@
 title: Project Management
 thumbnail: ''
 draft: false
-tags:
-- represetative
+tags: []
 created: 2023-09-18
 ---
 

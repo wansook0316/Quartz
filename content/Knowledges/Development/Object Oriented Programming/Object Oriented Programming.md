@@ -21,7 +21,7 @@ created: 2023-09-29
 1. [Design Patterns](Knowledges/Development/Object%20Oriented%20Programming/Design%20Patterns.md)
 1. [Singleton](Knowledges/Development/Object%20Oriented%20Programming/Singleton.md)
 1. [Nested Class](Nested%20Class)
-1. [Inheritance](Inheritance)
+1. [Inheritance](Knowledges/Development/Object%20Oriented%20Programming/Inheritance.md)
 1. [Composition](Composition)
 1. [Inheritance vs. Composition](Inheritance%20vs.%20Composition)
 1. [Polymorphism Part. 01](Polymorphism%20Part.%2001)

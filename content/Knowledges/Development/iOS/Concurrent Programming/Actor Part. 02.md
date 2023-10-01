@@ -5,6 +5,12 @@ draft: false
 tags:
 - actor
 - concurrency
+- thread-safety
+- multi-thread
+- actor-isolation
+- Sendable
+- actor-reentrancy
+- main-thread
 created: 2023-09-22
 ---
 

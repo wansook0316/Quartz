@@ -6,8 +6,8 @@ tags:
 - oop
 - design-pattern
 - memento
-- NScoding
 - NSObject
+- NSCoding
 created: 2023-09-26
 ---
 

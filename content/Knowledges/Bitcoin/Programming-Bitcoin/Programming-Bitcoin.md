@@ -1,5 +1,5 @@
 ---
-title: Programming Bitcoin
+title: Programming-Bitcoin
 thumbnail: ''
 draft: false
 tags:

@@ -5,6 +5,7 @@ draft: false
 tags:
 - oop
 - template
+- generic
 created: 2023-09-19
 ---
 

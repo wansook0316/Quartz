@@ -5,6 +5,7 @@ draft: false
 tags:
 - concurrency
 - thread
+- parallelism
 created: 2023-09-22
 ---
 
@@ -12,12 +13,12 @@ created: 2023-09-22
 
 해당 글은 사내 발표와 추가 정보를 기반으로 작성하였습니다.
 
-# Concurrency
+# [Concurrency](Knowledges/Development/Concepts/Concurrency.md)
 
  > 
  > 동시에 일어나는 여러가지 일
 
-애플리케이션의 여러부분을 동시에 실행 가능하도록 한다. 하지만! 이는 논리적인 개념이다. 즉, 동시에 처리되는 것처럼 보이게 한다는 것. 그럼 정말 병렬로 일어나는 행위를 뭐라고 부를까? 이미 알고 있다. Parallelism 이라 한다. 멀티코어 환경에서는 정말 병렬로 실행될 수도 있을 것이다.
+애플리케이션의 여러부분을 동시에 실행 가능하도록 한다. 하지만! 이는 논리적인 개념이다. 즉, 동시에 처리되는 것처럼 보이게 한다는 것. 그럼 정말 병렬로 일어나는 행위를 뭐라고 부를까? 이미 알고 있다. [Parallelism](Parallelism.md) 이라 한다. 멀티코어 환경에서는 정말 병렬로 실행될 수도 있을 것이다.
 
 ![](ConcurrentProgramming_01_ConcurrencyThread_0.png)
 

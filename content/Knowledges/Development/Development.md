@@ -6,6 +6,16 @@ tags: null
 created: 2023-09-21
 ---
 
+# Computer Science
+
+* [Concept](Concept.md)
+* [Network](Network.md)
+* [Graphics](Graphics.md)
+
+# Domain
+
+* [Graphic Information System](Graphic%20Information%20System.md)
+
 # Platform
 
 * [iOS](iOS.md)
@@ -14,10 +24,16 @@ created: 2023-09-21
 
 * [C](C.md)
 * [Go](Go.md)
+* [Swift](Swift.md)
 
 # Tools
 
 * [Git](Git.md)
+* [UML](UML.md)
+
+# Management
+
+* [Testing](Testing.md)
 
 # Paradigm & Design
 

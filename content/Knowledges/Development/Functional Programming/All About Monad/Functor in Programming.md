@@ -5,9 +5,9 @@ draft: false
 tags:
 - functor
 - type-constructor
-- Optinal
 - Result
 - functional-programming
+- Optional
 created: 2023-09-18
 ---
 
@@ -26,7 +26,7 @@ Functor란 무엇인가?
   * `Either`
   * `Future`
   * `Promise`
-* 그런데 그 "특정" 이라는 단어 자체가 임의의 값을 받을 수 있다는 것을 내포하고 있기 때문에 [Generic](Generic.md)으로 표현하는 것이 더 적합하다.
+* 그런데 그 "특정" 이라는 단어 자체가 임의의 값을 받을 수 있다는 것을 내포하고 있기 때문에 [Generic](Knowledges/Development/Object%20Oriented%20Programming/Generic.md)으로 표현하는 것이 더 적합하다.
   * `Optional<T>`
   * `Array<T>`
   * `Dictionary<T, U>`
@@ -35,7 +35,7 @@ Functor란 무엇인가?
   * `Either<T, U>`
   * `Future<T>`
   * `Promise<T>`
-* 이 외에도 위의 예시처럼 `Stack<T>`이라는 타입을 [Generic](Generic.md)으로 만들고 값을 감쌀 수 있다면 이는 Type Constructor이다.
+* 이 외에도 위의 예시처럼 `Stack<T>`이라는 타입을 [Generic](Knowledges/Development/Object%20Oriented%20Programming/Generic.md)으로 만들고 값을 감쌀 수 있다면 이는 Type Constructor이다.
 
 # Functor
 

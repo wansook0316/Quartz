@@ -2,7 +2,9 @@
 title: Quartz Publishing
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- obsidian
+- publishing
 created: 2023-09-19
 ---
 

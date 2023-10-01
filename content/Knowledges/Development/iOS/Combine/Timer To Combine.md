@@ -2,7 +2,9 @@
 title: Timer To Combine
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- timer
+- combine
 created: 2023-09-22
 ---
 

@@ -1,0 +1,364 @@
+---
+title: MVVM with RxSwift
+thumbnail: ''
+draft: false
+tags:
+- MVVM
+- RxSwift
+- combine
+created: 2023-09-30
+---
+
+맛보기의 마지막으로, 간단하게 프로젝트에 적용해보자. MVVM과 찰떡인 RxSwift를 적용해보면서 아키텍쳐와 사용방법에 대해 익숙해져보자.
+
+# 프로젝트 개요
+
+![](134298212-2603f566-a8b6-4fb0-8da1-0898c07f3d94.png)
+
+* 버튼을 누르면 값이 변경되고 아래에 총 금액이 나타난다.
+* 해당 프로젝트의 UI만 대충 완성된 상태에서 로직을 MVVM으로 만드는 것이 목적.
+
+# 문제점
+
+* MVVM의 핵심은, View에 관련된 값들을 모아놓는 공간으로서, 값이 변경되었을 때 View에서 이를 가져가도록 하는 구조를 만드는 것이다.
+* 그렇기 때문에 앞에서 배운 Rx의 개념을 사용하기가 용이한 것
+  * Observable과 같은 개념을 사용하면, View 에서 View Model의 값을 subscribe하면 해결되기 때문.
+* 하지만 문제가 있는데, View에서 발생하는 action을 기반으로 ViewModel의 값을 변경해야 하는 필요성이 생긴다.
+* Observable은 단순히 값을 받아먹는 녀석이기 때문에 이것이 불가능하다.
+* 이런 필요성에 의해 나온 것이 `PublishSubject` 라는 녀석이다.
+
+# 개요
+
+````swift
+
+import Foundation
+import RxSwift
+
+class MenuListViewModel {
+    
+    var menuObservable = PublishSubject<[Menu]>()
+    
+    lazy var itemsCount = self.menuObservable.map {
+        $0.map { $0.count }.reduce(0, +)
+    }
+    lazy var totalPrice = self.menuObservable.map {
+        $0.map { $0.price & $0.count }.reduce(0, +)
+    }
+    
+    init() {
+        let menus: [Menu] = [
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+        ]
+        
+        self.menuObservable.onNext(menus)
+    }
+    
+}
+````
+
+* 이런 뷰모델을 만들어놓고, view의 관련된 값을 여기에 업데이트를 하고, subscrie를 통해서 view를 자동 업데이트하는 것이 목적이다.
+* 이렇게 묶어 놓는 작업은 viewDidLoad에서 수행한다.
+
+````swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+        
+    self.viewModel.itemsCount
+        .map { "\($0)" }
+        .subscribe(onNext: { [weak self] in
+            self.totalPrice.text = $0
+        })
+        .disposed(by: self.disposeBag)
+    
+    self.viewModel.totalPrice
+        .map { $0.currencyKR() }
+        .subscribe(onNext: {
+            self.totalPrice.text = $0
+        })
+        .disposed(by: self.disposeBag)
+}
+    
+````
+
+* 예를 들면 이런식으로 처리한다.
+* 그런데, 이러한 방법에서 `RxCocoa` 라는 프레임워크를 사용하게 되면, 보다 쉽게 처리가 가능하다.
+  * UIKit에서 Rx를 편하게 사용하기 위해 제공하는 프레임워크이다.
+* 위의 viewModel을 보면, menu가 변경됨에 따라 파생되는 변수의 값을 만들수 있게 된다.
+* 이렇게 연결된 관계 자체를 stream이라 한다.
+
+````swift
+self.viewModel.itemsCount
+    .map { "\($0)" }
+    .bind(to: itemCountLabel.rx.text)
+    .disposed(by: self.disposeBag)
+````
+
+* 이렇게 하면 좋은 점이 있는데, 일단 subscribe를 사용하면 `[weak self]` 를 사용해주어야 한다.
+* 하지만 binding을 사용하면 순환참조 없이 가능하다. 아마 내부구현으로 숨겨져 있을 듯
+* 그리고 코드 길이도 줄어든다.
+
+# subject
+
+* 위의 방법을 사용하면 PublishSubject의 특성상 연결이 된 이후에 데이터에 대해서만 알림을 주기 때문에 초기 설정값에 대해서 업데이트를 수행하지 못한다.
+* 이 경우에는 `behavierSubject`를 사용해야 한다.
+* 결국 상황에 따라 문서를 잘봐야 한다.
+* 또 중요한 것이 tableview의 datasource를 해제한 상태로 사용해야 한다.
+
+````swift
+import Foundation
+import RxSwift
+
+class MenuListViewModel {
+    
+    var menuObservable = BehaviorSubject<[Menu]>(value: [])
+    
+    lazy var itemsCount = self.menuObservable.map {
+        $0.map { $0.count }.reduce(0, +)
+    }
+    lazy var totalPrice = self.menuObservable.map {
+        $0.map { $0.price * $0.count }.reduce(0, +)
+    }
+    
+    init() {
+        let menus: [Menu] = [
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+            Menu(name: "튀김1", price: 100, count: 0),
+        ]
+        
+        self.menuObservable.onNext(menus)
+    }
+    
+    func clearAllItemSelections() {
+        self.menuObservable
+            .map { menus in
+                return menus.map {
+                    Menu(name: $0.name, price: $0.price, count: 0)
+                }
+            }
+            .take(1) // 만약에 이게 없으면 연관관계가 만들어져서, 값이 변경될 때마다 호출되서 count가 0으로 고정되어 있을 것임
+            .subscribe(onNext: {
+                self.menuObservable.onNext($0)
+            })
+    }
+    
+}
+
+````
+
+````swift
+
+import UIKit
+import RxCocoa
+import RxSwift
+
+class MenuViewController: UIViewController {
+    // MARK: - Life Cycle
+    
+    let viewModel = MenuListViewModel()
+    var disposeBag = DisposeBag()
+    
+    let cellID = "MenuItemTableViewCell"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.viewModel.menuObservable
+            .bind(to: tableView.rx.items(cellIdentifier: self.cellID, cellType: MenuItemTableViewCell.self)) { index, item, cell in
+                
+                cell.title.text = item.name
+                cell.price.text = "\(item.price)"
+                cell.count.text = "\(item.count)"
+            }
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel.itemsCount
+            .map { "\($0)" }
+            .bind(to: self.itemCountLabel.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel.totalPrice
+            .map { $0.currencyKR() }
+            .bind(to: self.totalPrice.rx.text)
+            .disposed(by: self.disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = segue.identifier ?? ""
+        if identifier == "OrderViewController",
+           let orderVC = segue.destination as? OrderViewController {
+            // TODO: pass selected menus
+        }
+    }
+    
+    func showAlert(_ title: String, _ message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - InterfaceBuilder Links
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var itemCountLabel: UILabel!
+    @IBOutlet var totalPrice: UILabel!
+    
+    @IBAction func onClear() {
+        self.viewModel.clearAllItemSelections()
+    }
+    
+    @IBAction func onOrder(_ sender: UIButton) {
+        // TODO: no selection
+        // showAlert("Order Fail", "No Orders")
+//        performSegue(withIdentifier: "OrderViewController", sender: nil)
+        
+        self.viewModel.menuObservable.onNext([
+            Menu(name: "changed", price: Int.random(in: 100...1000), count: Int.random(in: 0...10)),
+            Menu(name: "changed", price: Int.random(in: 100...1000), count: Int.random(in: 0...10)),
+            Menu(name: "changed", price: Int.random(in: 100...1000), count: Int.random(in: 0...10)),
+        ])
+    }
+}
+
+````
+
+* 코드를 눈으로 쭉 훑으면서 가보면 생각보다 별게 없다는 것을 알게된다.
+* 아니다. 알면알수록 어려웠다. 취소
+
+# MVC, MVP, MVVM
+
+* 순차적으로 따라가면서 장단점을 알아보자.
+
+## MVC
+
+![imAssets/134312855-4b0658ff-90d7-4d21-bfd6-e68e099b18ff.png){: .center-small}*MVC*
+
+* Model에서 View를 바로 업데이트
+* 비즈니스 로직, action 처리등을 모두 VC가 담당하기 때문에 굉장히 커진다.
+* 그렇게 되기 때문에 VC가 UIKit을 상속받게 되어 테스트하기가 어렵다.
+* 그러면 컨트롤러의 역할을 좀 제한해보자.
+
+## MVP
+
+![imAssets/134313110-06cabc28-4efa-4315-a01a-c7c4d5844a2c.png){: .center-small}*MVP*
+
+* 여기서 보면 VC가 View를 모두 담당하는 그림이다.
+* 그리고 컨트롤러의 로직 부분을 담당하는 다른 객체를 하나 만들자.
+* View를 멍청하게 만들고, 로직 담당하는 부분을 따로 빼자.
+* 일단 이렇게 하면, Presenter는 model의 값을 가공하고, 그려야 하는 값자체만 넘겨버린다.
+* 이러면 View는 그리기만 하는 요소가 되어버리고, Presenter의 로직을 테스트할 수 있게 된다.
+* 그런데 이렇게 되면, View하고 (특정 VC) Presenter가 1:1이 되어야 한다.
+* 그리고 결국 View의 액션이 발생할 경우에 Presenter가 무엇을 그려야 하는지 다 계산해서 일일히 지시를 내려야 한다.
+  * 지시를 내린다는 것은 특정 뷰를 찾아서 그 안의 프로퍼티를 찾아서 값을 업데이트 하는 것을 말함
+* 그리고 만약에 똑같은 값을 반영해야 하는 경우에도 View와 Presenter가 1:1이어야 하기 때문에 중복코드가 발생함
+
+## MVVM
+
+![imAssets/134313189-54dcf074-154d-43ec-89a0-40a89781ac92.png){: .center-small}*MVVM*
+
+* 그래서 View와 Model을 1:다 관계로 만들어버림
+* 여기서 조심해야 하는 것!
+  * json으로 받아오는 데이터의 모델 (즉, json을 파싱해서 만들어지는 모델)을 Domain Model이라 부르고
+  * 실제 화면에 보여질 model (위의 경우에는 count, id 와 같은 다른 변수가 필요했음) 역시 Viewmodel이라 부름
+  * 이건 backend와 소통하는데 있어 내려오는 데이터와 실제 만들면서 보여질 모델에 차이가 있기 때문에 발생함
+  * 여기서는 Architecture적인 측면에서 ViewModel을 말함
+  * 이는 보여지는 화면과 Model 사이에서 보여질 데이터를 가진 상태로 존재하는 객체를 말함
+* 핵심은 View가 관찰을 하고 있다가, 자기가 데이터를 가지고 가는 것임
+* 이렇게 되면 다른 뷰에서 같은 뷰모델을 바라보고 보여지는 방법을 달리할 수 있음
+  * 같은 데이터를 가지고 하나는 테이블뷰, 하나는 섬네일뷰로 만들수 있는 것과 일맥 상통함
+
+# 주의사항 및 팁
+
+* 위에서 코드를 쭉 보면, Error가 났을 때, observable이 끊어진다고 했다.
+* 그렇다면 만약 UI쪽에서 연결을 해두었는데 (bind) 에러가 나버리면 어떡할까?
+* stream 자체가 끊어져버려서 다음 동작 (예를 들어 뷰를 리로드하는)을 하더라도 화면이 업데이트 되지 않을 것이다.
+* 그래서 핵심은, UI쪽에서 binding을 걸 때는 에러가 나더라도 **해당 바인딩이 끊어지게 하면 안된다.**
+* 그래서 아래와 같이 사용한다.
+
+````swift
+self.viewModel.itemsCount
+    .map { "\($0)" }
+    .catchErrorJustReturn("")
+    .observeOn(MainScheduler.instance)
+    .bind(to: self.itemCountLabel.rx.text)
+    .disposed(by: self.disposeBag)
+````
+
+* 이렇게 에러나 가면 그냥 빈 스트링을 리턴해라 와 같은 operator가 존재한다.
+* 그런데 잘 생각해보면, UI에서는 항상 이 세개를 세팅을 해줘야 한다.
+  * `catchErrorJustReturn`
+  * `observeOn`
+  * `bind`
+* 그래서 귀찮아서 `driver`라는 것을 만들었다.
+* `driver`는 항상 main thread에서 동작한다.
+
+````swift
+self.viewModel.totalPrice
+    .map { $0.currencyKR() }
+    .asDriver(onErrorJustReturn: "")
+    .drive(itemCountLabel.rx.text)
+    .disposed(by: self.disposeBag)
+````
+
+* 끊어지지 않는 bind를 만드는 방법이다.
+* 자, 여기까지 보면, 응? 그럼 애초에 발행하는 쪽에서도 Error나 Complete 자체가 필요없는 거아님?
+* 애초에 발행할 때, onNext만 있으면 저런 처리 자체를 안해줘도 되잖아?
+* 그래서 그런게 있다. 끊어지지 않는 Subject (Subject는 외부에서 Observable의 값을 변경할 수 있는 객체를 말함)
+* `RxRelay`
+
+````swift
+import RxRelay
+var menuObservable = BehaviorRelay<[Menu]>(value: [])
+
+func clearAllItemSelections() {
+    _ = self.menuObservable
+        .map { menus in
+            return menus.map { menu in
+                Menu(id: menu.id, name: menu.name, price: menu.price, count: 0)
+            }
+        }
+        .take(1) // 만약에 이게 없으면 연관관계가 만들어져서, 값이 변경될 때마다 호출되서 count가 0으로 고정되어 있을 것임
+        .subscribe(onNext: {
+            self.menuObservable.accept($0)
+        })
+}
+````
+
+* 이런 식으로 Reray로 선언을 해주고, onNext가 아니고 accept라는 메서드로 변경해주면 된다.
+* 다른 동작은 모두 같다.
+* 애초에 onNext밖에 없다. 오로지 값을 받아들일 수 밖에 없다.
+
+# 정리
+
+* MVVM 은 뷰와 관련된 값을 모아놓은 뷰모델을 만들고, 이를 View에서 감지된 변화를 적용하는 방법이다.
+* MVVM을 구현하는데 있어서 RxSwift가 필수적인 것은 아니다. 뷰와 관련된 모델을 만들고, 변화가 일어났을 떄(didset) View를 업데이트만 시켜줄 수 있다면 MVVM의 일종이라고 할 수 있다.
+  * MVVM은 뷰와의 종속성을 최소한으로 낮추어 테스트를 하기 용이한 구조로 만들고, 중복된 코드를 줄인다는 점에서 좋은 구조이다.
+* 하지만 이러한 방법을 사용하는데 있어서 data Binding을 한다면 더 구조적으로 깔끔하게 처리가 가능하다.
+  * data binding이란, Viewmodel에 있는 값자체와 View의 변화가 발생하는 요소와 연결을 시키는 것을 말한다.
+* 이 과정에서 KVO와 같은 방법을 사용할 수도 있을 것이다.
+  * KVO는 NSObject를 상속해서 처리해야 하기 때문에 무거운 편
+* 이런 상황에서 RxSwift를 사용하여 처리한다면 좋은 방편이 될 수 있다.
+  * RxSwift는 비동기 처리에 있어 타입으로 리턴받기 위한 의도로 만들어졌지만, 데이터 흐름을 처리하는데 용이하기 때문이다.
+  * 실제로 받아서 처리하는 녀석이 구독을 하고, 해당 값이 변경될 때마다 데이터를 발행하기 때문에 값을 관찰하는 로직자체는 유사하다.
+* 이 때, 이를 UI와 연결하기 위해서는 RxCocoa 프레임 워크와 RxRelay를 함께 사용하면 간결한 처리가 가능하다.
+* Combine은 apple이 만든 반응형 프레임워크라고 생각하면 좋다.
+  * iOS 13이후 부터 적용이 되기 때문에, 현재로서는 아직 적용하기가 조금 어려운 상태이다.
+  * 하지만 1년 정도 사이의 시간내에서 사용할 가능성이 높기 때문에, 현재는 RxSwift로 개발을 진행해보고, 나중에 Combine으로 변경하는 연습을 하는 것이 좋아보인다.
+  * 그리고 Combine과 SwiftUI간의 활용도가 좋기 때문에, 이를 나중에 연습해야 한다.
+  * Flutter는 추가로.. 하 할게 많네.
+
+# Reference
+
+* [시즌2 오프라인 모임](https://www.youtube.com/watch?v=iHKBNYMWd5I&t=3963s)
+* [RxSwift+MVVM 4시간에 끝내기](https://github.com/iamchiwon/RxSwift_In_4_Hours)
+* [ReactiveX](http://reactivex.io/)
+* [ReactiveX Operators](http://reactivex.io/documentation/operators.html)
+
+* [Combine](Combine.md)

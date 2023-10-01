@@ -3,14 +3,19 @@ title: Actor Part. 01
 thumbnail: ''
 draft: false
 tags:
-- concurrency
 - actor
+- data-race
+- shared-resource
+- thread-safety
+- actor-reentrancy
+- swift
+- multi-thread
 created: 2023-09-22
 ---
 
 Task는 코드 블럭을 독립적으로 사용할 수 있다. 이러한 점을 사용하면 병렬적으로 특정 코드를 처리하게 할 수도 있다. 그런데, 두 개 이상의 Task에서 공유자원을 사용해야 한다면 어떻게 할까?
 
-공유 자원에 접근하는 것은 동시성 문제를 일으키는 핵심적인 이유중 하나다. 궁금하다면 [Concurrency](https://velog.io/@wansook0316/Concurrency)에서 그 이유들을 알아보자. Apple은 이러한 문제에 대해 Actor라는 타입을 만들어 문제를 원천봉쇄하고자 했다. 한번 알아보자.
+공유 자원에 접근하는 것은 동시성 문제를 일으키는 핵심적인 이유중 하나다. 궁금하다면 [Concurrency](Knowledges/Development/Clean%20Code/Concurrency.md)에서 그 이유들을 알아보자. Apple은 이러한 문제에 대해 Actor라는 타입을 만들어 문제를 원천봉쇄하고자 했다. 이는 [Actor Model](Actor%20Model.md)에서 나오는 개념이다. 한번 알아보자.
 
 # Data races make concurrency hard
 

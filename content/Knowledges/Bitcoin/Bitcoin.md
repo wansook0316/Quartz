@@ -9,4 +9,4 @@ tags:
 created: 2023-09-18
 ---
 
-* [Programming Bitcoin](Programming%20Bitcoin.md)
+* [Programming-Bitcoin](Programming-Bitcoin.md)
