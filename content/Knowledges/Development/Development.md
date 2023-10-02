@@ -6,42 +6,42 @@ tags: null
 created: 2023-09-21
 ---
 
-# Computer Science
+## Computer Science
 
 * [Concept](Concept.md)
 * [Network](Network.md)
 * [Graphics](Graphics.md)
 
-# Domain
+## Domain
 
 * [Graphic Information System](Graphic%20Information%20System.md)
 
-# Platform
+## Platform
 
 * [iOS](iOS.md)
 
-# Languages
+## Languages
 
 * [C](C.md)
 * [Go](Go.md)
 * [Swift](Swift.md)
 
-# Tools
+## Tools
 
 * [Git](Git.md)
 * [UML](UML.md)
 
-# Management
+## Management
 
 * [Testing](Testing.md)
 
-# Paradigm & Design
+## Paradigm & Design
 
 * [Object Oriented Programming](Object%20Oriented%20Programming.md)
 * [Functional Programming](Knowledges/Development/Functional%20Programming/Functional%20Programming.md)
 * [Design Patterns](Knowledges/Development/Design%20Patterns/Design%20Patterns.md)
 
-# Mind set
+## Mind set
 
 * [Clean Code](Clean%20Code.md)
 * [Clean Coder](Clean%20Coder.md)
