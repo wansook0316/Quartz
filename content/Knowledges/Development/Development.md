@@ -8,9 +8,10 @@ created: 2023-09-21
 
 ## Computer Science
 
-* [Concept](Concept.md)
+* [Concept](Knowledges/Development/Concepts/Concept.md)
 * [Network](Network.md)
 * [Graphics](Graphics.md)
+* [Algorithm](Knowledges/Development/Algorithm/Algorithm.md)
 
 ## Domain
 

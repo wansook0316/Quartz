@@ -1,0 +1,176 @@
+---
+title: Make Parameter Object
+thumbnail: ''
+draft: false
+tags:
+- refactoring
+- parameter
+- capsulation
+- javascript
+created: 2023-10-02
+---
+
+Introduce Parameter Object, 매개변수 객체 만들기에 대해 알아보자.
+
+# 요약
+
+![](Refactoring_21_IntroduceParameterObject_0.png)
+
+# 코드
+
+````javascript
+function amountInvoiced(startDate, endDate) {...}
+function amountReceived(startDate, endDate) {...}
+function amountOverdue(startDate, endDate) {...}
+````
+
+````javascript
+function amountInvoiced(aDateRange) {...}
+function amountReceived(aDateRange) {...}
+function amountOverdue(aDateRange) {...}
+````
+
+# 배경
+
+* 데이터 항목 여러개가 함께 몰려다니는 경우가 있다.
+* 이런 경우 데이터 구조 하나로 묶어주자.
+* 매개변수 수가 줄어들고, 일관성도 높아진다.
+* 하지만 가장 근본적인 것은 코드가 더 근본적으로 바뀐다는 점에 있다.
+
+# 절차
+
+1. 적당한 데이터 구조가 없다면 새로 만든다.
+   * Value Object로 만들자.
+1. 테스트한다.
+1. 함수 선언 바꾸기로 새 데이터 구조를 매개변수로 추가한다.
+1. 테스트한다.
+1. 함수 호출 시 새 데이터 구조 인스턴스를 넘기도록 수정한다. 바꿀때 마다 테스트
+1. 기존 매개변수를 사용하던 코드를 새 데이터 구조의 요소를 사용하도록 바꾼다.
+1. 다 바꿨다면 기존 매개변수를 제거하고 테스트한다.
+
+# 예시
+
+````javascript
+const station = {
+    name: "ZB1",
+    readings: [
+        {temp: 47, time: "2016-11-10 09:10"},
+        {temp: 53, time: "2016-11-10 09:20"},
+        {temp: 58, time: "2016-11-10 09:30"},
+        {temp: 53, time: "2016-11-10 09:40"},
+        {temp: 51, time: "2016-11-10 09:50"},
+    ]
+};
+
+function readingsOutsideRange(station, min, max) {
+    return station.readings.filter(r => r.temp < min || r.temp > max);
+}
+
+alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+````
+
+* operatingPlan에 있는 범위 값을 가져와 전달하고 있다.
+* 이렇게 범위라는 개념은 객체 하나로 묶어 표현하는게 낫다.
+
+````javascript
+class NumberRange {
+    constructor(min, max) {
+        this._data = {min: min, max: max};
+    }
+
+    get min() {
+        return this._data.min;
+    }
+
+    get max() {
+        return this._data.max;
+    }
+}
+````
+
+* 값 객체로 만들려 했으나, 이 경우는 동작까지 포함하는 것이 나아 class로 만들었다.
+* 다만 값 수정 자체는 없을 예정이므로 setter는 만들지 않았다.
+
+````javascript
+function readingsOutsideRange(station, min, max, range) {
+    return station.readings.filter(r => r.temp < min || r.temp > max);
+}
+
+alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, null);
+````
+
+* 일단 새로 만든 객체를 매개변수로 추가하자.
+* 테스트 한다.
+
+````javascript
+function readingsOutsideRange(station, min, max, range) {
+    return station.readings.filter(r => r.temp < min || r.temp > max);
+}
+
+const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, range);
+````
+
+* 함수 호출 시 새 데이터 구조 인스턴스를 넘기도록 수정한다. 
+* 동작은 안바꿨으니 잘 될 것이다.
+* 테스트.
+
+````javascript
+function readingsOutsideRange(station, min, range) {
+    return station.readings.filter(r => r.temp < min || r.temp > range.max);
+}
+
+const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, range);
+````
+
+* max부터 대체해보자.
+
+````javascript
+function readingsOutsideRange(station, range) {
+    return station.readings.filter(r => r.temp < min || r.temp > range.max);
+}
+
+const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+alerts = readingsOutsideRange(station, range);
+````
+
+* 이제 끝났다.
+
+# 진정한 값 객체로 거듭나기
+
+* 값 객체로 바꾸는 작업 자체는 값진 작업의 준비단계다.
+* 이렇게 되면 **값 객체로 만든 객체의 관련 동작을 이 클래스로 옮길 수 있다.**
+* 예를 들어 온도가 허용 범위 내인지 검사하는 메서드를 추가할 수 있겠다.
+
+````javascript
+class NumberRange {
+    constructor(min, max) {
+        this._data = {min: min, max: max};
+    }
+
+    get min() {
+        return this._data.min;
+    }
+
+    get max() {
+        return this._data.max;
+    }
+
+    function contains(arg) {
+        return (arg >= this.min && arg <= this.max);
+    }
+}
+
+function readingsOutsideRange(station, range) {
+    return station.readings.filter(r => !range.contains(r.temp));
+}
+````
+
+* 이렇게 하면 범위를 검사하는 코드를 한 곳으로 모을 수 있다.
+
+# Reference
+
+* [Refactoring](https://product.kyobobook.co.kr/detail/S000001810241)
+* [github](https://github.com/WegraLee/Refactoring)
+* [martin-fowler-refactoring-2nd](https://github.com/wickedwukong/martin-fowler-refactoring-2nd)

@@ -11,3 +11,4 @@ created: 2023-10-01
 * [Constant Management](Constant%20Management.md)
 * [Completion in main thread](Completion%20in%20main%20thread)
 * [UI Checklist](UI%20Checklist)
+* [Swift Combination & Permuration](Swift%20Combination%20&%20Permuration.md)
