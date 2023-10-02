@@ -12,8 +12,8 @@ created: 2023-09-22
 
 # Introduction
 
-* [Introduction Part. 01](Introduction%20Part.%2001)
-* [Introduction Part. 02](Introduction%20Part.%2002)
+* [Introduction Part. 01](Knowledges/Development/Design%20Patterns/Introduction%20Part.%2001.md)
+* [Introduction Part. 02](Knowledges/Development/Design%20Patterns/Introduction%20Part.%2002.md)
 
 # Creational Patterns (생성 패턴)
 

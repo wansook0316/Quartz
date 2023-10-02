@@ -36,7 +36,7 @@ let image = UIImage(named: "default_egg", in: bundle, compatibleWith: nil)
 
 ## Not Opaque Data Type
 
-이전글에서 Bundle은 Opaque Data Type이라 했었다. 즉 directory이지만 Finder에서 실행 파일처럼 취급됨을 의미한다.(Package의 의미) [해당 글]()에서 `.app`의 경우 finder에서 실행파일로 인식되어 클릭하면 앱이 실행되나, "패키지 내용 보기"를 통해 접근하여 내부 파일을 볼 수 있다고 했다. 이렇게 finder에서 디렉토리지만 단일 파일처럼 인식하는 것을 Opaque Data Type이라 하는데, framework의 경우 일반 디렉토리로 취급되어 Opaque Data Type이 아니다. 
+이전글에서 Bundle은 Opaque Data Type이라 했었다. 즉 directory이지만 Finder에서 실행 파일처럼 취급됨을 의미한다.(Package의 의미) [Bundle](Bundle.md)에서 `.app`의 경우 finder에서 실행파일로 인식되어 클릭하면 앱이 실행되나, "패키지 내용 보기"를 통해 접근하여 내부 파일을 볼 수 있다고 했다. 이렇게 finder에서 디렉토리지만 단일 파일처럼 인식하는 것을 Opaque Data Type이라 하는데, framework의 경우 일반 디렉토리로 취급되어 Opaque Data Type이 아니다. 
 
 # Framework의 구조
 
