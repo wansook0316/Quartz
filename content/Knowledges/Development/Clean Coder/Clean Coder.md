@@ -6,7 +6,7 @@ tags: null
 created: 2023-09-21
 ---
 
-1. [Introduction](Introduction.md)
+1. [Introduction](Knowledges/Development/Clean%20Coder/Introduction.md)
 1. [Professionalism](Professionalism.md)
 1. [Saying No](Saying%20No.md)
 1. [Saying Yes](Saying%20Yes.md)

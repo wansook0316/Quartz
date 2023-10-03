@@ -164,7 +164,7 @@ GOF의 디자인 패턴 1장, 서론을 정리해봅니다.
 * 주어진 언어에 대해, 그 언어의 문법을 위한 표현 수단을 정의
 * 그리고 그 표현 수단을 사용하여 해당 언어로 작성된 문자를 해석하는 해석기를 정의하는 패턴
 
-13. [Iterator](Iterator.md)
+13. [Iterator](Knowledges/Development/Design%20Patterns/Iterator.md)
 
 * 내부 표현부를 노출하지 않고, 어떤 객체 집한에 속한 원소를 순차적으로 접근할 수 있는 방법을 제공
 

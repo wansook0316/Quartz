@@ -39,7 +39,7 @@ created: 2023-09-22
 * [Chain of Responsibility](Knowledges/Development/Design%20Patterns/Chain%20of%20Responsibility.md)
 * [Command](Command)
 * [Interpreter](Interpreter)
-* [Iterator](Iterator)
+* [Iterator](Knowledges/Development/Design%20Patterns/Iterator.md)
 * [Mediator](Mediator)
 * [Memento](Memento)
 * [Observer](Knowledges/Development/Design%20Patterns/Observer.md) 

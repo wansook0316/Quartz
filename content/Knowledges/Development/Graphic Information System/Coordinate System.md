@@ -5,6 +5,9 @@ draft: false
 tags:
 - coordinate-system
 - GIS
+- cartisian-coordinate
+- polar-coordinate
+- spherical-coordinate
 created: 2023-10-01
 ---
 

@@ -17,15 +17,18 @@ created: 2023-09-21
 
 * [Graphic Information System](Graphic%20Information%20System.md)
 
-## Platform
+## Technologies
 
 * [iOS](iOS.md)
+* [Artificial Intelligence](Artificial%20Intelligence.md)
 
 ## Languages
 
 * [C](C.md)
+* [Cpp](Cpp.md)
 * [Go](Go.md)
 * [Swift](Swift.md)
+* [Matlab](Matlab.md)
 
 ## Tools
 
