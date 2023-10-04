@@ -15,7 +15,7 @@ created: 2023-10-01
 
 ***행위도 여러개, 주체도 여러개***
 
-![](ConcurrentProgramming_01_ConcurrencyThread_0.png)
+![](ConcurrentProgramming_01_ConcurrencyThread_0.jpg)
 ![](TechTalks_22_ConcurrencyParallelism_0.png)
 
 * 가짜 병렬 (논리적 개념)

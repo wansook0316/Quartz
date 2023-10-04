@@ -17,7 +17,7 @@ Task를 알아보면서 많은 삽질을 했으니, 이제 다시한번 WWDC 영
 
 # Intro
 
-![](ConcurrentProgramming_11_StructuredConcurrency_0.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_0.jpg)
 
 예전의 프로그래밍 언어는 control flow가 상하로 왔다갔다했었다. 이런 코드는 흐름을 읽는 것을 방해했다. 하지만 요즘은 구조화된 프로그래밍 방법을 통해 이를 쉽게 읽을 수 있다. 이러한 것이 가능하게 된 것은, block을 사용했기 때문이다. block 안에서는 변수가 살아있고, 그 scope를 벗어나게 되는 경우 변수는 사라진다. 이런 static scope와 structured programming 방법은, 변수의 life time과 제어문을 이해하기 쉽게 만들었다.
 
@@ -86,11 +86,11 @@ func fetchThumbnails (for ids: [String]) async throws -> [String: UIImage] {
 
 # Async-let tasks
 
-![](ConcurrentProgramming_11_StructuredConcurrency_1.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_1.jpg)
 
 단순하게 데이터를 동기적으로 받아오는 방식을 생각해보면 위와 같다.
 
-![](ConcurrentProgramming_11_StructuredConcurrency_2.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_2.jpg)
 
 하지만 우리는 데이터가 받아오는 시간동안에 다른 작업을 처리하고 싶다. 이럴 경우 `async let`을 사용하면 된다. 이를 사용하기 위해서는 뒤의 호출하는 함수(`URLSession.shared.data(~)`)가 async 함수여야 한다. Concurrent Binding 평가 방식에 대해 이해해보자.
 
@@ -138,7 +138,7 @@ func fetchOneThumbnail(withId id: String) async throws -> UIImage {
 
 이 Task Tree는 Structured Concurrency에서 중요한 부분이다. 이 Tree는 단순히 구현을 위해 존재하는 것이 아니며, cancellation, priority, task-local 변수들에 영향을 미친다.
 
-![](ConcurrentProgramming_11_StructuredConcurrency_3.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_3.jpg)
 
 `async let`와 같은 structured task를 사용하게 되면, 현재 동작하고 있는 function의 task의 child가 되어 동작한다. 그리고 이 child task의 life cycle은 parent의 scope에 갇힌다.
 
@@ -164,15 +164,15 @@ func fetchOneThumbnail(withId id: String) async throws -> UIImage {
 
 그런데, 위에서 ❓은 여전히 동작하고 있다. **Parent Task는 본인이 가진 Child Task들의 동작이 모두 종료되어야 비로소 종료될 수 있다.** 라는 규칙은 Task Tree에서 모두 적용되기 때문에, 최악의 경우 data를 받을 수 없다면 무한정 대기하는 상황이 펼쳐질 수도 있다.
 
-![](ConcurrentProgramming_11_StructuredConcurrency_4.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_4.jpg)
 
 이러한 비정상 적인 exit에 대해 Swift는 자동적으로 대기하지 않은 task(data)를 canceled로 마킹한다. 그리고 함수를 탈출하기 전에 cancel된 task를 기다린다. 엥 이게 무슨말인가.
 
-![](ConcurrentProgramming_11_StructuredConcurrency_5.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_5.jpg)
 
 cencel로 처리하는 것과 task를 stop하는 것은 동치가 아니다. cancel한다는 것은 Task에게 "야야, 니가 결과 받아와도 그거 나 안쓸거야"라고 말하는 것과 같다. 실제로는 task가 canceled되면, cancel 명령을 받은 task의 모든 subtask들이 자동적으로 cancel된다. 즉, propagate된다는 말이다. 
 
-![](ConcurrentProgramming_11_StructuredConcurrency_6.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_6.jpg)
 
 가장 하위에 있는 task부터 cancel되어 finish 판정을 받으면, 상위로 결과가 올라온다. 그렇게 최종적으로 `fetchOneThumbnail` 함수가 종료된다.
 
@@ -255,11 +255,11 @@ func fetchThumbnails(for ids: [String]) async throws -> [String: UIImage] {
 }
 ````
 
-![](ConcurrentProgramming_11_StructuredConcurrency_7.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_7.jpg)
 
 여기서 이전 글에서 배웠던 TaskGroup을 사용하면 된다. `addTask` 함수를 통해 동작하는 scope를 Task로 넣게되면, Concurrent하게 동작한다.
 
-![](ConcurrentProgramming_11_StructuredConcurrency_8.png)
+![](ConcurrentProgramming_11_StructuredConcurrency_8.jpg)
 
 하지만, 이렇게 하면 문제가 발생한다. Compiler가 data race issue가 발생할 수 있다고 친히 알려준다. 즉, 공유 자원에 접근하고 있어 문제가 발생할 수 있다는 것이다. **data race 상태를 Compiler가 체크해준다.**
 

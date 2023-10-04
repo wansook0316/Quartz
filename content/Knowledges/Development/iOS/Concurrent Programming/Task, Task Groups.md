@@ -371,7 +371,7 @@ private func doSomething(with number: Int) async -> Int {
 }
 ````
 
-![](ConcurrentProgramming_08_TaskTaskGroups_0.png)
+![](ConcurrentProgramming_08_TaskTaskGroups_0.jpg)
 
 먼저 `withTaskGroup`을 실행하는 시기에는 main thread 였다. 그리고 child task의 경우 sub thread에서 처리되고 있었다. 하지만 이 task 내부에서 다른 async 함수의 결과를 대기하는 부분에서 동작하는 thread가 달라졌다. 내부적으로 async 프로세스 역시 다른 task를 만들어 다른 thread로 넘겨주는 행위이기 때문으로 생각된다.
 
@@ -381,7 +381,7 @@ private func doSomething(with number: Int) async -> Int {
 
 위의 작업을 하면서, 알게된 사실은 TaskGroup의 경우 **Serial Queue**에서 동작한다는 사실이다. Concurrent Queue가 아니다. 즉 Parallel이 동작하지 않는다.
 
-![](ConcurrentProgramming_08_TaskTaskGroups_1.png)
+![](ConcurrentProgramming_08_TaskTaskGroups_1.jpg)
 
 즉, 위와 같이 동작한다. 
 

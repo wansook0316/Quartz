@@ -16,7 +16,7 @@ created: 2023-09-22
 
 New feed reader 앱을 만든다고 생각해보자. 고수준에서 어떠한 것들이 필요할지 생각해보자.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_0.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_0.jpg)
 
 1. User Interface를 처리할 main thread가 있다.
 1. User가 구독한 news feed를 추적할 Database도 있다.
@@ -26,18 +26,18 @@ New feed reader 앱을 만든다고 생각해보자. 고수준에서 어떠한 �
 
 User가 새로운 news feed를 가져오라는 gesture를 했다고 생각해보자. GCD를 사용했을 때는 다음과 같이 처리했었다.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_1.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_1.jpg)
 
 User의 gesture를 받아 Serial Dispatch Queue에 `async` 하게 동작을 넘긴다.
 
 * 다른 Dispatch Queue에서 작업을 뽑아옴으로써 많은 양의 작업일지라도 main thread가 user의 동작을 계속 받을 수 있도록 하기 위해서
 * serial queue를 사용함으로써 database의 접근에 있어 상호 배제를 보장
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_2.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_2.jpg)
 
 Database Queue안에서 user가 구독한 feed들을 iterate하며, network 요청을 하도록 URL Session에 넘긴다.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_3.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_3.jpg)
 
 Network 결과가 들어오면, URL Session callback이 delegate queue에서 실행된다.
 
@@ -85,7 +85,7 @@ for feed in feedsToUpdate {
 
 이 문제를 이해하기 위해서는 GCD Queue가 어떻게 work item을 처리하는지 알아야 한다.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_4.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_4.jpg)
 
 1. concurrent queue는 여러개의 work item을 한번에 처리할 수 있기 때문에 시스템은 CPU Core수가 포화되는 수준까지 여러개의 thread를 가져온다. 
 1. 그런데 만약, Thread가 Block되면, (그리고 더 많은 수행될 work들이 있다면) System은 해당 CPU Core를 채울 수 있는 thread를 더 가져온다.
@@ -99,7 +99,7 @@ for feed in feedsToUpdate {
 
 URLSession의 결과를 가져오는 동작에서 Apple watch 처럼 2개의 코어가 있다고 생각해보자.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_5.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_5.jpg)
 
 1. Core가 2개이므로 GCD는 feed update result를 처리하기 위해 2개의 thread를 가져온다.
 1. 그 안에서 `databaseQueue.sync`를 호출하고 있기 대문에, 해당 task는 block된다.
@@ -123,7 +123,7 @@ Thread 수가 많아지는 것은 Application에 좋지 않은 영향을 끼친�
 
 ### Memory overhead
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_6.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_6.jpg)
 
 쉽게 알 수 있겠지만, block된 thread는 결국 나중에 돌아와서 본인의 작업을 수행해야 한다. 이점에서 작업이 중단된 상태를 기억하고 있어야 하고, 이는 곧 memory에 저장되게 된다.
 
@@ -135,7 +135,7 @@ Thread 수가 많아지는 것은 Application에 좋지 않은 영향을 끼친�
 
 Thread가 많아지는 것은 메모리 측면에서만 문제가 있는 것은 아니다. 결국 이런 Thread들이 언제 처리될 것인지를 관장하는 스케쥴링도 해야 하는데, 많아질 수록 이런 과정은 더욱 복잡해지기 마련이다.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_7.png) 
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_7.jpg) 
 
 제한된 Core수를 가진 상태에서 Thread explosion이 발생하면, 과도한 Context Switching을 발생시킬 수 있다. 이렇게 늦어진 처리는 결국 중요한 처리를 늦게하게 만들 수 있다. 결과적으로 CPU가 효과적으로 동작하는 것을 방해한다.
 
@@ -143,7 +143,7 @@ Thread가 많아지는 것은 메모리 측면에서만 문제가 있는 것은 
 
 위에서 살펴본 것과 같이 Thread explosion은 GCD에서 발생할 수 있는 문제이다. 그럼에도 이 부분을 섬세하게 캐치하여 코드를 작성하는 것은 놓치기 쉬운 부분이다. 이런 부분에서 Swift의 언어설계는 concurrency를 설계하는데 있어 다른 접근을 도입했다.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_8.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_8.jpg)
 
 1. Core 수에 맞는 Thread만 사용한다.
    * Blocking Thread가 없어진다.
@@ -199,17 +199,17 @@ async function이 어떻게 구현되어 있는지 알아보기 전에, 어떻�
 
 ### Non-async functions
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_9.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_9.jpg)
 
 Program에서 동작하는 모든 Thread는 함수 call상태를 저장하기 위한 stack을 가지고 있다. 
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_10.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_10.jpg)
 
 하나의 stack을 살펴보자. 하나의 함수가 call되면 새로운 frame이 stack에 push된다. 새롭게 만들어진 frame은 지역 변수 저장, 반환 주소 전달, 다른 기타 용도를 위해 사용된다. 일단 함수가 동작을 바치고 반환하면, stack frame은 pop된다.
 
 ### Async functions
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_11.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_11.jpg)
 
 ````swift
 func updateDatabase(with articles: [Article], for feed: Feed) async throws {
@@ -246,19 +246,19 @@ func save(_ newArticles: [Article], for feed: Feed) async throws -> [ID] { /* ..
    * 새로운 stack frame을 push하는 것 대신, top에 있는 stack frame은 대체된다.
    * 이는 후에 필요한 변수(`newArticles`)가 이미 async frame list에 저장됐기 때문이다.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_12.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_12.jpg)
 
 5번까지 진행한 후에, `save` function의 실행이 suspend되었다고 생각해보자. 상황이 이렇다면, thread가 block되어 있는 것보다 다른 작업을 하기 위해 재사용 되는 것이 보다 좋다. 위의 사진은 stack에 다른 작업이 들어와있고, 같은 방식으로 async frame에 작업 사항을 저장하는 것을 나타냈다.
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_13.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_13.jpg)
 
 suspension point를 걸쳐 필요한 모든 정보가 heap에 저장되어있기 때문에, conitinue 실행을 통해 나중에 사용될 수 있다. **이 async frame list가 `conituation`의 runtime 표현이다.**
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_14.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_14.jpg)
 
 어느정도 시간이 지난 후에, database 요청이 끝났고, 몇몇 thread가 비었다. **이 thread는 이전에 작업을 요청한 thread일 수도 있고 다른 thread일 수도 있다.** (core개수에 맞게 생성된 thread를 말한다.) 이렇게 빈 thread에서 작업이 계속된다. 
 
-![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_15.png)
+![](ConcurrentProgramming_12_SwiftConcurrencyBehindTheScenes-1_15.jpg)
 
 ````swift
 func updateDatabase(with articles: [Article], for feed: Feed) async throws {

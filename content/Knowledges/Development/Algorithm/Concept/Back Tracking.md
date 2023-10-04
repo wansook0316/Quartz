@@ -16,7 +16,7 @@ created: 2023-10-02
 
 # 트리 방문
 
-![](algorithm-backtracking01.png)
+![](algorithm-backtracking01.jpg)
 *트리 방문 방법*
 
 * preorder
@@ -39,9 +39,9 @@ created: 2023-10-02
 
 # N Queen
 
-![](algorithm-backtracking02.png)
+![](algorithm-backtracking02.jpg)
 *상태공간을 계층적으로 표현*
-![](algorithm-backtracking03.png)
+![](algorithm-backtracking03.jpg)
 *상태 공간 트리*
 
 * 퀸이 서로 겹치지 않도록 nxn 체스판에서 퀸을 놓는 방법을 구하는 문제.
@@ -51,7 +51,7 @@ created: 2023-10-02
 
 ## 백 트레킹
 
-![](algorithm-backtracking04.png)
+![](algorithm-backtracking04.jpg)
 *백 트레킹*
 
 * 그런데 이런 상태 공간은 n이 4라고 하면 굉장히 많아진다.
@@ -59,12 +59,12 @@ created: 2023-10-02
 * 애초에 안되는 경우는 탐색을 안하는 것이 맞기 때문
 * 이걸 가지치기 방법, 백 트레킹이라 한다.
 
-![](algorithm-backtracking05.png)
+![](algorithm-backtracking05.jpg)
 *백 트래킹을 사용한 4 queens*
 
 ### DFS, Back Tracking
 
-![](algorithm-backtracking06.png)
+![](algorithm-backtracking06.jpg)
 *깊이 우선 검색시 검색 마디 개수*
 
 * 그냥 dfs를 하면 답안을 찾는데 까지 155개
@@ -82,7 +82,7 @@ created: 2023-10-02
 * 그 이유는, 만약 이전의 방법을 사용하게 되면, 애초에 되지 않는 방문하고 그 사실을 알게 된다.
 * 하지만 미리 검증하고 넣어준다면, 재귀 호출을 덜하기 때문에 보다 효율적이다.
 
-![](algorithm-backtracking07.png)
+![](algorithm-backtracking07.jpg)
 *수도 코드*
 
 * 이 코드를 이해하려면, 처음에 들어가는 인자가 i번째 퀸이라고 생각하면 된다.
@@ -90,7 +90,7 @@ created: 2023-10-02
 
 # 부분집합의 합 구하기
 
-![](algorithm-backtracking08.png)
+![](algorithm-backtracking08.jpg)
 
 * n개의 item을 사용하여 item의 무게의 합이 W가 되는 부분집합을 구한다.
 * 이 문제의 상태공간 트리는 넣고 말고이니, 이진 트리 모양으로 만들어진다.
@@ -101,12 +101,12 @@ created: 2023-10-02
 * 그런데 만약 엄청 큰 값이 들어갔다면 튕겨져 나오게 된다.
 * 그러니까 일단 넣을 수 있는 걸 작게작게 넣어보면서 판단하는 것이 옳다.
 
-![](algorithm-backtracking09.png)
+![](algorithm-backtracking09.jpg)
 
 * 이 때 분기는, 다음 아이템을 넣었더니 원하는 무게를 넘어갔다 -> 볼 필요 없음
 * 이후의 무게를 다 넣어봤는데 W보다 작다. -> 애초에 글렀음 볼필요 없음
 
-![](algorithm-backtracking10.png)
+![](algorithm-backtracking10.jpg)
 *수도 코드*
 
 * 그래서 계속할 떄마다
@@ -122,12 +122,12 @@ created: 2023-10-02
 
 # 그래프 색칠 하기
 
-![](algorithm-backtracking11.png)
-![](algorithm-backtracking12.png)
+![](algorithm-backtracking11.jpg)
+![](algorithm-backtracking12.jpg)
 
 고등학교 때 어디선가 보았던 문제..
 
-![](algorithm-backtracking13.png)
+![](algorithm-backtracking13.jpg)
 *평면 그래프*
 
 * 평면 상에서 edge를 그렸는데, 엇갈리지 않게 만들 수 있는 경우.
@@ -136,7 +136,7 @@ created: 2023-10-02
 * 만약 비행기를 타고 날아가(3차원)
 * 이러면 안되지. 그래서 평면? 그래프인가보다
 
-![](algorithm-backtracking14.png)
+![](algorithm-backtracking14.jpg)
 *백 트래킹 상태공간 트리*
 
 * 얘도 보면 별거 없다.
@@ -145,4 +145,4 @@ created: 2023-10-02
 * 인접해 있는데, 다른 색이야 : OK
 * 인접하지 않았어 : 기각
 
-![](algorithm-backtracking15.png)
+![](algorithm-backtracking15.jpg)

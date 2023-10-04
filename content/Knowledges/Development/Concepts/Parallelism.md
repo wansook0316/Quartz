@@ -19,7 +19,7 @@ created: 2023-10-01
 병렬성은 [Concurrency](Knowledges/Development/Concepts/Concurrency.md)에 포함된다.
 
 ![](TechTalks_22_ConcurrencyParallelism_0.png)
-![](ConcurrentProgramming_01_ConcurrencyThread_0.png)
+![](ConcurrentProgramming_01_ConcurrencyThread_0.jpg)
 
 # Parallelism
 

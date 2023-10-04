@@ -20,7 +20,7 @@ created: 2023-09-22
 
 애플리케이션의 여러부분을 동시에 실행 가능하도록 한다. 하지만! 이는 논리적인 개념이다. 즉, 동시에 처리되는 것처럼 보이게 한다는 것. 그럼 정말 병렬로 일어나는 행위를 뭐라고 부를까? 이미 알고 있다. [Parallelism](Parallelism.md) 이라 한다. 멀티코어 환경에서는 정말 병렬로 실행될 수도 있을 것이다.
 
-![](ConcurrentProgramming_01_ConcurrencyThread_0.png)
+![](ConcurrentProgramming_01_ConcurrencyThread_0.jpg)
 
 여기서 핵심은 면접관 수에 관계없이, **면접자들을 여러줄로 나누어서 면접장에 들여보냈다**는 것이다. 여기서 면접관은 실제 물리 스레드라고 생각할 수 있고, 줄을 세워서 처리하는 것은 동시성을 만족하도록 구성하는 방식이라 생각할 수 있다.
 
@@ -86,7 +86,7 @@ example.start()
 
 # Thread로부터 멀어지자.
 
-![](ConcurrentProgramming_01_ConcurrencyThread_1.png)
+![](ConcurrentProgramming_01_ConcurrencyThread_1.jpg)
 
 하지만 iOS에서는 이렇게 직접 스레드를 만들어서 프로그래밍하는 것을 권장하지 않는다. 
 

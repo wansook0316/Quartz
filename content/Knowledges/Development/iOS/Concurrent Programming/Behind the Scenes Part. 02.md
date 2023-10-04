@@ -105,23 +105,23 @@ blocking의 문제 때문에, 일반적으로 우리는 dispatch async를 사용
 
 actor가 어떻게 동작하는지 한번 살펴보자.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_0.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_0.jpg)
 
 news feed를 만드는 앱에서, database와 networking을 처리했던 subsystem을 살펴보자. 
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_1.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_1.jpg)
 
 Swift concurrency로 넘어오면, GCD에서 있던 serial queue는 Database Actor로 바뀐다. 그리고 Concurrent Queue는 각각에 해당되는 Actor로 바뀐다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_2.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_2.jpg)
 
 이 모든 Actor들은 Cooperative thread pool에서 동작한다. feed actor는 article 저장, 그리고 다른 목적들을 위해 database actor와 상호작용한다. 이걸 actor hopping process라 한다. 이 hopping process가 어떻게 일어나는지 알아보자.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_3.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_3.jpg)
 
 sports feed를 위한 actor가 cooperative thread위에서 동작하고 있다고 생각해보자. 그리고 이 feed는 몇 article을 database에 저장하고 싶다. 그리고 database actor는 아직 사용된 적이 없다고 생각해보자. 즉, untended case이다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_4.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_4.jpg)
 
 Thread는 직접적으로 sports feed actor에서 database actor로 hopping할 수 있다. 여기서 주목해야 하는 점은 두가지이다.
 
@@ -130,27 +130,27 @@ Thread는 직접적으로 sports feed actor에서 database actor로 hopping할 �
 
 runtime에서 직접적으로 sport feed actor를 위해 work item을 suspend할 수 있다. 그리고 database actor를 위해 새로운 work item을 만들 수도 있다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_5.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_5.jpg)
 database actor가 어느정도 실행되었지만, 첫번째 work item의 실행이 모두 끝나지는 않았다고 해보자. 그리고 이순간에 weather feed actor가 몇 article을 database에 저장하려고 시도하는 상황을 생각해보자.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_6.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_6.jpg)
 
 이런 경우, database actor를 위해 새로운 work item이 생성된다. actor는 상호배제는 보장하기 때문에, 기껏해야 하나의 work item만 주어진 시간에 활성화 된다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_7.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_7.jpg)
 
 actor 역시 non-blocking이기 때문에, 이와 같은 상황에서 weather feed의 경우 suspend될 것이다. 그리고 thread는 이제 freed 상태이기 때문에 다른 작업을 수행할 수 있다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_8.png)
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_9.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_8.jpg)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_9.jpg)
 
 어느정도 시간이 지난 후에, 최초 database 요청(D1)이 완료되었고, database actor에 있던 활성화된 work item은 제거된다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_10.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_10.jpg)
 
 runtime은 다음으로 지연되어 있던 work item인 D2를 시작한다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_11.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_11.jpg)
 
 또는 feed actors 등 중 하나를 골라 재개할 수도 있다. 혹은 다른 work를 가져와 freed 된 thread에서 작업을 실행할 수도 있다.
 
@@ -165,15 +165,15 @@ Actor는 Reentrancy(재진입)이라는 개념 때문에 시스템이 work의 �
 
 ### Serial dispatch queues
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_12.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_12.jpg)
 
 당장 화면에 표시되는 정보를 가져오는 우선순위가 높은 작업을 database에게 요청한다고 생각해보자. 그리고 다음으로는 iCloud에 backup을 하는 우선순위에서 상대적으로 밀리는 작업을 요청하자. 그러면 요청을 한 순서대로 serial queue에 위와 같이 쌓이게 될 것이다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_13.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_13.jpg)
 
 DispatchQueue는 FIFO 순서로 처리하기 때문에 들어간 순서대로 순차적으로 처리된다. 그리고 이 말은 곧 item A가 실행되고 난 후, 낮은 우선 수위를 가지는 5개의 item이 6번쨰 위치한 높은 우선 순위 item보다 먼저 실행되어야 함을 뜻한다. 이를 **우선 순위 역전**이라 한다. 
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_14.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_14.jpg)
 
 Serial Queue는 높은 우선 순위 작업보다 앞에 있는 Queue의 모든 작업의 우선 순위를 높임으로써 우선 순위 역전을 방지한다. 즉, 이 말은 queue안에 있는 work들이 더 빨리 완료됨을 말한다.
 
@@ -181,19 +181,19 @@ Serial Queue는 높은 우선 순위 작업보다 앞에 있는 Queue의 모든 
 
 ### Actor reentrancy
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_15.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_15.jpg)
 
 database actor가 thread위에서 동작하고 있다 생각해보자. 
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_16.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_16.jpg)
 
 database actor는 suspend 되었고, 그 자리를 sports feed actor가 차지했다고 생각해보자. 
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_17.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_17.jpg)
 
 sports feed actor는 얼마 지나지 않아 동작을 완료했고, database actor에게 article을 저장해달라고 요청했다. database actor는 uncontended(실제 동작하고 있지 않음, 경쟁 X) 상태이기 때문에, pending한 작업(D1)이 있음에도 thread는 database actor를 hopping할 수 있다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_18.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_18.jpg)
 
 `save` 작업을 하기 위해서는 새로운 work item이 database actor를 위해 생성되어야 한다. 이걸 actor reentrancy라 한다.
 
@@ -201,7 +201,7 @@ actor에 올려진 새로운 work item이 하나 혹은 하나 이상의 이전 
 
 actor는 여전히 상호배제를 만족한다. 기껏해야 하나의 item만이 해당 시간에 실행될 수 있기 때문이다. 
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_19.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_19.jpg)
 
 어느정도 시간이 지난 후에, D2는 실행을 마친다. D2가 D1보다 나중에 생성되었음에도 불구하고 먼저 작업을 끝나쳤다는 것을 주목하자. **그러므로, actor reentrancy를 지원한다는 말은 actor가 엄격한 FIFO 순서를 따르지 않는 방식으로 item을 실행할 수 있음을 뜻한다.**
 
@@ -209,15 +209,15 @@ actor는 여전히 상호배제를 만족한다. 기껏해야 하나의 item만�
 
 이런 actor reentrancy를 기반으로 우선순위가 걸린 작업이 어떻게 이루어지는 지 확인해보자.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_20.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_20.jpg)
 
 먼저, 가장 우선순위가 높은 A item이 실행될 것이다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_21.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_21.jpg)
 
 actor reentrancy에 따라 runtime은 최우선 순위 work item을 queue의 최상단으로 옮긴다. 
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_22.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_22.jpg)
 
 이는 우선 순위 역전 문제를 직접 해결하여 보다 효과적인 스케줄링과 리소스 활용을 가능하게 한다.
 
@@ -225,7 +225,7 @@ actor reentrancy에 따라 runtime은 최우선 순위 work item을 queue의 최
 
 마지막으로 다른 종류의 actor가 있다. main actor는 시스템의 기존 개념인 메인 스레드를 추상화하기 때문에 다소 다르다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_23.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_23.jpg)
 
 다시 actor를 사용한 news feed를 받아오는 app을 떠올려보자. user interface를 업데이트 할 때, 우리는 main actor를 활용해야 한다. cooperative pool안에 있는 thread로부터 main thread는 분리되어 있기 때문이다. 그리고 이 작업은 context switching을 요한다.
 
@@ -248,15 +248,15 @@ database로부터 article을 로드하고 각 기사의 UI를 업데이트하는
 1. main actor에서 database actor로
 1. database actor에서 main actor로
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_24.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_24.jpg)
 
 루프 반복 횟수가 적고 각 반복에서 상당한 작업이 수행되고 있다면 괜찮을 수 있다. 하지만 실행이 main actor를 자주 오가는 경우 thread 전환의 오버헤드가 누적되기 시작할 수 있다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_25.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_25.jpg)
 
 프로그램이 컨텍스트 전환에 많은 시간을 소비한다면, main actor에 대한 작업이 일괄 처리되도록 코드 구성을 변경해야 한다.
 
-![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_26.png)
+![](ConcurrentProgramming_13_SwiftConcurrencyBehindTheScenes-2_26.jpg)
 
 cooperative pool에서 actor들 간의 hopping은 빠르지만, 앱을 작성할 때는 여전히 main actor와의 hopping를 염두에 두어야 한다.
 

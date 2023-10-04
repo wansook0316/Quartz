@@ -171,7 +171,7 @@ let result = await collage.draw()
 
 # Sync & Async
 
-![](ConcurrentProgramming_05_AsyncAwait_0.png)
+![](ConcurrentProgramming_05_AsyncAwait_0.jpg)
 
 `await` 키워드로 된 함수를 실행시키면, 지금까지 작업하고 있는 제어권은 system으로 넘어간다. system에서는 현재 작업 상황까지 suspend된 친구 말고, 더 중요한 녀석을 넘겨받은 제어권으로 처리한다.
 
@@ -186,7 +186,7 @@ system으로 code block이 넘어갔을 때, 바로 실행되지 않을 수 있�
 
 # Bridging from sync to async
 
-![](ConcurrentProgramming_05_AsyncAwait_1.png)
+![](ConcurrentProgramming_05_AsyncAwait_1.jpg)
 
 `async` 함수를 call 하게 되면, call하는 쪽에서 위와 같은 에러가 뜬다. async 함수의 경우에는 상위 호출 함수도 `async` 키워드를 달아주어야 하기 때문이다.
 

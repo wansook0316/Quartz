@@ -126,7 +126,7 @@ class MyObject {
 
 ## Dispatch Barrier
 
-![](ConcurrentProgramming_04_ThingsToNoteWhenDoingConcurrentProgramming_0.png)
+![](ConcurrentProgramming_04_ThingsToNoteWhenDoingConcurrentProgramming_0.jpg)
 
  > 
  > DispatchQueue에서 하나 이상의 작업 실행을 동기화
@@ -212,7 +212,7 @@ queue.sync {
 }
 ````
 
-![](ConcurrentProgramming_04_ThingsToNoteWhenDoingConcurrentProgramming_1.png)
+![](ConcurrentProgramming_04_ThingsToNoteWhenDoingConcurrentProgramming_1.jpg)
 
 내부 작업이 끝나야 바깥 작업을 실행시킬 수 있고, 코드가 진행된다. 하지만 내부에 sync 메서드가 있어서 실행하려고 보니, 바깥 block이 진행되지 않아 내부 작업을 실행시킬 수 없다. 교착상태에 빠진다. serial queue를 사용했기 때문에 하나의 작업씩만 가능하기 때문에 문제가 발생한다.
 
@@ -226,7 +226,7 @@ queue.async {
 }
 ````
 
-![](ConcurrentProgramming_04_ThingsToNoteWhenDoingConcurrentProgramming_2.png)
+![](ConcurrentProgramming_04_ThingsToNoteWhenDoingConcurrentProgramming_2.jpg)
 
 일단 제어권은 받아서 코드가 내려가려 한다. 그런데, 이제 실제로 작업이 들어간 Queue에서는 상황이 다르다. 내부 task를 진행해야 바깥 task가 진행할 수 있고, 반대로 내부 task가 수행되기 위해서는 바깥 task가 종료되어야 한다.
 

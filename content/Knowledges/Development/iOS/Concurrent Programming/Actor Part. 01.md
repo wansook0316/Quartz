@@ -339,7 +339,7 @@ Apple의 영상을 보면, actor Reentrancy는 deadlock을 방지하여, 진행�
 
 Apple 엔지니어들이 제안하는 첫번째 방법은, actor 내부 상태 변경을 sync code 안에서 하라는 것이다.
 
-![](ConcurrentProgramming_09_Actor-1_0.png)
+![](ConcurrentProgramming_09_Actor-1_0.jpg)
 
 여기서 문제는 동기적으로 처리하고 있는 흐름에서 **먼저 출금 가능여부를 판단하기 때문에 발생한다.** 그렇기 때문에 처음에는 출금 가능이라 통과된 이후, 서버에 요청을 하는 동안 suspend되고, 그 사이에 두번째 Task의 출금 가능 로직을 수행한다. 당연히 아직 반영이 안되었으니 통과되버린다. 이 시점에서 사실 통과되면 안된다.
 
@@ -417,8 +417,8 @@ func withdraw(_ amount: Int) async {
 
 Actor가 Thread-safe 하다는 것은, actor가 가진 변화가능한 상태에 대해 상호 배제를 보장한다는 것이다. 즉, 특정 상태에 대해 동시에 접근하는 것을 막겠다는 것이다. 위의 account 코드를 보았을 때, 항상 `🤓 출금할 금액입니다: 800`이 먼저 출력되었다. 즉, 외부에서 여러 Task 내부에 actor의 method를 호출하더라도, 여러개 존재하는 Task에서 독자적인 실행 흐름을 가지고 메서드를 실행하는 것이 아닌, actor가 가지는 실행흐름에 종속된다는 것이다.
 
-![](ConcurrentProgramming_09_Actor-1_1.png)
-![](ConcurrentProgramming_09_Actor-1_2.png)
+![](ConcurrentProgramming_09_Actor-1_1.jpg)
+![](ConcurrentProgramming_09_Actor-1_2.jpg)
 
 Reentrancy 문제가 보통 multi thread 상황에서 발생하지만 thread-safe와는 다른 문제이다. 여기서 골자는, actor라는 타입이 multi thread에서 발생하는 다양한 문제는 처리했지만, 여전히 재호출하거나, 여러 다른 task에서 실행했을 때 결과가 달라질 수 있다는 점을 말하고 있다는 것이다. 그리고 그 이유는, **suspension point(`await`)에서 actor의 상태값이 변경되지 않을 것이라고 가정했기 때문에 발생한다.** 분명 actor 내부에 정의된 함수는 sync하게 동작하지만, 내부에 비동기 함수를 넣고 실행하게 되면, 그 비동기함수의 동작은 다른 실행 흐름을 갖고 있고, 그동안 해당 비동기 함수를 호출한 실행 흐름은 suspend된다. 그런데 concurrent하게 작동하기 때문에 suspend된 동안 다른 작업을 수행하게 되고, 그 작업이 같은 actor의 함수를 호출하게 된다면, 이전 Task의 결과가 도출되기 전에 호출된 것이기 때문에 같은 결과가 나오지 않을 수 있다.
 

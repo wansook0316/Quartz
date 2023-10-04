@@ -27,7 +27,7 @@ created: 2023-10-02
 
 # 삽입 정렬
 
-![](algorithm-sorting01.png)
+![](algorithm-sorting01.jpg)
 *삽입 정렬*
 
 * 항목을 끼워 넣는다고 생각해!!!
@@ -49,9 +49,9 @@ def insertsort(a):
   return a
 ````
 
-![](algorithm-sorting02.png)
-![](algorithm-sorting03.png)
-![](algorithm-sorting04.png)
+![](algorithm-sorting02.jpg)
+![](algorithm-sorting03.jpg)
+![](algorithm-sorting04.jpg)
 
 평균 계산은, 시작 위치가 2부터 이므로, 그 시작위치에 따른 계산의 횟수를 구하고 그 비교 횟수를 확률 변수 X로 둔다. 그리고 그 비교 횟수가 등장하기 위한 확률은 i에 따라 결정된다. 즉, i가 2부터 n까지 가는데, 각각의 i가 등장할 확률은 1/(i-1)이다. 그런데 1까지 인덱스가 갈수는 있으므로 결국 해당 index가 등장할 확률은 고르게 1/i이다.
 
@@ -61,7 +61,7 @@ def insertsort(a):
 
 # 선택 정렬
 
-![](algorithm-sorting05.png)
+![](algorithm-sorting05.jpg)
 *선택 정렬*
 
 * 뒤에서 부터 제일 작을 놈을 선택해서 넣어버린다.
@@ -109,7 +109,7 @@ def exchangesort(a):
 
 # 거품 정렬
 
-![](algorithm-sorting06.png)
+![](algorithm-sorting06.jpg)
 *거품 정렬*
 
 * 얘는 뒤에서부터 시작해서 작은 값이 거품처럼 올라온다고 거품 정렬이다.
@@ -129,7 +129,7 @@ def bubblesort(a):
 
 # 정리
 
-![](algorithm-sorting07.png)
+![](algorithm-sorting07.jpg)
 *기본 정렬 정리*
 
 * 삽입 정렬은 애초에 정렬되어 있는 걸 가정하고 하기 때문에 정렬이 어느정도 되어 있으면 더 빠르다.
@@ -178,7 +178,7 @@ def bubblesort(a):
 
 # Merge Sort
 
-![](algorithm-sorting08.png)
+![](algorithm-sorting08.jpg)
 *합병 정렬 알고리즘 재검토*
 
 그러면 합병 정렬은?
@@ -194,7 +194,7 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 
 ## Binary Tree의 종류
 
-![](algorithm-sorting09.png)
+![](algorithm-sorting09.jpg)
 *이진 트리의 종류*
 
 * 완전 이진 트리
@@ -209,7 +209,7 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 
 ## Heap
 
-![](algorithm-sorting10.png)
+![](algorithm-sorting10.jpg)
 *Heap*
 
 * 어떤 마디에 저장된 값은 그 마디의 자식 마디에 저장된 값보다 크거나 같다. (max heap)
@@ -225,7 +225,7 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
     * 변경도 재구성이기 때문
   * 우선 순위 큐를 구현하는데 적합
 
-![](algorithm-sorting11.png)
+![](algorithm-sorting11.jpg)
 *Heap 구조*
 
 * 구조 해석
@@ -236,7 +236,7 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 
 ### Sift down
 
-![](algorithm-sorting12.png)
+![](algorithm-sorting12.jpg)
 *Sift down*
 
 루트에 있는 키가 Heap 성질을 만족하지 않을 때, 이를 만족시키도록 하는 방법
@@ -256,8 +256,8 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 data = [2, 4, 5, 3, 1, 9, 6, 7, 10, 8]
 ````
 
-![](algorithm-sorting13.png)
-![](algorithm-sorting14.png)
+![](algorithm-sorting13.jpg)
+![](algorithm-sorting14.jpg)
 
 * 핵심은 추가가되면 가장 맨 끝의 index에 추가하고, 거기서부터 부모노드를 찾으면서 자기 자리를 찾는 방법
 * 시간 복잡도
@@ -268,13 +268,13 @@ data = [2, 4, 5, 3, 1, 9, 6, 7, 10, 8]
   * 그러면 d개의 조상을 가짐
   * 자 그러면 처음 시작부터 몇개의 비교를 하는지 표로 살펴보자.
 
-![](algorithm-sorting15.png)
+![](algorithm-sorting15.jpg)
 *시간 복잡도 계산*
 
 해당 depth에서 올라갈 수 있는 지에 대해서 횟수로 계산해서 표로 나타낸 것이다.
 
-![](algorithm-sorting16.png)
-![](algorithm-sorting17.png)
+![](algorithm-sorting16.jpg)
+![](algorithm-sorting17.jpg)
 
 * beta가 없다 생각했을 때 nlogn-2n+2
 * 만약 있다면 d만큼의 비교가 추가적으로 발생하므로 logn을 더해줌
@@ -282,18 +282,18 @@ data = [2, 4, 5, 3, 1, 9, 6, 7, 10, 8]
 
 ### Sift down
 
-![](algorithm-sorting18.png)
-![](algorithm-sorting19.png)
+![](algorithm-sorting18.jpg)
+![](algorithm-sorting19.jpg)
 
 쉽게 얘기하면 뭐다? 깊은 depth부터 올라오면서 siftdown을 하는 것
 
-![](algorithm-sorting20.png)
+![](algorithm-sorting20.jpg)
 *Sift down 방법 시간 복잡도*
 
 해당 depth에서 아래로 내려갈 때, 필요한 비교 연산의 횟수를 나타낸 것이다. 오른쪽 그림에서 d가 3인 것을 기억하자.
 
-![](algorithm-sorting21.png)
-![](algorithm-sorting22.png)
+![](algorithm-sorting21.jpg)
+![](algorithm-sorting22.jpg)
 
 자 이렇게 구한 상태에서 beta 추가된 연산을 더해준다. beta가 추가됨에 따라, 상위 depth에 연결된 노드들에 대해 다시 sift down을 수행해야 한다. (d번)
 
@@ -323,15 +323,15 @@ makeheap은 배웠으니 Remove keys에 대해 알아보자.
 
 ### Remove keys
 
-![](algorithm-sorting23.png)
+![](algorithm-sorting23.jpg)
 *removekeys*
 
 * 핵심은, 맨위의 key가 날아간 이후에 맨 아래에 있는 원소가 그 자리를 대체하게 되는데, 그럴 때마다 sift down이 이루어져야 한다는 사실이다.
 * 그럼 그 siftdown이 몇번이 일어나는지 안다면 시간 복잡도를 구할 수 있다.
 
-![](algorithm-sorting24.png)
+![](algorithm-sorting24.jpg)
 *depth 2에 있는 원소의 siftdown 횟수*
-![](algorithm-sorting25.png)
+![](algorithm-sorting25.jpg)
 *결과..!*
 
 좀 토나오니까 이제 결과만 알고 넘어가자.
@@ -349,7 +349,7 @@ makeheap은 배웠으니 Remove keys에 대해 알아보자.
 
 Key가 비교가 안되는 경우 어떻게 해야할까? 이럴때 사용할 수 있는 비교가 아닌 정렬 방법이 있다.
 
-![](algorithm-sorting26.png)
+![](algorithm-sorting26.jpg)
 *왼쪽에서 오른쪽 자리순으로 정렬*
 
 약간 모으는 느낌이 강하다. 이게 뭐냐면, 백의 자리, 십의 자리, 일의 자리 순으로 정렬을 진행하는 것이다.
@@ -360,7 +360,7 @@ Key가 비교가 안되는 경우 어떻게 해야할까? 이럴때 사용할 �
 
 이러한 문제를 해결하려면 오른쪽에서 왼쪽으로 가면된다. 그리고 각 자리수가 나올 수 있는 bucket을 만들어 관리하면 해결된다.
 
-![](algorithm-sorting27.png)
+![](algorithm-sorting27.jpg)
 *오른쪽에서 왼쪽으로*
 
 순서는 다음과 같다.
