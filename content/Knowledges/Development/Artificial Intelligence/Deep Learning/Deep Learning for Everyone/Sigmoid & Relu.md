@@ -1,0 +1,37 @@
+---
+title: Sigmoid & Relu
+thumbnail: ''
+draft: false
+tags: null
+created: 2023-10-04
+---
+
+# XOR 문제에서
+
+이제 NN을 공부하는데 있어서 sigmoid 함수를 통과했던 것을 우리는
+
+Activate Function이라고 부를 것이다.
+
+그런데 Layer 4개 이상 추가를 해서 정확도를 측정할 경우, sigmoid 함수를 
+
+활성 함수로 사용할 경우, 제대로 반영이 안되는 것을 알 수 있다.
+
+[](https://en.wikipedia.org/wiki/Sigmoid_function)
+
+sigmoid 함수의 특징상 양끝으로 갈수록 기울기 값이 0에 가까워지는 것을 알 수 있다.
+
+Layer당 sigmoid 함수가 계속있으므로 처음 w, b의 값을 업데이트 시키기 위한
+
+미분계수는 점점 작아진다.
+
+$$
+{\partial f \over \partial w};=0.1 \times 0.1 ;\cdots ;=;0.000001
+$$
+
+즉, **기울기가 사라지고 있다.(Vanishing Gradient)**
+
+최종 Layer의 값이 처음 값을 업데이트 못 해주고 있다.
+
+# Relu의 등장
+
+x가 무한대로 가면 무조건 1이하가 되는데, 이거 좀 바꿔보자!

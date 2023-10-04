@@ -23,7 +23,7 @@ created: 2023-09-30
 1. [Deinitializer](Deinitializer.md)
 1. [Two-phase Initialization](Two-phase%20Initialization.md)
 1. [Extension](Extension.md)
-1. [Protocol](Protocol.md)
+1. [Protocol](Knowledges/Development/Swift/Protocol.md)
 1. [Generic](Knowledges/Development/Swift/Generic.md)
 1. [Error Handling](Knowledges/Development/Swift/Error%20Handling.md)
 1. [Automatic Reference Counting](Automatic%20Reference%20Counting.md)

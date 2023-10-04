@@ -22,6 +22,18 @@ HTTP 관련 내용은 사실 읽어도 읽어도 잘 머리에 안남는 것 같
   * 클라이언트의 연결을 수락하고 (연결을 맺고)
   * HTTP 요청을 처리하여 응답을 보내주는 프로그램
 
+# HTTP Protocol 특징 (간략)
+
+![](Pasted%20image%2020231004130726.png)
+
+1. Message 종류 두 가지
+   * Request & Response
+1. TCP 사용
+   * Transport Layer 위에 Application Layer 존재
+1. stateless protocol
+   * 상대방 상태정보를 저장하지 않음
+   * 그냥 request, response후 아무것도 저장 안한다.
+
 # 역사
 
 * HTTP v0.9 (1996)
@@ -96,3 +108,23 @@ HTTP 관련 내용은 사실 읽어도 읽어도 잘 머리에 안남는 것 같
 * HTTP/1.0
   * 메소드 POST 추가
     * 쓰기 가능
+
+# Non-Persistent HTTP
+
+Request Message 를 서버로 보내기 위해선 우선 TCP Connection이 선행되어야 한다. 그리고 request msg 에 대해서 response msg 를 받게되면 TCP Connection 은 끊기며 다시 웹사이트의 리소스를 들고오기 위해선 TCP Connection 을 재차 맺어야한다. Connection 이 지속적인 상태가 아니다.
+
+![](Pasted%20image%2020231004130805.png)
+![](Pasted%20image%2020231004131254.png)
+
+1. HTTP client가 IP/PORT에 TCP 연결을 시작한다.
+1. HTTP server의 host는 80번 포트에서 TCP 연결을 기다리다가 문제가 없으면 "accept" 라고 client에게 알린다.
+1. HTTP client는 HTTP request 메시지를 TCP 연결 Socket에 보낸다.
+1. HTTP server는 요청을 받고 response를 socket에 넣는다.
+1. HTTP sever는 TCP 연결을 끊는 준비를 한다.
+1. HTTP client는 응답을 받고 화면에 보여준다.
+1. HTTP client가 다 받았다면 다 받았다는 메시지를 보낸다.
+1. 함께 Connection을 끊는다.
+
+# Persistent HTTP
+
+웹클라이언트 (브라우저) 는 보통 같은 사이트에 여러 개의 TCP 커넥션을 맺는다. 예를 들어 웹 페이지에 첨부된 이미지들 대부분은 같은 웹사이트에 있으며, 여러 하이퍼링크도 같은 사이트를 가리키는 경우가 있다. 여기서 서버에 HTTP 요청을 하기 시작한 애플리케이션은 웹 페이지의 다른 이미지 등을 가져오기 위해서 그 서버에 또 다시 요청하는 경우가 생기는데, 이 속성을 사이트 지역성(Site Locality)이라고 부른다. 하지만 이러한 TCP 커넥션을 계속 유지하여 앞으로도 있을 HTTP 요청에 재사용할 수 있도록 하는 것이다. 처리가 완료된 이후에도 계속 연결된 상태로 있는 TCP 커넥션을 Persistent Connection 이라고 한다.

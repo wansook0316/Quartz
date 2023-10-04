@@ -10,7 +10,6 @@ tags:
 - PATCH
 - OPTIONS
 - HEAD
-- TRACE
 - CONNECT
 created: 2023-10-01
 ---
