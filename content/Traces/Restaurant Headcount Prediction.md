@@ -135,4 +135,4 @@ created: 2023-10-04
 
 # Patent
 
-![](Pasted%20image%2020231004094237.png)
+![](Pasted%20image%2020231004094237.jpg)

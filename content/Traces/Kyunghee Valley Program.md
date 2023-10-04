@@ -34,6 +34,6 @@ created: 2023-10-04
 
 # Reference
 
-![](Pasted%20image%2020231004094056.png)
-![](Pasted%20image%2020231004094102.png)
-![](Pasted%20image%2020231004094110.png)
+![](Pasted%20image%2020231004094056.jpg)
+![](Pasted%20image%2020231004094102.jpg)
+![](Pasted%20image%2020231004094110.jpg)

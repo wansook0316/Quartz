@@ -22,21 +22,21 @@ created: 2023-10-04
 
 # Project
 
-![](dance-coptyright-dataset01%201.jpg)
-![](dance-coptyright-dataset02%201.jpg)
-![](dance-coptyright-dataset03%201.jpg)
-![](dance-coptyright-dataset04%201.jpg)
-![](dance-coptyright-dataset05%201.jpg)
-![](dance-coptyright-dataset06%201.jpg)
-![](dance-coptyright-dataset07%201.jpg)
-![](dance-coptyright-dataset08%201.jpg)
-![](dance-coptyright-dataset09%201.jpg)
-![](dance-coptyright-dataset10%201.jpg)
-![](dance-coptyright-dataset11%201.jpg)
-![](dance-coptyright-dataset12%201.jpg)
-![](dance-coptyright-dataset13%201.jpg)
-![](dance-coptyright-dataset14%201.jpg)
-![](dance-coptyright-dataset15%201.jpg)
+![](dance-coptyright-dataset01.jpg)
+![](dance-coptyright-dataset02.jpg)
+![](dance-coptyright-dataset03.jpg)
+![](dance-coptyright-dataset04.jpg)
+![](dance-coptyright-dataset05.jpg)
+![](dance-coptyright-dataset06.jpg)
+![](dance-coptyright-dataset07.jpg)
+![](dance-coptyright-dataset08.jpg)
+![](dance-coptyright-dataset09.jpg)
+![](dance-coptyright-dataset10.jpg)
+![](dance-coptyright-dataset11.jpg)
+![](dance-coptyright-dataset12.jpg)
+![](dance-coptyright-dataset13.jpg)
+![](dance-coptyright-dataset14.jpg)
+![](dance-coptyright-dataset15.jpg)
 
 # Reference
 

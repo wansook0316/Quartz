@@ -111,7 +111,7 @@ created: 2023-10-04
 
 # Result
 
-![](Pasted%20image%2020231004093902.png)
+![](Pasted%20image%2020231004093902.jpg)
 
 # Reference
 

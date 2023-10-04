@@ -70,7 +70,7 @@ created: 2023-10-04
 
 # Result
 
-![](Pasted%20image%2020231004093818.png)
+![](Pasted%20image%2020231004093818.jpg)
 
 # Reference
 

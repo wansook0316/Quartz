@@ -15,7 +15,7 @@ created: 2023-10-04
  > 
  > 방탈출, 이제는 기록하고 경쟁하세요!
 
-![](Pasted%20image%2020231004195216.png)
+![](Pasted%20image%2020231004195216.jpg)
 
 * 방탈출 카페 위치 조회, 방탈출 정보 기록 및 랭크 확인 기능 제공
 * [AppStore: ‎Escaper 방탈출](https://apps.apple.com/kr/app/escaper-%EB%B0%A9%ED%83%88%EC%B6%9C/id1597406132)
