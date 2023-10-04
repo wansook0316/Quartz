@@ -8,3 +8,4 @@ created: 2023-09-30
 
 * [Daily](Logs/Daily/Daily.md)
 * [Monthly](Logs/Monthly/Monthly.md)
+* [Traces](Traces.md)
