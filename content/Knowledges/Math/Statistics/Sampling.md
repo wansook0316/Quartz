@@ -2,7 +2,12 @@
 title: Sampling
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- sampling
+- population
+- error
+- sampling-error
 created: 2023-10-04
 ---
 

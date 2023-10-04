@@ -24,6 +24,7 @@ created: 2023-09-21
 * [iOS](iOS.md)
 * [Artificial Intelligence](Artificial%20Intelligence.md)
 * [Docker](Docker.md)
+* [Server](Server.md)
 
 ## Languages
 

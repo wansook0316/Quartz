@@ -2,7 +2,13 @@
 title: Producer-Consumer Problem
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- producer-consumer-problem
+- buffer
+- bounded-buffer
+- mutex
+- busy-waiting
 created: 2023-10-04
 ---
 

@@ -2,7 +2,12 @@
 title: Network & Internet
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- internet
+- TCP
+- IP
+- web-browser
 created: 2023-10-04
 ---
 

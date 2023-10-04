@@ -2,7 +2,11 @@
 title: Neural Net for XOR
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- XOR
+- neural-network
 created: 2023-10-04
 ---
 

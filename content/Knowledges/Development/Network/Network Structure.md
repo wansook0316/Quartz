@@ -2,7 +2,11 @@
 title: Network Structure
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- structure
+- link
+- edge
 created: 2023-10-04
 ---
 

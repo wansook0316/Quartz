@@ -2,7 +2,13 @@
 title: Softmax Function
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- classification
+- softmax
+- cost-function
+- cross-entropy
 created: 2023-10-04
 ---
 
@@ -20,8 +26,8 @@ created: 2023-10-04
 그렇다면 여러 개의 클래스를 분류해야 한다면 어떻게 해야할까?
 
 위의 Logistic regression의 아이디어를 이용할 수 있는데, 만약 A, B, C 세 개의 클래스가 있다면
-![](_2019-07-15__5.01.20.png)
 
+![](_2019-07-15__5.01.20.png)
 ![](_2019-07-15__5.04.01.png)
 세 개의 독립적인 logistic regression을 사용하면, 저렇게 3개의 선이 그어질 수 있다.
 
@@ -43,8 +49,6 @@ $$
 Z 벡터를 sigmoid에 넣어 확률 벡터를 나오게하면 된다.
 
 이걸 가능하게 하는 것이 Softmax 함수이다.
-
-[Softmax function - Wikipedia](https://en.wikipedia.org/wiki/Softmax_function)
 
 회귀로 돌린 Z값을 넣게 되면, 확률로 매핑시켜 준다.
 
@@ -74,11 +78,7 @@ $$
 예측값2(y_hat) = [1 0] # A클래스일 확률이 100%라고 예측
 ````
 
-우리가 하고 싶은 것은, 맞았을 때는 cost function의 값이 작게,
-
-틀렸을 때는 cost function의 값이 크게 나오게 하는 것이다. 그리고나서 이 함수를
-
-최소화하는 방향의 모델을 만드는 것이 목적이다.
+우리가 하고 싶은 것은, 맞았을 때는 cost function의 값이 작게, 틀렸을 때는 cost function의 값이 크게 나오게 하는 것이다. 그리고나서 이 함수를 최소화하는 방향의 모델을 만드는 것이 목적이다.
 
 그렇다면, cross-entropy가 내가 생각하는 이 과정이 맞는지 생각해보자.
 
@@ -106,9 +106,7 @@ $$
 -\sum_i{y_ilog(\hat{y_i})};=;{-y_1log(\hat{y_1})-{y_2log(\hat{y_2})}}
 $$
 
-그런데, 로지스틱 회귀는 레이블이 2개가 있고, 또 하나가 결정될 때,
-
-반대는 1에서 뺀 값이다.
+그런데, 로지스틱 회귀는 레이블이 2개가 있고, 또 하나가 결정될 때, 반대는 1에서 뺀 값이다.
 
 $$
 y_2;=;1-y_1;\\\hat{y_2};=;1 - \hat{y_1}
@@ -119,3 +117,7 @@ $$
 $$
 
 위 식은 logistic 회귀에서 비용함수이다.
+
+# Reference
+
+* [Softmax function - Wikipedia](https://en.wikipedia.org/wiki/Softmax_function)

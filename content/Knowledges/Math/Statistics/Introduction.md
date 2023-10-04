@@ -2,7 +2,11 @@
 title: Introduction
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- population-parameter
+- skerness
+- histogram
 created: 2023-10-04
 ---
 
@@ -17,9 +21,9 @@ created: 2023-10-04
 
 # 주요 통계학 개념
 
-1. 모수
+1. 모수(population parameter)
    * 모집단 (population)의 특성을 나타내는 척도, 특징
-1. 통계량
+1. 통계량(statistic)
    * 표본(sample)의 특성을 나타내는 척도, 특징
 
 결과적으로 우리는 표본의 통계량을 기반으로 모수를 추정한다.

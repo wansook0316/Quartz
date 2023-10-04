@@ -2,7 +2,14 @@
 title: Center of Data
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- median
+- mean
+- arithmetic-mean
+- geometric-mean
+- harmonic-mean
+- mode
 created: 2023-10-04
 ---
 

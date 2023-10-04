@@ -2,7 +2,11 @@
 title: Box Plot
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- box-plot
+- statistics
+- median
+- percentile
 created: 2023-10-04
 ---
 

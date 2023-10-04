@@ -2,11 +2,18 @@
 title: Mask R-CNN
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- ROI-align
+- ResNet
+- loss-function
+- segmentation
+- faster-RCNN
+- deep-learning
 created: 2023-10-04
 ---
 
-## 개요
+# 개요
 
 ![](computer-vision-mask-rcnn01.jpg)
 *structure of mask RCNN*
@@ -16,7 +23,7 @@ created: 2023-10-04
 
 `object instance segmentation`을 위한 프레임 워크이다. 기존의 `semantic segmentation`을 넘어서 각각의 `instance`도 구분이 가능한 구조를 만들었다. 학습이 쉽고 Faster RCNN에 조금의 overhead만 추가하여 5fps의 빠르기로 실행된다. COCO 데이터셋에서 `instance segmentation`, `bbox object detection`, `person keypoint detection` 에서 가장 높은 결과를 보였다.
 
-## 핵심 아이디어
+# 핵심 아이디어
 
  > 
  > Faster R-CNN에서 detect한 각각의 box에 mask를 씌워주자!
@@ -45,7 +52,7 @@ created: 2023-10-04
 
 결과적으로, 이 문제에서 해야할 일은 masking을 수행하는 것이다. 그래서 논문이름도 Mask RCNN이다.
 
-## Equivariance
+# Equivariance
 
  > 
  > input에서의 변화가 output의 변화에 영향을 준다.
@@ -61,7 +68,7 @@ classification 문제에서는 label을 도출하는 문제이기 때문에 Inva
 
 mask RCNN의 구조를 담당하는 Faster RCNN은 Fully conv net을 사용하고 있다. 여기서 mask RCNN은 뒤의 mask head부분 역시 FCN을 사용하여 제작하였다.
 
-## RoI Align
+# RoI Align
 
 ![](computer-vision-mask-rcnn06.jpg)
 *기존의 Faster RCNN의 구조*
@@ -87,7 +94,7 @@ mask RCNN의 구조를 담당하는 Faster RCNN은 Fully conv net을 사용하�
 
 이 방법은 Mask Accuracy에서 큰 향상을 보였다.
 
-## Mask RCNN architecture
+# Mask RCNN architecture
 
 Mask R-CNN은 여러 가지 아키텍쳐를 합친 네트워크인데, 크게 두 가지로 나뉜다.
 
@@ -99,16 +106,16 @@ Mask R-CNN은 여러 가지 아키텍쳐를 합친 네트워크인데, 크게 �
 ![](computer-vision-mask-rcnn10.jpg)
 *Head Architecture*
 
-### ResNet Backbone
+## ResNet Backbone
 
 논문에서는 ResNet 과 ResNeXt networks 를 depth 50 or 101 layers에 대해 평가했다. 원래 Faster R-CNN은 ResNet을 사용하는데, 4번째 스테이지의 마지막 Conv layer(이하 C4)에서 features를 뽑아낸다.
 이 경우, 이 backbone을 사용한다면 우리는 ResNet-50-C4 와 같이 부를 것이다. ResNet-50-C4가 일반적으로 사용된다.
 
-### ResNet-FPN Backbone
+## ResNet-FPN Backbone
 
 FPN은 Feature Pyramid Network로, top-down architecture를 사용한다. FPN backbone을 사용하는 Faster R-CNN은 피쳐 피라미드의 서로 다른 레벨로부터 RoI features를 뽑아내지만, 나머지는 vanilla ResNet과 같다. Mask R-CNN에서 피쳐 추출을 위해 ResNet-FPN backbone을 이용하는 것은 정확도와 속도 면에서 엄청난 향상을 보였다. Feature Pyramid Network는 추후 글에서 작성하도록 하겠다.
 
-## Loss function (decoupling)
+# Loss function (decoupling)
 
 $$
 L = L\_{cls} + L\_{box} + L\_{mask}

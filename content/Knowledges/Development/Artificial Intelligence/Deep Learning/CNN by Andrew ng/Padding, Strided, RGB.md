@@ -2,7 +2,13 @@
 title: Padding, Strided, RGB
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- deep-learning
+- padding
+- stride
+- RGB
+- convolution
 created: 2023-10-04
 ---
 
@@ -43,24 +49,17 @@ created: 2023-10-04
 ## Category of Padding
 
 1. Vaild
-   
-   ***No Padding***
-   
-   p = 0
-
+   - ***No Padding***
+   - p = 0
 1. Same
-   
-   방금같은 3x3 필터의 경우 p = 1 일 때 출력값과 입력값의 크기가 동일함
-   
-   결론적으로 ***입력과 같은 크기의 출력을 갖게하는 패딩값***
+   * 방금같은 3x3 필터의 경우 p = 1 일 때 출력값과 입력값의 크기가 동일함
+   * 결론적으로 ***입력과 같은 크기의 출력을 갖게하는 패딩값***
 
 $$
 (n+2p-f+1) = n\\ p = {f-1\over2}
 $$
 
-거의 항상 필터는 홀수의 크기를 같고 있기 때문에
-
-Padding은 정수값으로 떨어진다.
+거의 항상 필터는 홀수의 크기를 같고 있기 때문에 Padding은 정수값으로 떨어진다.
 
 # What is Strided Convolution
 
@@ -105,7 +104,7 @@ $$
 * 출력의 \[1,1\]에 저장된다.
 * 그렇기 때문에 4 x 4 x 3 이 아닌 4 x 4 x 1짜리 출력을 얻게 된다.
 
-***참고***
+### 참고
 
 * 텐서플로우에서 왜 노드의 연결이 텐서로 이루어진다고 했는지 위 예시에서 보다 확실하게 알 수 있다.
 * 여기서 필터는 가중치 덩어리이기 때문이다.

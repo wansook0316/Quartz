@@ -2,7 +2,10 @@
 title: Dual mode
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- dual-mode
+- register
 created: 2023-10-04
 ---
 

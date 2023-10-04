@@ -9,6 +9,12 @@ tags:
 created: 2023-10-01
 ---
 
+
+ > 
+ > 여러 일을 여러 사람이 각자 동시에 하는 것
+
+***행위도 여러개, 주체도 여러개***
+
 ![](ConcurrentProgramming_01_ConcurrencyThread_0.png)
 ![](TechTalks_22_ConcurrencyParallelism_0.png)
 

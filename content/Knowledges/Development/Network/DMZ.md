@@ -2,7 +2,10 @@
 title: DMZ
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- DMZ
+- server
 created: 2023-10-04
 ---
 

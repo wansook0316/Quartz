@@ -2,7 +2,15 @@
 title: Deep Sort
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- sort
+- realtime
+- tracking
+- kalman-filter
+- hungarian-algorithm
+- algorithm
+- deep-learning
 created: 2023-10-04
 ---
 

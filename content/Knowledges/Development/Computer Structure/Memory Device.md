@@ -2,7 +2,14 @@
 title: Memory Device
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-structure
+- RAM
+- SSD
+- HDD
+- register
+- ALU
+- 64bit
 created: 2023-10-04
 ---
 
@@ -14,8 +21,7 @@ created: 2023-10-04
 
 ## 계층 구조
 
-![기억장치의 계층 구조](https://t1.daumcdn.net/cfile/tistory/992DB8435AEF240E25){: .center-text}
-[출처 : https://programmer-student.tistory.com](https://programmer-student.tistory.com/8){: .center-text}
+![](Pasted%20image%2020231004213353.png)
 
 ### 쉬운 이해를 위한 도표
 
@@ -53,7 +59,7 @@ created: 2023-10-04
 
 위에서 언급했던 번호에 해당하는 것이 보통 RAM에 대한 설명이다.
 
-<img width="763" alt="image" src="https://user-images.githubusercontent.com/37871541/77840905-287e0700-71c7-11ea-8293-6a7e9082c6f1.png">{: .center}
+![](Pasted%20image%2020231004213416.png)
 
  > 
  > 신발장 번호 : 주소  
@@ -66,7 +72,7 @@ created: 2023-10-04
  > 
  > 트랙 번호와 섹터 번호를 붙여 관리한다.
 
-<img width="1177" alt="image" src="https://user-images.githubusercontent.com/37871541/77840491-17cb9200-71c3-11ea-995f-e12caab4c6ff.png">{: .center}
+![](Pasted%20image%2020231004213435.png)
 
 #### Track
 
@@ -110,8 +116,7 @@ created: 2023-10-04
  > 캐시 메모리는 CPU 그 자체다.  
  > RAM은 CPU의 연산을 돕기위한 **연습장**이다.
 
-<img width="1218" alt="image" src="https://user-images.githubusercontent.com/37871541/77840990-151f6b80-71c8-11ea-8414-bcbb03c2a359.png">
-{: .center}
+![](Pasted%20image%2020231004213531.png)
 
 맨 위에서 보았듯이 메모리가 정보를 불러오는 데에는 속도가 존재한다. 전체적인 과정은 HDD, RAM, Resister 순으로 입출력이 일어나는데, 이 때 속도차이가 나므로 CPU가 빠르게 연산을 처리하는데 문제가 생긴다.
 

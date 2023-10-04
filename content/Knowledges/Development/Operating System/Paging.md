@@ -2,7 +2,12 @@
 title: Paging
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- paging
+- address
+- memory
+- process
 created: 2023-10-04
 ---
 

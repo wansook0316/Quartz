@@ -29,7 +29,10 @@ created: 2023-09-30
 * [Parallelism](Parallelism)
 * [PWA](PWA)
 * [Protobuf](Protobuf)
-* [Proxy Server](Proxy%20Server)
+* [Kernel](Kernel.md)
+* [Dependency](Dependency.md)
+* [Synchronization](Synchronization)
+* [Atomicity](Atomicity)
 
 # Thinking
 

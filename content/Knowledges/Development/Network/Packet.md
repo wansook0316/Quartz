@@ -2,7 +2,11 @@
 title: Packet
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- packet
+- network
+- data
+- bandwidth
 created: 2023-10-04
 ---
 
@@ -18,9 +22,7 @@ created: 2023-10-04
   * Package, bucket의 합성어
   * 쉬운 전송을 위해 데이터를 쪼갠 조각
   * 왜 쪼개는가?
-    * 대역폭 때문
-      * 대역폭 : 네트워크에서 수용가능한 최대 전송 속도로 정보를 전달할 수 있는 단위시간당 전송량
-      * 결론 : 단위 시간당 전송량
+    * [Bandwidth](Bandwidth.md) 때문
     * 특정 데이터가 네트워크의 대역폭을 많이 점유하는 경우, 다른 패킷의 전송 흐름을 막을 수 있음
   * 그러면, 너트워크로 정보를 보낼 때, 패킷이라는 단위를 써서 쪼개서 전달하는 경우, 패킷이 섞여서 들어옴
   * 이 순서를 어떻게 맞출까?

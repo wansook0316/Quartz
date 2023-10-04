@@ -2,7 +2,11 @@
 title: SSH
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- SSH
+- network
+- public-key
+- private-key
 created: 2023-10-04
 ---
 

@@ -2,7 +2,11 @@
 title: NAT Network
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- NAT
+- public-ip
+- private-ip
 created: 2023-10-04
 ---
 
@@ -21,4 +25,4 @@ created: 2023-10-04
   * 그에 대한 응답이 돌아왔을 때, 어떻게 각각의 디바이스에 패킷을 전송할 수 있을까?
   * 결국 이걸 가능하게 하기 위해서는 각 디바이스가 가지는 유일한 값이 필요하다.
   * 어떤 값을 들고 있으면 될까?
-  * MAC Address이다.
+  * [MAC Address](MAC%20Address.md)이다.

@@ -2,7 +2,13 @@
 title: Deep Lab
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-lab
+- computer-vision
+- convolution
+- U-net
+- Xception
+- deep-learning
 created: 2023-10-04
 ---
 

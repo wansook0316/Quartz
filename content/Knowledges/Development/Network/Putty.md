@@ -2,7 +2,11 @@
 title: Putty
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- SSH
+- TCP
+- host
 created: 2023-10-04
 ---
 

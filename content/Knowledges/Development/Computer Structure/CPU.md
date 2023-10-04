@@ -2,7 +2,10 @@
 title: CPU
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- CPU
+- logic-gate
+- adder
 created: 2023-10-04
 ---
 
@@ -13,7 +16,8 @@ CPU의 동작방법을 알아보자.
 # 디지털 회로
 
 기본적으로 연산을 수행하도록 가능하게 하는 것은 이 디지털 회로가 있기 때문이다. 이 디지털 회로는 반도체의 특징을 이용하면 가능하다. 반도체는 조건에 따라 도체가 될 수도, 부도체가 될 수도 있다. 이 성격을 이용하여 우리는 연산을 가능하게 만들 수 있다.
-![논리 게이트](https://image.shutterstock.com/image-vector/digital-logic-gate-symbols-black-600w-449422498.jpg){: .center-text} [출처 : https://www.shutterstock.com](https://www.shutterstock.com/ko/image-vector/digital-logic-gate-symbols-black-isolated-449422498){: .center-text}
+
+![](Pasted%20image%2020231004212204.png)
 
 # 연산 방법
 
@@ -33,9 +37,8 @@ $$
 ;;;;0101
 $$
 
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/37871541/77505245-fb1f1980-6ea5-11ea-858c-6bfb716b7c5d.png">{: .center}
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/37871541/77505254-01ad9100-6ea6-11ea-97ca-548cbdfc1a0a.png">{: .center}
-
+![](Pasted%20image%2020231004212243.png)
+![](Pasted%20image%2020231004212230.png)
 3개의 input의 결과로 ***자리올림을 나타내는 변수, 더한 뒤 값을 나타내는 변수*** 이렇게 두개의 값을 뽑아낸다. 위의 4자리 2진수의 덧셈을 수행하기 위해서는 전가산기 4개가 필요하며, 각 연산을 수행한 결과는 다음 자리수의 input으로 들어가게 된다. $C_0$는 0이다.
 
 ## 뺄셈은..?

@@ -2,7 +2,13 @@
 title: Monitor
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- monitor
+- mutual-exclusion
+- bank-account-problem
+- producer-consumer-problem
+- producer-consumer
 created: 2023-10-04
 ---
 

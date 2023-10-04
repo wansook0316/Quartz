@@ -2,7 +2,10 @@
 title: Statistical Inference
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- inference
+- confidence-interval
 created: 2023-10-04
 ---
 

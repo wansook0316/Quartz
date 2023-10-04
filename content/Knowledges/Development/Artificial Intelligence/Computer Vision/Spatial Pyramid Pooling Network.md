@@ -2,7 +2,10 @@
 title: Spatial Pyramid Pooling Network
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- object-detection
+- deep-learning
 created: 2023-10-04
 ---
 
@@ -13,7 +16,8 @@ created: 2023-10-04
 
 Fast R-CNN으로 넘어가기전 상당히 많은 아이디어를 가져온 논문이다. 이전의 R-CNN을 보게되면, proposal roi가 CNN에 들어가기 전에 입력 이미지를 바꿔주어야 하는 한계가 존재했다. 여기서 저자들은 의문을 갖는다. 이 제한 요소를 없앤 상태로 CNN을 학습시키는 것이다.
 
-![](Pasted%20image%2020231004171725.png)*SPPNet의 핵심 아이디어*
+![](Pasted%20image%2020231004171725.png)
+*SPPNet의 핵심 아이디어*
 
 사실 CNN의 입력이미지 크기는 고정될 필요가 없다. CNN의 핵심 아이디어는 filter를 가지고 연산을 수행하는 것이고, 이것의 연산 방식은 sliding window 방식으로 진행된다. 하지만, 이 입력 이미지의 크기가 고정이어야 하는 이유는, 마지막에 도출되는 fully connected layer의 크기가 고정적으로 나와야 하기 때문이다. 이 문제점으로 부터 SPPNet가 제안된다.
 

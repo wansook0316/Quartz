@@ -2,13 +2,16 @@
 title: Subnet
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- subnet
+- address
 created: 2023-10-04
 ---
 
 # 네트워크 주소와 브로드캐스트 주소
 
-* 브로드캐스트는 앞에서 스위치(또는 지금은 라우터)에 연결된 모든 호스트에 요청을 보내는 것을 의미했다.
+* 브로드캐스트는 앞에서 [Switch](Switch.md)(또는 지금은 [Router](Router.md))에 연결된 모든 호스트에 요청을 보내는 것을 의미했다.
 * 이런 용도로 사용되는 특별한 주소를 말한다.
 * 브로드 캐스트 주소
   * 호스트 ID가 255인 주소이다.
@@ -18,7 +21,7 @@ created: 2023-10-04
   * 전체 네트워크에서 작은 네트워크를 식별하는데 사용된다.
   * 즉, 작은 네트워크를 <mark style='background-color: #fff5b1'> 대표하는 주소 </mark>
 
-![image](https://user-images.githubusercontent.com/37871541/126897102-888bd4df-022c-40bd-8586-5a4858e24208.png){: .center-small}
+![](Pasted%20image%2020231004221149.png)
 
 # 서브넷의 구조
 
@@ -30,7 +33,7 @@ created: 2023-10-04
 * 이전에는 네트워크 ID, 호스트 ID 였는데, 이 개념이 추가되면 3개로 나눠진다.
 * 즉 호스트 ID 에서 비트를 빌려 서브넷으로 만들 수 있다.
 
-<img width="832" alt="스크린샷 2021-07-25 오후 8 21 00" src="https://user-images.githubusercontent.com/37871541/126897268-7e62666e-b4ba-4ff6-aca2-4665ea4e4bf9.png">{: .center-small}*서브넷*
+![](Pasted%20image%2020231004221230.png)
 
 # 서브넷 마스크
 
@@ -38,7 +41,7 @@ created: 2023-10-04
 * 이를 위해 서브넷 마스크라는 값을 사용한다.
 * C 클래스 기준으로 예시를 살펴보자.
 
-![image](https://user-images.githubusercontent.com/37871541/126897326-3eb2ece2-2cec-4cc8-9fd4-64d50a4f3550.png){: .center-small}*서브넷 마스크 예시*
+![](Pasted%20image%2020231004221236.png)
 
 * 호스트 ID에서 4비트를 빌려 네트워크 ID를 28비트로 만들었다.
 * 즉, 네트워크 ID 24, 서브넷 ID 4, 호스트 ID 4가 된다.

@@ -2,7 +2,11 @@
 title: History
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- batch
+- interrupt
+- time-sharing
 created: 2023-10-04
 ---
 

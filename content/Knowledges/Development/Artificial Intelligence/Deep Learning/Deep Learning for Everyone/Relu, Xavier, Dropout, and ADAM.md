@@ -2,7 +2,9 @@
 title: Relu, Xavier, Dropout, and ADAM
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
 created: 2023-10-04
 ---
 

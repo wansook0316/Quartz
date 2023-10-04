@@ -2,7 +2,15 @@
 title: Linear Regression
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- graph
+- cost-function
+- loss-function
+- mean-sqaure-error
+- MSE
+- placeholder
 created: 2023-10-04
 ---
 

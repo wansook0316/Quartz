@@ -2,7 +2,10 @@
 title: IPC
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- elliptic-curve
+- network
+- process
 created: 2023-10-04
 ---
 

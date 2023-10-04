@@ -2,7 +2,11 @@
 title: Initialization
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- neural-network
+- initialization
 created: 2023-10-04
 ---
 
@@ -18,15 +22,11 @@ x, w = 0 일 경우 gradient가 0이 되서 학습이 안된다!
 
 그 해결방안 중 하나가 RBM이었는데, 아이디어는 간단하다.
 
-뉴럴 네트워크가 만들어져 있다고 가정하자. 입력단은 3개, 출력은 4개
-
-우리가 이 뉴럴 네트워크를 학습할 때, 결국 크게 두개의 과정을 수행하게 되는데,
+뉴럴 네트워크가 만들어져 있다고 가정하자. 입력단은 3개, 출력은 4개. 우리가 이 뉴럴 네트워크를 학습할 때, 결국 크게 두개의 과정을 수행하게 되는데,
 
 Forward Propagation, Backward Propagation 이다.
 
-그래서 우리는 어떤 결과를 원하냐면,
-
-**입력 신호와 출력 신호가 같아지는 weight, bias를 구한다.**
+그래서 우리는 어떤 결과를 원하냐면, **입력 신호와 출력 신호가 같아지는 weight, bias를 구한다.**
 
 이 때 weight, bias를 초기값으로 사용하겠다는 것이 RBM이다.
 

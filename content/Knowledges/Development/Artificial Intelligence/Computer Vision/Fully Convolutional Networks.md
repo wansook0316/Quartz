@@ -2,11 +2,17 @@
 title: Fully Convolutional Networks
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- FCN
+- fully-convolutional-network
+- segmentation
+- upscaling
+- deep-learning
 created: 2023-10-04
 ---
 
-## Task
+# Task
 
  > 
  > Segmentation
@@ -19,7 +25,7 @@ semantic segmentation은 이미지 내에 있는 물체들을 의미 있는 단�
 
 이 중에서 의미론적인 구분을 하는 `Sementic Segmentation` 중에서 Deep Lab에 대해 알아볼 것이다. 다음으로는 `U-Net`, 마지막으로 instance 단위로 segmentation을 진행하는 `instance segmentation`을 알아볼 것이다.
 
-## 알아두어야 할 것
+# 알아두어야 할 것
 
 1. 평가 metric
    * IoU(intersection over Union)
@@ -27,7 +33,7 @@ semantic segmentation은 이미지 내에 있는 물체들을 의미 있는 단�
    * [Pascal VOC 2012](https://pjreddie.com/projects/pascal-voc-dataset-mirror/)
    * [cityscape](https://pjreddie.com/projects/pascal-voc-dataset-mirror/)
 
-## Fully Convolutional Networks
+# Fully Convolutional Networks
 
  > 
  > Fully connected 대신 Fully convolution!
@@ -59,7 +65,7 @@ AlexNet, VGGNet 등 이미지 분류(image classification)용 CNN 알고리즘�
 
 저자들은 `Fully Convolutional Network`는 `1x1 filter`를 사용하기 때문에 input image에 대한 dependency가 작은 것도 장점이라 했다. `1x1 conv`는 Width, Height에 대해 의존도가 없기 때문에 channel 수를 마음대로 조정하여 원하는 output 모양을 맞출 수 있다. 여러 층의 컨볼루션층들을 거치고 나면 특성맵(feature map)의 크기가 H/32 x W/32가 되는데, 그 특성맵의 한 픽셀이 입력이미지의 32 x 32 크기를 대표한다. 즉, 입력이미지의 위치 정보를 '대략적으로' 유지하고 있는 것이다.
 
-## Upsampling
+# Upsampling
 
  > 
  > feature map을 키워서 image size로 만들자!
@@ -77,7 +83,7 @@ AlexNet, VGGNet 등 이미지 분류(image classification)용 CNN 알고리즘�
 ![](computer-vision-FCN11.png)
 *FCN-32s : Coarse Output*
 
-## Skip Combining
+# Skip Combining
 
  > 
  > 이전 단계의 컨볼루션층들의 특성맵을 참고하여 upsampling을 해주자!

@@ -2,7 +2,12 @@
 title: Logistic Regression
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- regression
+- logistic-regression
+- classification
 created: 2023-10-04
 ---
 

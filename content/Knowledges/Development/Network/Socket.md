@@ -2,7 +2,11 @@
 title: Socket
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- socket
+- interface
+- process
 created: 2023-10-04
 ---
 

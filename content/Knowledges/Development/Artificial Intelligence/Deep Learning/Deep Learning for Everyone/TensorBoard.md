@@ -2,7 +2,10 @@
 title: TensorBoard
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- tensorboard
 created: 2023-10-04
 ---
 
@@ -259,9 +262,7 @@ with tf.name_scope("Train"):
 writer = tf.summary.FileWriter("./logs/xor_logs")
 ````
 
-이렇게 두개를 디렉토리를 다르게 해서 기록해 둔 뒤,
-
-terminal에서
+이렇게 두개를 디렉토리를 다르게 해서 기록해 둔 뒤, terminal에서
 
 ````bash
 $ tensorboard --logdir=./logs

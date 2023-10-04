@@ -2,7 +2,13 @@
 title: Xception
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- Xception
+- computer-vision
+- inception
+- convolution
+- ResNet
+- deep-learning
 created: 2023-10-04
 ---
 

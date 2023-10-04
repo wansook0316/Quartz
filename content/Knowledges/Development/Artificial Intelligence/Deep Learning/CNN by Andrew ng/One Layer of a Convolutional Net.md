@@ -2,7 +2,12 @@
 title: One Layer of a Convolutional Net
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- convolution
+- computer-vision
+- parameter
+- hyper-parameter
+- deep-learning
 created: 2023-10-04
 ---
 
@@ -95,32 +100,20 @@ C --> |FullyConct|D[Layer 3]
 D --> |SoftMax|E[Prediction]
 ````
 
-결국 Convolution Network에서 우리가 중점적으로 손을 봐야하는 것은,
-
-이 과정을 수행하는 데 있어 어떤 Hyperparameter를 쓰느냐이다.
+결국 Convolution Network에서 우리가 중점적으로 손을 봐야하는 것은, 이 과정을 수행하는 데 있어 어떤 Hyperparameter를 쓰느냐이다.
 
 이것이 궁극적으로 구조를 변화시키기 때문이다.
 
 ![](Pasted%20image%2020231004141825.png)
 
-또한 이렇게 처음 이미지는 RGB의 3개의 채널만 가지고 있지만,
+또한 이렇게 처음 이미지는 RGB의 3개의 채널만 가지고 있지만, Layer가 증가하면서 Channel 수가 증가하는 양상을 보인다.
 
-Layer가 증가하면서 Channel 수가 증가하는 양상을 보인다.
-
-직관적으로는 처음에는 간단한 하위특성(수직선, 수평선) 등만 탐색하다가
-
-이것들의 조합으로 만들어지는 수많은 특성들이 있게되므로
-
-점점 많은 필터(특성)를 사용하는 듯하다.
+직관적으로는 처음에는 간단한 하위특성(수직선, 수평선) 등만 탐색하다가 이것들의 조합으로 만들어지는 수많은 특성들이 있게되므로 점점 많은 필터(특성)를 사용하는 듯하다.
 
 ## What is Parameter, Hyperparameter
 
-파라미터는 가중치를 얘기한다.
+파라미터는 가중치를 얘기한다. 그리고 하이퍼파라미터는 필터의 크기, 스트라이드, 패딩과 같은 값을 의미한다.
 
-그리고 하이퍼파라미터는 필터의 크기, 스트라이드, 패딩과 같은 값을 의미한다.
-
-즉, 파라미터란, 우리가 궁극적으로 구하고 싶은 변수를 의미하고,
-
-하이퍼 파라미터란 그 과정속에서 필요한 변수들을 의미한다.
+즉, 파라미터란, 우리가 궁극적으로 구하고 싶은 변수를 의미하고, 하이퍼 파라미터란 그 과정속에서 필요한 변수들을 의미한다.
 
 하이퍼 파라미터의 예시로는 Gradient Deacent 의 learning rate가 있겠다.

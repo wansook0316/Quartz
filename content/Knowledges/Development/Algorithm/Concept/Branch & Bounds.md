@@ -30,7 +30,8 @@ created: 2023-10-02
 * 가치 pi, 각각의 무게 wi가 있는 물건 n개가 있다면
 * 가장 가치를 높히면서 가방에 담을 때의 물건 리스트는?
 
-![image](https://user-images.githubusercontent.com/37871541/122235894-03bf9d80-cef9-11eb-8cc2-e253e254955d.png){: .center-small}*상태 공간 트리*
+![](algorithm-branch-and-bound01.png)
+*상태 공간 트리*
 
 * 자 얘를 간단하게 생각해보면 이런 상태공간 트리가 생긴다.
 * 물건이 n개라면 2^n개의 말단 노드가 생기는 거지.
@@ -43,7 +44,8 @@ created: 2023-10-02
 
 ## Branch and bounds : DFS
 
-![image](https://user-images.githubusercontent.com/37871541/122236335-65800780-cef9-11eb-814f-5337e12c0937.png){: .center-small}*branch and bound를 사용*
+![](algorithm-branch-and-bound02.png)
+*branch and bound를 사용*
 
 * 자, 그럼 이번에는 이렇게 해보자.
 * 내가 특정 노드를 방문했을 때, 이후로 가질 수 있는 최대 가치를 알 수 있다고 생각해보자.
@@ -70,18 +72,21 @@ created: 2023-10-02
   * maxprofit >= bound이면 탐색할 필요가 없다.
     * 같아도 그러한 이유는 bound는 정말 이론적 최선이기 때문이지.
 
-![image](https://user-images.githubusercontent.com/37871541/122239190-b5f86480-cefb-11eb-924f-026d293cc6a5.png){: .center}*탐색 트리*
+![](algorithm-branch-and-bound03.png)
+*탐색 트리*
 
 * 연습하면서 순차적으로 따라가 보자.
 
 ## Branch and bounds : BFS
 
-![image](https://user-images.githubusercontent.com/37871541/122239469-ed671100-cefb-11eb-99bb-685aaa2983d3.png){: .center-small}*BFS*
+![](algorithm-branch-and-bound04.png)
+*BFS*
 
 * 너비 우선 탐색을 진행해보자.
 * 탐색 순서만 다르고 모든 것은 같다.
 
-![image](https://user-images.githubusercontent.com/37871541/122239639-0ff92a00-cefc-11eb-92a8-5e259ccdddca.png){: .center-small}*BFS 탐색 순서*
+![](algorithm-branch-and-bound05.png)
+*BFS 탐색 순서*
 
 ## Branch and bounds : BFS(Best First Search)
 
@@ -92,7 +97,8 @@ created: 2023-10-02
 * 그런데, 이 Queue를 Priority Queue를 사용해서 가장 가능성이 있는 녀석부터
 * 탐색한다면 어떨까?
 
-![image](https://user-images.githubusercontent.com/37871541/122240163-839b3700-cefc-11eb-9523-983581b61d52.png){: .center-small}*Best First Search*
+![](algorithm-branch-and-bound06.png)
+*Best First Search*
 
 * 실제로 해보면 탐색 개수가 많이 줄어들었다.
 
@@ -103,19 +109,21 @@ created: 2023-10-02
 * 만약에 모든 가지수를 판단한다면 (n-1)!이다.
 * 이런 경로가 아예 그래프에 있다.
 
-![image](https://user-images.githubusercontent.com/37871541/122240979-2784e280-cefd-11eb-8695-9e749b8026e7.png){: .center-small}*헤밀토니안 회로*
+![](algorithm-branch-and-bound07.png)
+*헤밀토니안 회로*
 
 * 이것을 동적 계획법으로 풀려면 시간 복잡도가 말이 안된다.
 * 사실 왜 안되는지는 모르겠다.
 
-![image](https://user-images.githubusercontent.com/37871541/122241481-8c403d00-cefd-11eb-83c0-8f6cf21f97c3.png){: .center-small}*외판원 문제 상태 공간 트리*
+![](algorithm-branch-and-bound08.png)
+*외판원 문제 상태 공간 트리*
 
 * 이렇게 상태공간 트리가 구성된다. 말단 노드는 총 (n-1)!개이다.
 * 전략은 분기 한정법으로, 지금까지 방문한 마지막 노드 이후의 모든 노드가 가지는 가중치의 최단 거리를 더해서 Bound를 잡는 것
 * 그러니까 무슨 말이냐면..
 
-![image](https://user-images.githubusercontent.com/37871541/122242351-3750f680-cefe-11eb-9909-5fee296c4319.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122242373-3b7d1400-cefe-11eb-8200-7dd230dd3992.png){: .center-small}
+![](algorithm-branch-and-bound09.png)
+![](algorithm-branch-and-bound10.png)
 
 * 자 잘보면, 첫번째 v1~v5까지의 최단 거리를 모두 더해서 일주 경로의 bound를 잡았다.
 * 생각해보면 이건 잘못됐다. 불가능할지도 모르는 경로인데..
@@ -127,12 +135,12 @@ created: 2023-10-02
 
 ## 직접 해보기
 
-![image](https://user-images.githubusercontent.com/37871541/122242847-9a428d80-cefe-11eb-8c37-460c9bed45ea.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122242868-9f074180-cefe-11eb-83ec-0636062ec96c.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122242884-a4fd2280-cefe-11eb-8097-fc94a3d88ea1.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122242901-a9294000-cefe-11eb-92bb-6f4e9c547dc0.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122242931-adedf400-cefe-11eb-8206-8e6cc399e4aa.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122242952-b1817b00-cefe-11eb-85a4-2c61bd954747.png){: .center-small}
+![](algorithm-branch-and-bound11.png)
+![](algorithm-branch-and-bound12.png)
+![](algorithm-branch-and-bound13.png)
+![](algorithm-branch-and-bound14.png)
+![](algorithm-branch-and-bound15.png)
+![](algorithm-branch-and-bound16.png)
 
 * 그런데 여전히 시간 복잡도는 거의 지수다 ^^
 * 제프딘은 n^2에 풀 수 있다고 한다.

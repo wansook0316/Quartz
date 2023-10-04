@@ -2,7 +2,11 @@
 title: Loading Data from File
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- input
+- file
 created: 2023-10-04
 ---
 
@@ -171,13 +175,10 @@ Other scores will be  [[ 145.86265564]
 # Queue Runners
 
 ![](_2019-07-15__12.10.56.png)
-모델을 Train 시켜야 하는 기본 데이터가 많을 때,
 
-이 모든 값들을 메모리에 올려놓고 작업하는 것은 너무 부하가 크다.
+모델을 Train 시켜야 하는 기본 데이터가 많을 때, 이 모든 값들을 메모리에 올려놓고 작업하는 것은 너무 부하가 크다.
 
-그렇기 때문에 Tensorflow는 Queue Runner라는 것을 제공한다.
-
-기본적인 원리는 이렇다.
+그렇기 때문에 Tensorflow는 Queue Runner라는 것을 제공한다. 기본적인 원리는 이렇다.
 
 1. 불러와야 할 파일들을 다 가지고 있는다.
 1. 각각의 파일마다 어떻게 Read할지 정한다. (Reader1, Reader2...)

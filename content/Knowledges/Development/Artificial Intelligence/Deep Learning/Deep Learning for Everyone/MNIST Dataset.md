@@ -2,7 +2,11 @@
 title: MNIST Dataset
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- MNIST
+- classification
 created: 2023-10-04
 ---
 

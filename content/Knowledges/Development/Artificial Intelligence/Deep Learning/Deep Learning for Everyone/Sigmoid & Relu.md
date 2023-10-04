@@ -2,7 +2,12 @@
 title: Sigmoid & Relu
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- sigmoid
+- relu
+- XOR
 created: 2023-10-04
 ---
 
@@ -15,8 +20,6 @@ Activate Function이라고 부를 것이다.
 그런데 Layer 4개 이상 추가를 해서 정확도를 측정할 경우, sigmoid 함수를 
 
 활성 함수로 사용할 경우, 제대로 반영이 안되는 것을 알 수 있다.
-
-[](https://en.wikipedia.org/wiki/Sigmoid_function)
 
 sigmoid 함수의 특징상 양끝으로 갈수록 기울기 값이 0에 가까워지는 것을 알 수 있다.
 
@@ -35,3 +38,7 @@ $$
 # Relu의 등장
 
 x가 무한대로 가면 무조건 1이하가 되는데, 이거 좀 바꿔보자!
+
+# Reference
+
+* [Sigmoid_function](https://en.wikipedia.org/wiki/Sigmoid_function)

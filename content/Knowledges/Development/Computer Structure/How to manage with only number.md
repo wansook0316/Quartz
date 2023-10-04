@@ -2,7 +2,12 @@
 title: How to manage with only number
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-structure
+- ASCII
+- binary
+- image
+- pixel
 created: 2023-10-04
 ---
 
@@ -17,8 +22,7 @@ created: 2023-10-04
  > 
  > 숫자와 글자에 대한 함수관계를 정의한다.
 
-![아스키 코드표](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile5.uf.tistory.com%2Fimage%2F216CE84C52694FF02054D4){: .center-text}
-[출처](https://shaeod.tistory.com/){: .center-text}
+![](Pasted%20image%2020231004213645.png)
 
 ### 바이너리 코드(binary Code)
 

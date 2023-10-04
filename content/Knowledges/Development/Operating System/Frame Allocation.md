@@ -2,7 +2,10 @@
 title: Frame Allocation
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- frame
+- paging
 created: 2023-10-04
 ---
 

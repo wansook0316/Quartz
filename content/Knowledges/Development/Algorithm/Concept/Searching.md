@@ -22,12 +22,15 @@ created: 2023-10-02
 * 없다면 오류로 처리한다.
 * 결론 : 이분 검색 알고리즘보다 효율적인 알고리즘은 없다.
 
-![image](https://user-images.githubusercontent.com/37871541/122089259-8c7b0280-ce41-11eb-9469-110ccbbf461e.png){: .center-small}*이진 검색 상태 공간 트리*
-![image](https://user-images.githubusercontent.com/37871541/122089398-ae748500-ce41-11eb-8c21-3376c359827b.png){: .center-small}*순차 검색은 답이없다.*
+![](algorithm-searching01.png)
+*이진 검색 상태 공간 트리*
+![](algorithm-searching02.png)
+*순차 검색은 답이없다.*
 
 # 보간 검색
 
-![image](https://user-images.githubusercontent.com/37871541/122090883-3313d300-ce43-11eb-8217-4b30b6ea2425.png){: .center-small}*보간 검색*
+![](algorithm-searching03.png)
+*보간 검색*
 
 * 비교 이외에 다른 추가적인 정보를 이용하여 검색?
 * 10개의 정수를 검색하는데, 첫번째 정수는 0-9중 하나,
@@ -37,11 +40,14 @@ created: 2023-10-02
 
 ## Linear Interpolation
 
-![image](https://user-images.githubusercontent.com/37871541/122091059-60608100-ce43-11eb-8931-511012860374.png){: .center-small}*선형 보간*
+![](algorithm-searching04.png)
+*선형 보간*
 
-![image](https://user-images.githubusercontent.com/37871541/122091172-7c642280-ce43-11eb-9c40-190b56b4b350.png){: .center-small}*선형 보간 방법*
+![](algorithm-searching05.png)
+*선형 보간 방법*
 
-![image](https://user-images.githubusercontent.com/37871541/122091722-0f04c180-ce44-11eb-92e2-f05db3df1388.png){: .center-small}*선형 보간의 시간 복잡도*
+![](algorithm-searching06.png)
+*선형 보간의 시간 복잡도*
 
 * 시간 복잡도
   * 최악의 경우 순차검색과 같아짐
@@ -56,7 +62,8 @@ created: 2023-10-02
 
 ## 이진 검색 트리
 
-![image](https://user-images.githubusercontent.com/37871541/122092055-76bb0c80-ce44-11eb-903a-2ad7f4406ff5.png){: .center-small}*이진 검색 트리*
+![](algorithm-searching07.png)
+*이진 검색 트리*
 
 * 사용하는 이유
   * 일단 inorder 순회 (왼쪽 자신 오른쪽)을 하게 되면 정렬된 순서로 추출 가능
@@ -68,9 +75,11 @@ created: 2023-10-02
 * 삽입될 때 균형 트리라면 logn으로 가능
 * 삭제되는 경우는 사진을 보자.
 
-![image](https://user-images.githubusercontent.com/37871541/122092532-ffd24380-ce44-11eb-9cee-172f6460a109.png){: .center-small}*두개의 자식 노드가 있는 경우*
+![](algorithm-searching08.png)
+*두개의 자식 노드가 있는 경우*
 
-![image](https://user-images.githubusercontent.com/37871541/122092691-2ee8b500-ce45-11eb-8e39-aa592a100ffc.png){: .center-small}*한개의 자식 노드가 있는 경우*
+![](algorithm-searching09.png)
+*한개의 자식 노드가 있는 경우*
 
 * 삭제 시나리오는 두가지가 있다.
   * 두개의 자식 노드가 있는 경우
@@ -81,10 +90,9 @@ created: 2023-10-02
 
 ### 이진 검색트리 검색 분석
 
-![image](https://user-images.githubusercontent.com/37871541/122093163-bc2c0980-ce45-11eb-9290-4ebfc1db7fc9.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122093195-c3ebae00-ce45-11eb-8b7f-4328ed1e4d52.png){: .center-small}
-
-![image](https://user-images.githubusercontent.com/37871541/122093315-eb427b00-ce45-11eb-9baf-cb744008a02f.png){: .center-small}
+![](algorithm-searching10.png)
+![](algorithm-searching11.png)
+![](algorithm-searching12.png)
 
 * 결국 여전히 최악의 경우 O(n)
 
@@ -103,10 +111,11 @@ created: 2023-10-02
 ## AVL 트리
 
 * 좌우 Subtree의 높이 차가 최대 1인 이진 탐색 트리
+  ![](algorithm-searching13.png)
+  *AVL 트리*
 
-![image](https://user-images.githubusercontent.com/37871541/122174599-cee22500-cebd-11eb-8711-ce87e60815cf.png){: .center-small}*AVL 트리*
-
-![image](https://user-images.githubusercontent.com/37871541/122180358-52eadb80-cec3-11eb-954d-12a86c2d1f4c.png){: .center-small}*균형 유지 방법*
+![](algorithm-searching14.png)
+*균형 유지 방법*
 
 * 재구성 작업
   * 일단을 위의 그림의 구현이 이해가지 않지만 보면
@@ -124,7 +133,8 @@ created: 2023-10-02
 
 ## B Tree
 
-![image](https://user-images.githubusercontent.com/37871541/122184131-e1ad2780-cec6-11eb-8ef4-20ec74b34cd3.png){: .center-small}*2-3 tree*
+![](algorithm-searching15.png)
+*2-3 tree*
 
 * 2-3 Tree
   * 각 마디에는 키가 하나 또는 두개가 존재한다. (B, \[B, C\])
@@ -135,11 +145,13 @@ created: 2023-10-02
   * 오른쪽은 크거나 같다.
   * 모든 잎마디는 수준이 같다. -> 어떻게? 추가적인 작업이 필요
 
-![image](https://user-images.githubusercontent.com/37871541/122184565-4d8f9000-cec7-11eb-9ba8-4059d20df12f.png){: .center-small}*2-3 트리에서 데이터 추가시 균형 유지 방법*
+![](algorithm-searching16.png)
+*2-3 트리에서 데이터 추가시 균형 유지 방법*
 
 지금 35를 넣으니 맨 오른쪽에 입력되어서 하나의 마디에 하나 혹은 두개의 키가 들어가야 함에도 불구하고 그렇지 않았다.
 
-![image](https://user-images.githubusercontent.com/37871541/122184748-7ca60180-cec7-11eb-8afc-455396cff168.png){: .center-small}*continue...*
+![](algorithm-searching17.png)
+*continue...*
 
 1. 25, 30, 35에서 중앙에 있는 값을 위로 올린다.
 1. 다시 중앙에 있는 값(20)을 위로 올린다.
@@ -152,7 +164,8 @@ created: 2023-10-02
 
 # Hashing
 
-![image](https://user-images.githubusercontent.com/37871541/122186707-436e9100-cec9-11eb-9061-1957701c8543.png){: .center-verysmall}*Hash*
+![](algorithm-searching18.png)
+*Hash*
 
 * 어느 일정한 개수의 값을 저장한다고 했을 때, 만약 key가 주민 등록 번호라면, 모든 번호를 저장하게 만들 수는 없다.
 * 즉, 배열이나 트리나 이런 구조를 사용해서 만들게 된다.
@@ -170,7 +183,8 @@ $$
 
 ## 충돌을 피하는 방법
 
-![image](https://user-images.githubusercontent.com/37871541/122187497-0bb41900-ceca-11eb-8b53-a57e67a5a7b5.png){: .center-small}*충돌 피하는 방법*
+![](algorithm-searching19.png)
+*충돌 피하는 방법*
 
 * open Hashing
   * closed addressing
@@ -193,8 +207,10 @@ $$
 
 ### Open Hashing
 
-![image](https://user-images.githubusercontent.com/37871541/122188996-7f0a5a80-cecb-11eb-99e4-6c00adbb43fb.png){: .center-small}*성공했을 때, 평균 검색 시간*
-![image](https://user-images.githubusercontent.com/37871541/122189292-c5f85000-cecb-11eb-9b69-9576acf6f90d.png){: .center-verysmall}*실패시, 성공시 시간 비교*
+![](algorithm-searching20.png)
+*성공했을 때, 평균 검색 시간*
+![](algorithm-searching21.png)
+*실패시, 성공시 시간 비교*
 
 * 최악의 상황
   * 모든 키가 같은 해쉬값을 가짐
@@ -206,8 +222,10 @@ $$
 
 ### Closed Hashing
 
-![image](https://user-images.githubusercontent.com/37871541/122189809-343d1280-cecc-11eb-9e9e-2c06aa366ac2.png){: .center-small}*hash image*
-![image](https://user-images.githubusercontent.com/37871541/122190966-45d2ea00-cecd-11eb-9d7e-44c91ab27322.png){: .center-small}*Double Hashing*
+![](algorithm-searching22.png)
+*hash image*
+![](algorithm-searching23.png)
+*Double Hashing*
 
 linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
@@ -225,7 +243,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
   * 충돌할 경우 h2 사용
 * 자료가 삭제되면 문제가 발생한다.
 
-![image](https://user-images.githubusercontent.com/37871541/122190520-d8bf5480-cecc-11eb-926e-a94b5cac9e66.png){: .center-small}*linear 삭제 경우 문제점*
+![](algorithm-searching24.png)
+*linear 삭제 경우 문제점*
 
 * a, b둘다 해시값이 5인 상황
 * 둘다 넣었지, 잘됐어 오른쪽으로 밀렸으니까
@@ -245,7 +264,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 ### 최소키와 최대키 찾기
 
-![image](https://user-images.githubusercontent.com/37871541/122192873-01e0e480-cecf-11eb-9e6d-c271e092f584.png){: .center-small}*최소키와 최대키 동시에 찾기*
+![](algorithm-searching25.png)
+*최소키와 최대키 동시에 찾기*
 
 * 한번의 루프에서 최대, 최소 비교를 2번씩 n-1번 해야한다.
 * W(n) = 2(n-1)
@@ -254,7 +274,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 ### 키를 짝지워서 찾기
 
-![image](https://user-images.githubusercontent.com/37871541/122193127-305ebf80-cecf-11eb-84af-0082d69eaa88.png){: .center-small}*키를 짝지우기*
+![](algorithm-searching26.png)
+*키를 짝지우기*
 
 1. 짝을 지어서 둘만 비교하여 큰놈, 작은놈을 나눈다.
 1. 두 그룹을 만들어서 각각의 그룹에서 큰놈 그룹은 최댓값
@@ -266,7 +287,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 ## 차대키 (second largest key) 찾기
 
-![image](https://user-images.githubusercontent.com/37871541/122194344-5042b300-ced0-11eb-8c49-1d167f2d2450.png){: .center-small}*토너먼트 방법*
+![](algorithm-searching27.png)
+*토너먼트 방법*
 
 * 단순한 방법
   * 최대키를 찾음 (n-1번 비교)
@@ -279,7 +301,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
     * 그럼 내가 이기고 온 녀석들 중에 2등따리보다 실력이 좋을수는 있지. 그치.
     * 그러니까 우승자가 제끼고 온놈들만 조사하면 2번째 실력자가 나오는 거지.
 
-![image](https://user-images.githubusercontent.com/37871541/122194907-d7902680-ced0-11eb-9048-8548e06a93c7.png){: .center-small}*시간 복잡도 계산*
+![](algorithm-searching28.png)
+*시간 복잡도 계산*
 
 * n = 8팀
 * 첫번째 4번, 두번재 2번 마지막 1번
@@ -297,7 +320,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 ## Partition 방법
 
-![image](https://user-images.githubusercontent.com/37871541/122196520-43bf5a00-ced2-11eb-8971-ccb1d2b13d88.png){: .center-small}*Partition*
+![](algorithm-searching29.png)
+*Partition*
 
 * 퀵소트를 진행할 떄 두가지 함수가 있다.
   * Partition
@@ -308,7 +332,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 * 만약 현재 위치가 k보다 작다면, 오른쪽을 탐색해서 알아내면 되고,
 * 크다면 왼쪽을 탐색하면 된다.
 
-![image](https://user-images.githubusercontent.com/37871541/122196930-a9abe180-ced2-11eb-9b65-cfc9ecb13be6.png){: .center-small}*수도 코드*
+![](algorithm-searching30.png)
+*수도 코드*
 
 * 시간 복잡도
   * 최악의 경우 O(n^2)
@@ -321,8 +346,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 ## 선형 시간 방법
 
-![image](https://user-images.githubusercontent.com/37871541/122197836-8cc3de00-ced3-11eb-9161-cdaff0c0511c.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122198524-30ad8980-ced4-11eb-90c3-d8d7e7b61fed.png){: .center-small}
+![](algorithm-searching31.png)
+![](algorithm-searching32.png)
 
 1. 데이터를 5개의 묶음으로 만든다.
 1. 각각의 묶음에서 정렬한다.
@@ -335,7 +360,8 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 1. 그렇지 않으면 S3에 있다는 소리니까 그곳을 탐색
    * 이 때 k-s1-s2인 이유는 s3에서 k-s1-s2번째의 위치가 답이기 때문
 
-![image](https://user-images.githubusercontent.com/37871541/122200035-9fd7ad80-ced5-11eb-95cb-9fdf2a6cb402.png){: .center}*의사 코드*
+![](algorithm-searching33.png)
+*의사 코드*
 
 1. 5로 나뉜 뭉치를 정렬하는 것 : n/5 * 5*log5 = n*log5 = O(n)
 1. M에 대해서 M/2번쨰 위치 구하기 : T(n/5)
@@ -350,24 +376,26 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 이 부분을 이해하기 위해서는 결국 S1, S3가 크기가 얼마나 나오는지에 대해 알아야 계산이 가능하다.
 
-![image](https://user-images.githubusercontent.com/37871541/122201219-c9dd9f80-ced6-11eb-8b21-874a31e3d06f.png){: .center}
+![](algorithm-searching34.png)
 
 맨 아래의 그림을 확장해보면 다음과 같다.
 
-![image](https://user-images.githubusercontent.com/37871541/122201940-8172b180-ced7-11eb-9bb0-16a63b0bc7bd.png){: .center}
+![](algorithm-searching35.png)
 
 한번의 중앙 위치를 알아낸 이후에 상황을 그림으로 나타내면 위와 같다. 만약에 여기서, m보다 작거나 같은 영역은 얼마나되니? 라고 물어본다면 대강 3/4정도의 영역이 확실하게 작을 수 있는 지점이다. 그렇기 때문에 다음 스텝으로 넘어감에 있어서 S1, S3는 최악의 경우 3n/4 정도의 개수가 할당될 수 있다. 결과적으로 상수 타임에 가능하다.. ㄷㄷ
 
 ## Partition과 median 방법 비교
 
-![image](https://user-images.githubusercontent.com/37871541/122202600-2bead480-ced8-11eb-868c-d12751b3e539.png){: .center}Partition, median 방법 비교\_
+![](algorithm-searching36.png)
+*Partition, median 방법 비교*
 
 * 결국 비교를 해보면, 단순 Partition방법은 모든 값을 비교하면서 pivot을 찾았다는 것
 * 그리고 median의 median 방법을 통해 검색하는 영역을 줄였다는 점에서 시간 복잡도의 차이가 발생했다.
 
 # 문자열 매칭
 
-![image](https://user-images.githubusercontent.com/37871541/122203054-9e5bb480-ced8-11eb-8b1f-88d601879cd3.png){: .center-small}*문자열 매칭 문제*
+![](algorithm-searching37.png)
+*문자열 매칭 문제*
 
 문자열에서 패턴을 찾는 문제.
 
@@ -378,30 +406,32 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 ## 원시적인 방법
 
-![image](https://user-images.githubusercontent.com/37871541/122203157-b3d0de80-ced8-11eb-8299-397eeccd7849.png){: .center-small}*원시적인 방법*
+![](algorithm-searching38.png)
+*원시적인 방법*
 
 원시적인 방법은 그냥 n-m+1번 반복하는 것. 그리고 각각에 대해 m번 비교 :  O(mn)
 
 ## 오토마타
 
-![image](https://user-images.githubusercontent.com/37871541/122203571-217d0a80-ced9-11eb-8f16-16c833de9f35.png){: .center-small}*오토마타 사용*
+![](algorithm-searching39.png)
+*오토마타 사용*
 
 * 흠 전혀 모르겠다.
 * 컴파일러 책을 참고하라고 한다. 와우..
 
 ## Rabin-Karp
 
-![image](https://user-images.githubusercontent.com/37871541/122203884-7456c200-ced9-11eb-81a7-5401ab0857e2.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122203903-7a4ca300-ced9-11eb-9a2e-a31bf7ad9164.png){: .center-small}
+![](algorithm-searching40.png)
+![](algorithm-searching41.png)
 
 * 핵심은 숫자로 변경해서 비교하는 것.
 
-![image](https://user-images.githubusercontent.com/37871541/122204026-9bad8f00-ced9-11eb-86ae-61152d4fc7c3.png){: .center-small}
+![](algorithm-searching42.png)
 
 * 여기서 눈치챘겠지만, 계산 테크닉을 이용해서 비교를 줄일 수 있다.
 * 그런데 m의 값이 크면 값이 너무 커지기 때문에 방법이 필요하다.
 
-![image](https://user-images.githubusercontent.com/37871541/122204212-d4e5ff00-ced9-11eb-82b8-dca7212138fb.png){: .center-small}
+![](algorithm-searching43.png)
 
 * 적당한 q를 도입해서 모듈러 연산을 도입해 이러한 문제를 해결한다.
 * 문제는 모듈러 값이 같다고해서 진짜 매칭이되는지 확인할 방법이 없기 때문에
@@ -410,19 +440,19 @@ linear, quadratic은 이해가 쉬우니 더블만 가져왔다.
 
 ## Boyer Moore 알고리즘
 
-![image](https://user-images.githubusercontent.com/37871541/122204910-9f8de100-ceda-11eb-8e03-2053bd14098d.png){: .center-small}
+![](algorithm-searching44.png)
 
 * 핵심이 뭐야?
 * 맨처음부터 비교하지 말고 맨 끝을 비교한다음에
 * 달라? 그러면 A 배열에서 비교한 녀석을 B에서 찾아봐
 * 없어? 없으면 그냥 다 건너뛰어버리는겨
 
-![image](https://user-images.githubusercontent.com/37871541/122205111-d7952400-ceda-11eb-8049-1dc89c892bd5.png){: .center-small}
+![](algorithm-searching45.png)
 
 * 이 때 가만 보면, p에 있는 원소에 대해서 끝의 문자가 어떤것이 나왔냐에 따라 점프하는 이동거리를 아예 구해버렸다. 
 * 그러면 추가 계산 중복되는게 없어져버리니까
 
-![image](https://user-images.githubusercontent.com/37871541/122205429-335fad00-cedb-11eb-8659-8bfa1418121b.png){: .center-small}
+![](algorithm-searching46.png)
 
 * 결국 jump를 구하는게 핵심이다.
 * 그런데 만약에 해당 문자가 2개라면?

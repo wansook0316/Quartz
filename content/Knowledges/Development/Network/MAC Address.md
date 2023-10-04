@@ -2,12 +2,22 @@
 title: MAC Address
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- mac
+- mac-address
+- host
+- DNS
+- router
 created: 2023-10-04
 ---
 
 * 디바이스가 가지고 있는 고유의 물리적, 하드웨어 주소
 * 패킷에 들어오는 mac 주소를 보고 적어둔 테이블을 기반으로 사설 IP주소를 알아낸다음 해당 디바이스로 데이터를 넘겨준다.
+* 랜 카드에 할당된 전세계 유일한 번호
+* 6바이트로 구성
+* 앞쪽 24비트 : 제조사 번호
+* 뒤쪽 24비트 : 제조사가 붙인 일련번호
 
 # 맥 주소가 있는데 IP 주소를 왜 쓸까?
 

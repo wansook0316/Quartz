@@ -2,7 +2,9 @@
 title: Introduction
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
 created: 2023-10-04
 ---
 

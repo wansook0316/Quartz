@@ -2,7 +2,11 @@
 title: Packet Delay
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- packet
+- network
+- delay
+- TCP
 created: 2023-10-04
 ---
 
@@ -61,7 +65,7 @@ $$
 
 ## Transmission Delay
 
-패킷하나가 빠져나가는 시간을 줄인다. 초당 선송할 수 있는 양을 늘리면 된다. 마치 톨게이트에서 5차선이었던 것을 10차선으로 바꾸면 한번에 빠져나갈 수 있는 차량의 수가 증가한다. 이 때, 이 차선에 대응되는 개념이 **대역폭**이다.
+패킷하나가 빠져나가는 시간을 줄인다. 초당 선송할 수 있는 양을 늘리면 된다. 마치 톨게이트에서 5차선이었던 것을 10차선으로 바꾸면 한번에 빠져나갈 수 있는 차량의 수가 증가한다. 이 때, 이 차선에 대응되는 개념이 [Bandwidth](Bandwidth.md)이다.
 
 ## Propagation Delay
 
@@ -73,9 +77,9 @@ $$
  > 큐에 패킷이 가득차있는 경우 버려진다.
  > 라우터의 큐에 삽입되기 이전에 큐에 패킷이 가득차있는 경우 큐의 저장공간이 없기 때문에 Packet Loss 가 발생하며, 패킷은 버려진다.
 
-## TCP 작동
+## [TCP](TCP.md) 작동
 
-이런 경우 안전한 전송을 담당하는 Client 쪽의 TransportLayer 계층의 TCP 프로토콜이 해당 패킷을 재전송한다. 잘 몰라도 된다. 나중에 배운다.
+이런 경우 안전한 전송을 담당하는 Client 쪽의 [Transport Layer](Transport%20Layer.md) 계층의 TCP 프로토콜이 해당 패킷을 재전송한다. 잘 몰라도 된다. 나중에 배운다.
 
 ## Reference
 

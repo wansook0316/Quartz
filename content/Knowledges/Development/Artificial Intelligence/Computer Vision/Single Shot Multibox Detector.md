@@ -2,7 +2,11 @@
 title: Single Shot Multibox Detector
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- object-detection
+- convolution
+- deep-learning
 created: 2023-10-04
 ---
 

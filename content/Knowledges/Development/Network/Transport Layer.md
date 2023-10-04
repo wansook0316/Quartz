@@ -1,14 +1,18 @@
 ---
-title: Transfer Layer
+title: Transport Layer
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- transport-layer
+- TCP
+- UDP
 created: 2023-10-04
 ---
 
 # 전송 계층
 
-* 물리 계층, 데이터 링크 계층, 네트워크 계층 이 세개의 계층만 있으면 목적지에 데이터를 보낼 수 있다.
+* [Physical Layer](Physical%20Layer.md), [Data Link Layer](Data%20Link%20Layer.md), [Network Layer](Network%20Layer.md) 이 세개의 계층만 있으면 목적지에 데이터를 보낼 수 있다.
 * 하지만 데이터 유실, 손상되는 경우 알수도 없고 해줄게 없다.
 * 이를 방지하기 위한 계층이 전송계층이다.
 * <mark style='background-color: #fff5b1'> 신뢰성 있는 데이터 전달 </mark>을 위해 필요하다.

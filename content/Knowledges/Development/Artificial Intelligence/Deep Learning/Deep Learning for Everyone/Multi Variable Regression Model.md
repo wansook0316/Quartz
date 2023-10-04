@@ -2,7 +2,10 @@
 title: Multi Variable Regression Model
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- regression
 created: 2023-10-04
 ---
 

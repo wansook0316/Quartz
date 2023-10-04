@@ -2,7 +2,20 @@
 title: Memory Management
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- memory
+- allocation
+- address
+- data
+- link
+- builder
+- CPU
+- bus
+- compile
+- compiler
+- linker
+- dynamic-linking
 created: 2023-10-04
 ---
 

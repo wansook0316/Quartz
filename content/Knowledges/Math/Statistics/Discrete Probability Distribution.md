@@ -2,7 +2,9 @@
 title: Discrete Probability Distribution
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- distribution
 created: 2023-10-04
 ---
 

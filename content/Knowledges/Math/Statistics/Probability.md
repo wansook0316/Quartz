@@ -2,7 +2,12 @@
 title: Probability
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- mutual-exclusion
+- event
+- conditional-probability
+- independent-events
 created: 2023-10-04
 ---
 

@@ -27,7 +27,8 @@ created: 2023-10-02
 
 # 삽입 정렬
 
-![image](https://user-images.githubusercontent.com/37871541/122244388-d0344180-ceff-11eb-9197-9ab1e761dc96.png){: .center-small}*삽입 정렬*
+![](algorithm-sorting01.png)
+*삽입 정렬*
 
 * 항목을 끼워 넣는다고 생각해!!!
 * 어디에? : 앞에
@@ -48,9 +49,9 @@ def insertsort(a):
   return a
 ````
 
-![image](https://user-images.githubusercontent.com/37871541/122251458-7a629800-cf05-11eb-9061-afd99c00a670.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122251476-80f10f80-cf05-11eb-9658-e8039b53e075.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122251504-86e6f080-cf05-11eb-8b6e-b3843382a4fe.png){: .center-small}
+![](algorithm-sorting02.png)
+![](algorithm-sorting03.png)
+![](algorithm-sorting04.png)
 
 평균 계산은, 시작 위치가 2부터 이므로, 그 시작위치에 따른 계산의 횟수를 구하고 그 비교 횟수를 확률 변수 X로 둔다. 그리고 그 비교 횟수가 등장하기 위한 확률은 i에 따라 결정된다. 즉, i가 2부터 n까지 가는데, 각각의 i가 등장할 확률은 1/(i-1)이다. 그런데 1까지 인덱스가 갈수는 있으므로 결국 해당 index가 등장할 확률은 고르게 1/i이다.
 
@@ -60,7 +61,8 @@ def insertsort(a):
 
 # 선택 정렬
 
-![image](https://user-images.githubusercontent.com/37871541/122248764-47b7a000-cf03-11eb-9ad1-fb7767d3a289.png){: .center-small}*선택 정렬*
+![](algorithm-sorting05.png)
+*선택 정렬*
 
 * 뒤에서 부터 제일 작을 놈을 선택해서 넣어버린다.
 * 불안정 정렬
@@ -107,7 +109,8 @@ def exchangesort(a):
 
 # 거품 정렬
 
-![image](https://user-images.githubusercontent.com/37871541/122253423-1d67e180-cf07-11eb-8083-9ab04eec9bef.png){: .center-small}*거품 정렬*
+![](algorithm-sorting06.png)
+*거품 정렬*
 
 * 얘는 뒤에서부터 시작해서 작은 값이 거품처럼 올라온다고 거품 정렬이다.
 
@@ -126,7 +129,8 @@ def bubblesort(a):
 
 # 정리
 
-![image](https://user-images.githubusercontent.com/37871541/122255410-09bd7a80-cf09-11eb-94f1-28982ab7adee.png){: .center-small}*기본 정렬 정리*
+![](algorithm-sorting07.png)
+*기본 정렬 정리*
 
 * 삽입 정렬은 애초에 정렬되어 있는 걸 가정하고 하기 때문에 정렬이 어느정도 되어 있으면 더 빠르다.
 * 삽입 정렬은 교환정렬보다는 빠른 경향이 있다고 말해도 된다. 애초에 교환 정렬이 별로다.
@@ -174,7 +178,8 @@ def bubblesort(a):
 
 # Merge Sort
 
-![image](https://user-images.githubusercontent.com/37871541/122062037-056e6000-ce2a-11eb-8454-905b7bef40fe.png){: .center-small}*합병 정렬 알고리즘 재검토*
+![](algorithm-sorting08.png)
+*합병 정렬 알고리즘 재검토*
 
 그러면 합병 정렬은?
 
@@ -189,7 +194,8 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 
 ## Binary Tree의 종류
 
-![image](https://user-images.githubusercontent.com/37871541/122062687-99d8c280-ce2a-11eb-8f6c-e8d1fbdc3029.png){: .center-small}*이진 트리의 종류*
+![](algorithm-sorting09.png)
+*이진 트리의 종류*
 
 * 완전 이진 트리
   * 트리 내부에 있는 모든 마디에 두 개씩 자식 마디가 있는 이진 트리
@@ -203,7 +209,8 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 
 ## Heap
 
-![image](https://user-images.githubusercontent.com/37871541/122063115-f0de9780-ce2a-11eb-8157-1116375a064d.png){: .center-small}*Heap*
+![](algorithm-sorting10.png)
+*Heap*
 
 * 어떤 마디에 저장된 값은 그 마디의 자식 마디에 저장된 값보다 크거나 같다. (max heap)
 * 얘는 실질적인 완전 이진트리이다.
@@ -218,7 +225,8 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
     * 변경도 재구성이기 때문
   * 우선 순위 큐를 구현하는데 적합
 
-![image](https://user-images.githubusercontent.com/37871541/122063726-7bbf9200-ce2b-11eb-950d-05b39da7bb4e.png){: .center-small}*Heap 구조*
+![](algorithm-sorting11.png)
+*Heap 구조*
 
 * 구조 해석
   * index i 노드
@@ -228,7 +236,8 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 
 ### Sift down
 
-![image](https://user-images.githubusercontent.com/37871541/122063948-ad385d80-ce2b-11eb-9c22-b3973c385998.png){: .center-small}*Sift down*
+![](algorithm-sorting12.png)
+*Sift down*
 
 루트에 있는 키가 Heap 성질을 만족하지 않을 때, 이를 만족시키도록 하는 방법
 
@@ -247,9 +256,8 @@ pivot 놓고 양쪽으로 나누어서 재귀적으로 진행하는 알고리즘
 data = [2, 4, 5, 3, 1, 9, 6, 7, 10, 8]
 ````
 
-![image](https://user-images.githubusercontent.com/37871541/122064953-84649800-ce2c-11eb-9dd9-80bee770e989.png){: .center}
-
-![image](https://user-images.githubusercontent.com/37871541/122065104-a3632a00-ce2c-11eb-83d2-d5a77e7d4bed.png){: .center-small}
+![](algorithm-sorting13.png)
+![](algorithm-sorting14.png)
 
 * 핵심은 추가가되면 가장 맨 끝의 index에 추가하고, 거기서부터 부모노드를 찾으면서 자기 자리를 찾는 방법
 * 시간 복잡도
@@ -260,12 +268,13 @@ data = [2, 4, 5, 3, 1, 9, 6, 7, 10, 8]
   * 그러면 d개의 조상을 가짐
   * 자 그러면 처음 시작부터 몇개의 비교를 하는지 표로 살펴보자.
 
-![image](https://user-images.githubusercontent.com/37871541/122065806-31d7ab80-ce2d-11eb-8159-60a3a351ec10.png){: .center-small}*시간 복잡도 계산*
+![](algorithm-sorting15.png)
+*시간 복잡도 계산*
 
 해당 depth에서 올라갈 수 있는 지에 대해서 횟수로 계산해서 표로 나타낸 것이다.
 
-![image](https://user-images.githubusercontent.com/37871541/122068620-85e38f80-ce2f-11eb-8500-0dcc6c80f632.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122068723-9b58b980-ce2f-11eb-96c0-ba65f996f374.png){: .center-small}
+![](algorithm-sorting16.png)
+![](algorithm-sorting17.png)
 
 * beta가 없다 생각했을 때 nlogn-2n+2
 * 만약 있다면 d만큼의 비교가 추가적으로 발생하므로 logn을 더해줌
@@ -273,18 +282,18 @@ data = [2, 4, 5, 3, 1, 9, 6, 7, 10, 8]
 
 ### Sift down
 
-![image](https://user-images.githubusercontent.com/37871541/122066321-9e52aa80-ce2d-11eb-90f1-67d8871111ce.png){: .center-small}
-
-![image](https://user-images.githubusercontent.com/37871541/122066804-030e0500-ce2e-11eb-9cd4-7d5c0c8a6e55.png){: .center-small}
+![](algorithm-sorting18.png)
+![](algorithm-sorting19.png)
 
 쉽게 얘기하면 뭐다? 깊은 depth부터 올라오면서 siftdown을 하는 것
 
-![image](https://user-images.githubusercontent.com/37871541/122066991-2933a500-ce2e-11eb-954a-c0a23f3a8230.png){: .center}*Sift down 방법 시간 복잡도*
+![](algorithm-sorting20.png)
+*Sift down 방법 시간 복잡도*
 
 해당 depth에서 아래로 내려갈 때, 필요한 비교 연산의 횟수를 나타낸 것이다. 오른쪽 그림에서 d가 3인 것을 기억하자.
 
-![image](https://user-images.githubusercontent.com/37871541/122069050-db1fa100-ce2f-11eb-94fe-f640267098e3.png){: .center-small}
-![image](https://user-images.githubusercontent.com/37871541/122069355-16ba6b00-ce30-11eb-87e1-5442af2087ba.png){: .center-small}
+![](algorithm-sorting21.png)
+![](algorithm-sorting22.png)
 
 자 이렇게 구한 상태에서 beta 추가된 연산을 더해준다. beta가 추가됨에 따라, 상위 depth에 연결된 노드들에 대해 다시 sift down을 수행해야 한다. (d번)
 
@@ -314,13 +323,16 @@ makeheap은 배웠으니 Remove keys에 대해 알아보자.
 
 ### Remove keys
 
-![image](https://user-images.githubusercontent.com/37871541/122071496-bc220e80-ce31-11eb-8a96-8e0a31873bf4.png){: .center-small}*removekeys*
+![](algorithm-sorting23.png)
+*removekeys*
 
 * 핵심은, 맨위의 key가 날아간 이후에 맨 아래에 있는 원소가 그 자리를 대체하게 되는데, 그럴 때마다 sift down이 이루어져야 한다는 사실이다.
 * 그럼 그 siftdown이 몇번이 일어나는지 안다면 시간 복잡도를 구할 수 있다.
 
-![image](https://user-images.githubusercontent.com/37871541/122071804-02776d80-ce32-11eb-8832-57cc19841a5c.png){: .center-small}*depth 2에 있는 원소의 siftdown 횟수*
-![image](https://user-images.githubusercontent.com/37871541/122072139-48343600-ce32-11eb-9abc-abce11c5eb4b.png){: .center-small}*결과..!*
+![](algorithm-sorting24.png)
+*depth 2에 있는 원소의 siftdown 횟수*
+![](algorithm-sorting25.png)
+*결과..!*
 
 좀 토나오니까 이제 결과만 알고 넘어가자.
 
@@ -328,6 +340,7 @@ makeheap은 배웠으니 Remove keys에 대해 알아보자.
 
 |알고리즘|비교횟수|추가저장장소|
 |:--:--------|:--:--------|:----:------------|
+|--------|--------------------------|-----------------------------------------------------|
 |합병정렬|W/A = O(nlogn)|O(n)<br>여분 공간 필요|
 |퀵 정렬|W = O(n^2)<br>A = O(nlogn)|O(logn)<br>재귀호출을 하는 공간<br>(사실 무시해도 됨)|
 |힙 정렬|W/A = O(nlogn)|제자리 정렬|
@@ -336,7 +349,8 @@ makeheap은 배웠으니 Remove keys에 대해 알아보자.
 
 Key가 비교가 안되는 경우 어떻게 해야할까? 이럴때 사용할 수 있는 비교가 아닌 정렬 방법이 있다.
 
-![image](https://user-images.githubusercontent.com/37871541/122077021-55532400-ce36-11eb-8bdb-ed96bad85150.png){: .center}*왼쪽에서 오른쪽 자리순으로 정렬*
+![](algorithm-sorting26.png)
+*왼쪽에서 오른쪽 자리순으로 정렬*
 
 약간 모으는 느낌이 강하다. 이게 뭐냐면, 백의 자리, 십의 자리, 일의 자리 순으로 정렬을 진행하는 것이다.
 
@@ -346,7 +360,8 @@ Key가 비교가 안되는 경우 어떻게 해야할까? 이럴때 사용할 �
 
 이러한 문제를 해결하려면 오른쪽에서 왼쪽으로 가면된다. 그리고 각 자리수가 나올 수 있는 bucket을 만들어 관리하면 해결된다.
 
-![image](https://user-images.githubusercontent.com/37871541/122079075-08704d00-ce38-11eb-8b58-8264d9777fc1.png){: .center}*오른쪽에서 왼쪽으로*
+![](algorithm-sorting27.png)
+*오른쪽에서 왼쪽으로*
 
 순서는 다음과 같다.
 

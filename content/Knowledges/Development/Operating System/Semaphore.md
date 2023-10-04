@@ -2,7 +2,10 @@
 title: Semaphore
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- semaphore
+- bank-account-problem
 created: 2023-10-04
 ---
 
@@ -60,7 +63,7 @@ release() 는 value값을 증가시키고, 만약 **value값이 0보다 같거�
 세마포를 그림으로 나타내면 위와 같다. list는 실제로 큐로 볼 수 있다. acquire()에 의해 block되는 프로세스는 세마포 내부에 있는 큐에 삽입된 후, 다른 프로세스가 임계구역을 나오면서 release()를 호출하여 **세마포 큐에 있는 프로세스를 깨워야 한다.**(다시 ready queue로 보낸다.)
 
 위에서 살펴본 것처럼 세마포는 일반적으로 **Mutual exclusion**을 위해 사용된다.  
-[운영체제 정리 08: 프로세스 동기화 \<1. 발생 이유와 목적>](https://wansook0316.github.io/cs/os/2020/04/01/운영체제-정리-08-프로세스-동기화-1.html)
+[Process Synchronization](Process%20Synchronization.md)
 
 ### Bank Account Problem(은행 계좌 문제) 해결
 

@@ -2,7 +2,10 @@
 title: Continuous Probability Distribution
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- CPD
+- distribution
 created: 2023-10-04
 ---
 

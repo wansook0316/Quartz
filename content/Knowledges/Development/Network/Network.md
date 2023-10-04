@@ -30,15 +30,16 @@ created: 2023-10-01
 1. [Router](Router)
 1. [Packet Delay](Packet%20Delay)
 1. [IPC](IPC)
-1. [Server mangement terms](Server%20mangement%20terms)
 1. [Network Communication rule](Network%20Communication%20rule)
 1. [OSI 7 layer](OSI%207%20layer)
 1. [Physical Layer](Physical%20Layer)
+1. [Ethernet](Ethernet)
+1. [Switch](Switch)
 1. [Data Link Layer](Data%20Link%20Layer)
 1. [ARP(Address Resolution Protocol)](ARP(Address%20Resolution%20Protocol))
 1. [Network Layer](Network%20Layer)
 1. [Subnet](Subnet)
-1. [Transfer Layer](Transfer%20Layer)
+1. [Transport Layer](Transport%20Layer.md)
 1. [TCP](TCP)
 
 # HTTP

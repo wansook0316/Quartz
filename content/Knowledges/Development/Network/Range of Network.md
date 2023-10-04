@@ -2,7 +2,12 @@
 title: Range of Network
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- LAN
+- WAN
+- MAN
+- internet
 created: 2023-10-04
 ---
 

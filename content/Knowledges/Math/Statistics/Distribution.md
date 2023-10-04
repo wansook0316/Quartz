@@ -2,7 +2,13 @@
 title: Distribution
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- distribution
+- random
+- random-variable
+- probability-density-function
+- probability-mass-function
 created: 2023-10-04
 ---
 

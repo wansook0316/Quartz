@@ -2,7 +2,10 @@
 title: Disk Scheduling Algorithm
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- scheduling
+- disk
 created: 2023-10-04
 ---
 

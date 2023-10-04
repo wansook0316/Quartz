@@ -2,7 +2,9 @@
 title: Hard Disk Drive
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- HDD
+- operatiing-system
 created: 2023-10-04
 ---
 

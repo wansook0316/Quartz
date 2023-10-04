@@ -2,7 +2,11 @@
 title: Convolution
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- convolution
+- computer-vision
+- deep-learning
+- edge-detection
 created: 2023-10-04
 ---
 
@@ -22,7 +26,6 @@ created: 2023-10-04
   ![](Pasted%20image%2020231004141458.png)
 
 * 이 난로는 처음에 많이 따뜻했다가 점점 열기가 식는다. 이렇게
-  
   ![](Pasted%20image%2020231004141451.png)
 
 * 이번에는 온풍기가 있다.

@@ -11,7 +11,9 @@ created: 2023-10-01
 
 
  > 
- > Domain Name Server
+ > Domain Name Server 
+
+ > 
  > 도메인이름을 치면 IP주소로 바꿔주는 서비스
 
 * naver.com -> 192.168.03.2 OR 192.168.03.2:80

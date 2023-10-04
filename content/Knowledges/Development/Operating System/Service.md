@@ -2,7 +2,12 @@
 title: Service
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- service
+- process
+- file
+- io
 created: 2023-10-04
 ---
 

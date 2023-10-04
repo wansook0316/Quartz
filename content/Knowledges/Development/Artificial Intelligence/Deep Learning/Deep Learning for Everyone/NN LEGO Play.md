@@ -2,7 +2,10 @@
 title: NN LEGO Play
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- ResNet
 created: 2023-10-04
 ---
 

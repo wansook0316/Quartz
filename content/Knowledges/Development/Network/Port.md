@@ -2,7 +2,12 @@
 title: Port
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- process
+- network
+- IP
+- port
+- port-forwarding
 created: 2023-10-04
 ---
 

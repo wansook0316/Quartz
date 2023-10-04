@@ -2,7 +2,17 @@
 title: Physical Layer
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- physical-layer
+- bit
+- clock
+- CPU
+- ethernet
+- repeater
+- lan-card
+- hub
+- mac-address
 created: 2023-10-04
 ---
 

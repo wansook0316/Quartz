@@ -2,7 +2,11 @@
 title: Variation
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- variation
+- variance
+- standard-deviation
 created: 2023-10-04
 ---
 
@@ -20,7 +24,7 @@ created: 2023-10-04
 
 해당 데이터의 값이 어디서 부터 어디까지인지 나타낸다.
 
-## 분산, 표준 편차
+## 분산 (Variance), 표준 편차 (Standard Deviation)
 
 얼마나 퍼져있는지에 대한 척도이다. 통계적으로 매우 중요한 역할을 수행한다.
 

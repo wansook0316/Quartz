@@ -2,7 +2,12 @@
 title: RCNN
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- RCNN
+- object-detection
+- bounding-box
+- deep-learning
 created: 2023-10-04
 ---
 

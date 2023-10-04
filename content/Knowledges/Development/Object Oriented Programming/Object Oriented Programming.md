@@ -27,7 +27,7 @@ created: 2023-09-29
 1. [Polymorphism Part. 01](Polymorphism%20Part.%2001)
 1. [Polymorphism Part. 02](Polymorphism%20Part.%2002)
 1. [Abstract Method, Abstract Class](Abstract%20Method,%20Abstract%20Class)
-1. [Interface](Interface)
+1. [Interface](Knowledges/Development/Object%20Oriented%20Programming/Interface.md)
 1. [Dependency and Coupling](Dependency%20and%20Coupling)
 1. [Interface vs. Implementation](Interface%20vs.%20Implementation)
 1. [Things to know before Learning Design Pattern](Things%20to%20know%20before%20Learning%20Design%20Pattern)

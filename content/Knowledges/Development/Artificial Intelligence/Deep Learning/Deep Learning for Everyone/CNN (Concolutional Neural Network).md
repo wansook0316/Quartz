@@ -2,7 +2,11 @@
 title: CNN (Concolutional Neural Network)
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- convolution
+- computer-vision
 created: 2023-10-04
 ---
 
@@ -15,22 +19,13 @@ created: 2023-10-04
 ## Padding, Stride
 
 ![](Pasted%20image%2020231004141153.png)
-
 ![](Pasted%20image%2020231004141201.png)
-
-[vdumoulin/conv_arithmetic](https://github.com/vdumoulin/conv_arithmetic)
-
-[The Ultimate Guide to Convolutional Neural Networks (CNN) - Blogs SuperDataScience - Big Data | Analytics Careers | Mentors | Success](https://www.superdatascience.com/the-ultimate-guide-to-convolutional-neural-networks-cnn/)
 
 입력 단 자체를 나누어서 노드를 단들고 마지막에 합쳐버린다!
 
-이 발상은, 고양이 실험으로 부터 왔는데,
+이 발상은, 고양이 실험으로 부터 왔는데, 요약하면, 우리는 그림 전체를 파악하는 것이 아니고, 부분 부분의 입력을 나누어서 받는다는 것이 핵심 아이디어이다.
 
-요약하면, 우리는 그림 전체를 파악하는 것이 아니고, 부분 부분의 입력을 나누어서 받는다는 것이
-
-핵심 아이디어이다.
-
-자세한 설명은, [CNN by Andrew Ng](../CNN%20by%20Andrew%20Ng%20d0f005dcea5b47a39308e6a0e4e3351c.md) 여기서 공부해보자!
+자세한 설명은, [CNN by Andrew ng](CNN%20by%20Andrew%20ng.md) 여기서 공부해보자!
 
 ![](_2019-07-21__11.43.07.png)
 ![](_2019-07-21__11.47.06.png)
@@ -55,14 +50,13 @@ created: 2023-10-04
 
 ![](Pasted%20image%2020231004140637.png)
 
-[A Comprehensive Guide to Convolutional Neural Networks - the ELI5 way](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
-
 # Fully Connected Layer (FC layer)
 
-마지막 단에서 최종 출력 개수로 맞춰주는 것!
+마지막 단에서 최종 출력 개수로 맞춰주는 것! 소프트맥스를 사용한다.
 
-소프트맥스를 사용한다.
+# Reference
 
-# CNN Visualization
-
-[ConvNetJS CIFAR-10 demo](http://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)
+* [vdumoulin/conv_arithmetic](https://github.com/vdumoulin/conv_arithmetic)
+* [The Ultimate Guide to Convolutional Neural Networks (CNN) - Blogs SuperDataScience - Big Data | Analytics Careers | Mentors | Success](https://www.superdatascience.com/the-ultimate-guide-to-convolutional-neural-networks-cnn/)
+* [A Comprehensive Guide to Convolutional Neural Networks - the ELI5 way](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
+* [\# CNN Visualization](http://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)

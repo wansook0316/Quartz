@@ -2,7 +2,10 @@
 title: Normal Distribution
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- normal-distribution
+- binomial-distribution
 created: 2023-10-04
 ---
 

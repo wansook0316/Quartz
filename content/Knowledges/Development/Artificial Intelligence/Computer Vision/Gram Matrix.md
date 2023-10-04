@@ -2,7 +2,10 @@
 title: Gram Matrix
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- style-transfer
+- deep-learning
 created: 2023-10-04
 ---
 

@@ -2,7 +2,11 @@
 title: File Allocation
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- file
+- allocation
+- FAT
 created: 2023-10-04
 ---
 

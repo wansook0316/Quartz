@@ -7,7 +7,9 @@ created: 2023-10-04
 ---
 
 1. [Introduction](Knowledges/Development/Computer%20Structure/Introduction.md)
-1. [Transform Number System](Transform%20Number%20System.md)
+1. [Interface](Knowledges/Development/Computer%20Structure/Interface.md)
+1. [Bit](Bit.md)
+1. [byte](byte.md)
 1. [CPU](CPU.md)
 1. [Memory Device](Memory%20Device.md)
 1. [How to manage with only number](How%20to%20manage%20with%20only%20number.md)

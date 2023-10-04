@@ -2,7 +2,14 @@
 title: Dropout
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- dropout
+- overfitting
+- underfitting
+- traveling-salesman-problem
+- regularization
 created: 2023-10-04
 ---
 

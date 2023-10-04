@@ -2,7 +2,10 @@
 title: Critical Section
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- critical-section
+- mutual-exclusion
 created: 2023-10-04
 ---
 

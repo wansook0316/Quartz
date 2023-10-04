@@ -2,7 +2,13 @@
 title: Introduction
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- computer-vision
+- descripter
+- ROI
+- IOU
+- loss-function
+- deep-learning
 created: 2023-10-04
 ---
 

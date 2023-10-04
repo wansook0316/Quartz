@@ -2,7 +2,8 @@
 title: Page Replacement Algorithm
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
 created: 2023-10-04
 ---
 

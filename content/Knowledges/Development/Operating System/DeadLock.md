@@ -2,7 +2,11 @@
 title: DeadLock
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- deadlock
+- dining-philosopher-problem
+- dining-philosophers
 created: 2023-10-04
 ---
 

@@ -2,7 +2,10 @@
 title: Readers-Writers Problem
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- readers-writers-problem
+- mutual-exclusion
 created: 2023-10-04
 ---
 

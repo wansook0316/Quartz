@@ -2,7 +2,9 @@
 title: Bandwidth
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- bandwidth
+- network
 created: 2023-10-04
 ---
 

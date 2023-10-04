@@ -2,7 +2,11 @@
 title: Bank Account Problem
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- bank-account-problem
+- shared-resource
+- synchronization
 created: 2023-10-04
 ---
 

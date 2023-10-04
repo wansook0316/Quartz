@@ -9,6 +9,15 @@ tags:
 created: 2023-10-01
 ---
 
+
+ > 
+ > 같은 일을 여러 사람이 동시에 하는 것
+
+***군대 삽질 분대가 다같이***
+
+***행위는 하나, 주체는 여러개***  
+병렬성은 [Concurrency](Knowledges/Development/Concepts/Concurrency.md)에 포함된다.
+
 ![](TechTalks_22_ConcurrencyParallelism_0.png)
 ![](ConcurrentProgramming_01_ConcurrencyThread_0.png)
 

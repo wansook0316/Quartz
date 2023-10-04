@@ -2,7 +2,16 @@
 title: Introduction
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- booting
+- RAM
+- ROM
+- kernel
+- shall
+- application
+- CLI
+- GUI
 created: 2023-10-04
 ---
 
@@ -56,13 +65,13 @@ POST는 전원이 켜지면 가장 처음에 실행되는 프로그램으로, �
 
 ![](os-Introduction3.png)
 
-커널(Kernel)은 운영체제의 핵심인 하드웨어를 다루는 코드를 말한다. 이 부분이 핵심이 때문에, Kernel에 따라 운영체제가 달라진다. 예를 들어 페도라, 우분투 등이 리눅스 운영체제라 부르는 것은, 이 운영체제가 리눅스 커널을 사용하기 때문이다.
+커널([Kernel](Kernel.md))은 운영체제의 핵심인 하드웨어를 다루는 코드를 말한다. 이 부분이 핵심이 때문에, [Kernel](Kernel.md)에 따라 운영체제가 달라진다. 예를 들어 페도라, 우분투 등이 리눅스 운영체제라 부르는 것은, 이 운영체제가 리눅스 [Kernel](Kernel.md)을 사용하기 때문이다.
 
 명령어 해석기(Command interpreter, shell)는 이 커널로 만들어진 코드를 동작하기 위해 만들어진 부분이다. Interface라고 볼 수 있다. GUI(Graphical User Interface)나 CLI(Command Line Interface) 같은 방식으로 운영체제에 명령을 요청할 수 있다.
 
 # 위치
 
-사용자 프로그램(Application)은 특정 운영체제에 맞춰서 만든다. 그러므로 한 애플리케이션은 서로 다른 운영체제에서 수행할 수 없다. (하드웨어가 같은 것은 전혀 상관이 없다.) 예를 들면 Windows에서 수행하는 프로그램을 그대로 Linux에 옮기면 수행되지 않는다. 이전 글에서 보았듯이 **사용자 프로그램은 자원을 OS를 통해 요청**한다. 그렇기 때문에 해당 운영체제의 Interface를 따라야 하고, 그렇기 때문에 운영체제가 다를 경우 동작할 수 없다.
+사용자 프로그램(Application)은 특정 운영체제에 맞춰서 만든다. 그러므로 한 애플리케이션은 서로 다른 운영체제에서 수행할 수 없다. (하드웨어가 같은 것은 전혀 상관이 없다.) 예를 들면 Windows에서 수행하는 프로그램을 그대로 Linux에 옮기면 수행되지 않는다. 이전 글에서 보았듯이 **사용자 프로그램은 자원을 OS를 통해 요청**한다. 그렇기 때문에 해당 운영체제의 Interface([Kernel](Kernel.md)를 따라야 하고, 그렇기 때문에 운영체제가 다를 경우 동작할 수 없다.
 
 ![](os-Introduction4.png)
 

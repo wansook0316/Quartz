@@ -2,7 +2,9 @@
 title: Traffic
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- traffic
 created: 2023-10-04
 ---
 

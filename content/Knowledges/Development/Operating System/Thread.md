@@ -2,7 +2,10 @@
 title: Thread
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- thread
+- process
 created: 2023-10-04
 ---
 

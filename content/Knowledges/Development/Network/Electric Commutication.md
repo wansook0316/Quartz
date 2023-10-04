@@ -2,7 +2,13 @@
 title: Electric Commutication
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- group-theory
+- repeater
+- hub
+- switch
+- signal
 created: 2023-10-04
 ---
 

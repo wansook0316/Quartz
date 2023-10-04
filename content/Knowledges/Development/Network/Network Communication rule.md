@@ -2,7 +2,12 @@
 title: Network Communication rule
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- network
+- communication
+- OSI
+- capsulation
+- OSI-7Layer
 created: 2023-10-04
 ---
 
@@ -29,7 +34,7 @@ created: 2023-10-04
 
 ![](Pasted%20image%2020231004132746.png)*OSI 7 계층*
 
-* 통신 규격 : TCP/IP 모델
+* 통신 규격 : [TCP](TCP.md)/[IP](IP.md) 모델
   * 인터넷 모델이라 불림
   * 응용, 표현, 세션 계층이 응용으로 합쳐짐
   * 물리, 데이터 링크 계층이 네트워크 접속 계층으로 합쳐짐

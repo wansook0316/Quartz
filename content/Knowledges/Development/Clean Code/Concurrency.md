@@ -4,14 +4,14 @@ thumbnail: ''
 draft: false
 tags:
 - concurrency
-- producer-consumer
 - readers-writers
-- dining-philosophers
 - thread
 - multi-thread
 - SRP
 - locktime
 - semaphore
+- dining-philosopher-problem
+- producer-consumer-problem
 created: 2023-09-21
 ---
 

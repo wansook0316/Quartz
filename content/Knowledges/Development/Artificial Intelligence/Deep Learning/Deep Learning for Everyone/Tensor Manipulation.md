@@ -2,7 +2,15 @@
 title: Tensor Manipulation
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- Array
+- tensor
+- rank
+- shape
+- axis
+- zip
 created: 2023-10-04
 ---
 

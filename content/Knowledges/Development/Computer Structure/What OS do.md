@@ -2,7 +2,12 @@
 title: What OS do
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- computer-structure
+- process
+- virtual-memory
+- scheduling
 created: 2023-10-04
 ---
 
@@ -25,16 +30,16 @@ created: 2023-10-04
 한정된 자원으로 많은 프로그램들이 동작해야 한다. 어쩔 수 없이 나눠서 사용해야 한다.
 
 아래 단어들의 의미를 모른다면, 용어를 알고 다시 읽자.
-[하드웨어, 운영체제, 프로세스, 스레드 용어 정리](https://wansook0316.github.io/cs/architecture/2020/03/25/컴퓨터구조-용어정리.html)
+[Introduction](Knowledges/Development/Computer%20Structure/Introduction.md)
 
 ### Scheduling
 
  > 
  > 멀티 프로세스 운영체제에서 하나의 CPU가 복수의 프로세스를 실행하기 위해 CPU를 사용하는 순서를 정해주는 작업
 
-<img width="1210" alt="image" src="https://user-images.githubusercontent.com/37871541/77846957-870daa00-71f4-11ea-85a8-4de42f067d62.png">{: .center}
+![](Pasted%20image%2020231004213748.png)
 
-이렇게 다양한 프로세스를 동시에 작업하게 되면, 스레드가 CPU를 사용하고 있을 떄, 사용하고 있다고 알려주는 \*\**동기화*\*\*가 매우 중요하다.
+이렇게 다양한 프로세스를 동시에 작업하게 되면, 스레드가 CPU를 사용하고 있을 떄, 사용하고 있다고 알려주는 \*\**[Synchronization](Synchronization.md)*\*\*가 매우 중요하다.
 
 ## Virtual Memory System
 
@@ -45,14 +50,14 @@ created: 2023-10-04
 
 ### 단위
 
-이 곳에서 모든 메모리는 **Page**라는 단위로 관리된다. HDD와 RAM을 왔다갔다 하는 단위이다. 이 중에는 Paged 될 수 있는 **페이징 풀** 영역과 절대로 Paged 되면 안되는 **비 페이징 풀** 영역이 있다.
+이 곳에서 모든 메모리는 **Page**라는 단위로 관리된다. HDD와 RAM을 왔다갔다 하는 단위이다. 이 중에는 Paged 될 수 있는 **페이징 풀** 영역과 절대로 Paged 되면 안되는 **비 페이징 풀** 영역이 있다. [Paging](Paging.md)
 
 ### Virtual Memory의 구성
 
 집의 공간을 가족 구성원들이 나눠쓰듯이 프로세스의 가상 메모리 공간을 thread가 나눠서 사용한다. 이 나눠서 사용하는 공간을 **Stack**이라 한다. 이 thread에 할당된 메모리 공간이 stack을 사용하여 관리되기 때문에 Stack이라 불린다.
 
 프로세스는 Heap과 실행 코드 영역을 갖는다.  
-[운영체제 정리 05: 프로세스 관리](http://127.0.0.1:4000/cs/os/2020/04/01/운영체제-정리-05-운영체제-프로세스-관리.html)
+[Process Management](Process%20Management.md)
 
 ### 동작 방법
 

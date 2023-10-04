@@ -2,7 +2,12 @@
 title: Covarience & Coefficient
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- statistics
+- linear
+- covarience
+- coefficient
+- linearity
 created: 2023-10-04
 ---
 

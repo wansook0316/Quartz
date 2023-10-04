@@ -2,13 +2,17 @@
 title: Dining Philosopher Problem
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- operatiing-system
+- dining-philosopher-problem
+- deadlock
+- starvation
 created: 2023-10-04
 ---
 
 식사하는 철학자 문제는 원형 테이블에 5명의 철학자와 5개의 젓가락이 있는 상황이 있다고 하자. 각 철학자는 생각하고 식사하고 생각하고 식사하고를 반복한다. 단, 식사를 하기 위해서는 2개의 젓가락이 필요하다.
 
-<img width="800" alt="image" src="https://user-images.githubusercontent.com/37871541/78470305-5b923e80-7763-11ea-9e84-3da8a934774c.png">{:.center}
+![](Pasted%20image%2020231004222545.png)
 
 이 상황을 프로그래밍을 해보자. 젓가락은 한 철학자가 가져가면 다른 철학자는 이 젓가락을 사용할 수 없다. 즉, 한 젓가락에 동시에 접근할 수 있는 철학자는 **한 명**뿐이므로 젓가락은 세마포로 만들 수 있다.**(number of permit = 1)** 한 철학자가 식사를 하려고 하면, **왼쪽 젓가락과 오른쪽 젓가락 순서**로 가져가고, 식사가 끝나면 동일하게 **왼쪽 젓가락, 오른쪽 젓가락 순서**로 내려놓는다.
 

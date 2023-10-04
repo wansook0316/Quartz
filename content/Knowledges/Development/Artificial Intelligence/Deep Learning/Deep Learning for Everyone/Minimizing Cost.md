@@ -2,15 +2,19 @@
 title: Minimizing Cost
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- deep-learning
+- tensorflow
+- cost
+- weight
+- gradient
+- gradient-descent
 created: 2023-10-04
 ---
 
 # 비용 최소화 코드
 
-저번글에서 X, Y에 최적화된 W, b를 찾았다면, 이번에는 고정된 X, Y 에 대해
-
-다른 W값을 넣어주면서 Cost의 변화를 살펴보자.
+저번글에서 X, Y에 최적화된 W, b를 찾았다면, 이번에는 고정된 X, Y 에 대해 다른 W값을 넣어주면서 Cost의 변화를 살펴보자.
 
 ````python
 # Lab 3 Minimizing Cost
