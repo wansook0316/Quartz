@@ -10,7 +10,7 @@ created: 2023-09-30
 1. [Optional](Optional.md)
 1. [Control Flow](Knowledges/Development/Swift/Control%20Flow.md)
 1. [Collection](Collection.md)
-1. [String](String.md)
+1. [String](Knowledges/Development/Swift/String.md)
 1. [Function](Knowledges/Development/Swift/Function.md)
 1. [Closure](Closure.md)
 1. [Class](Knowledges/Development/Swift/Class.md)

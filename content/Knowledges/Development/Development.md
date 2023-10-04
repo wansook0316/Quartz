@@ -12,6 +12,8 @@ created: 2023-09-21
 * [Network](Network.md)
 * [Graphics](Graphics.md)
 * [Algorithm](Knowledges/Development/Algorithm/Algorithm.md)
+* [Operating System](Operating%20System.md)
+* [Compiler](Compiler.md)
 
 ## Domain
 
@@ -21,6 +23,7 @@ created: 2023-09-21
 
 * [iOS](iOS.md)
 * [Artificial Intelligence](Artificial%20Intelligence.md)
+* [Docker](Docker.md)
 
 ## Languages
 
@@ -29,11 +32,13 @@ created: 2023-09-21
 * [Go](Go.md)
 * [Swift](Swift.md)
 * [Matlab](Matlab.md)
+* [Python](Python.md)
 
 ## Tools
 
 * [Git](Git.md)
 * [UML](UML.md)
+* [Regex](Regex.md)
 
 ## Management
 

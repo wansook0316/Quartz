@@ -27,8 +27,9 @@ created: 2023-09-30
 * [Actor Model](Actor%20Model)
 * [Concurrency](Knowledges/Development/Concepts/Concurrency.md)
 * [Parallelism](Parallelism)
-* [Turing Completeness](Turing%20Completeness)
 * [PWA](PWA)
+* [Protobuf](Protobuf)
+* [Proxy Server](Proxy%20Server)
 
 # Thinking
 
