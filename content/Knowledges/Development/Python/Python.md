@@ -21,10 +21,6 @@ created: 2023-10-04
 1. [Set](Set)
 1. [Class](Knowledges/Development/Python/Class.md)
 
-## Tip
-
-* [Algorithm Tips](Algorithm%20Tips.md)
-
 ## Regex
 
 1. [re Module](re%20Module.md)
@@ -35,3 +31,7 @@ created: 2023-10-04
 1. [Lookahead Assertions](Lookahead%20Assertions)
 1. [Substitute String](Substitute%20String)
 1. [Greedy & Non-Greedy](Greedy%20&%20Non-Greedy)
+
+## Tip
+
+* [Algorithm Tips](Algorithm%20Tips.md)
