@@ -17,3 +17,4 @@ tags: null
 * [Knowledges](Knowledges.md)
 * [Channels](Channels.md)
 * [Logs](Logs.md)
+* [Traces](Traces.md)
