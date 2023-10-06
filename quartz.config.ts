@@ -4,6 +4,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "🥚",
+    appTitle: "Wansook World",
     description: "Goal, Plan, Execute.",
     enableSPA: true,
     enablePopovers: true,

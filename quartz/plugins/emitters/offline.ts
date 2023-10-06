@@ -28,7 +28,7 @@ export const Offline: QuartzEmitterPlugin = () => {
     async emit({ cfg }, _content, resources, emit): Promise<FilePath[]> {
       const manifest = {
         short_name: cfg.configuration.pageTitle,
-        name: cfg.configuration.pageTitle,
+        name: cfg.configuration.appTitle,
         description: cfg.configuration.description,
         background_color: cfg.configuration.theme.colors.lightMode.light,
         theme_color: cfg.configuration.theme.colors.lightMode.light,
