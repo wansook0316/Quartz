@@ -8,6 +8,10 @@ export default (() => {
     const description = fileData.description?.trim() ?? "No description provided"
     const { css, js } = externalResources
 
+    const appTitle = cfg.appTitle
+    const attachedTitle = `${title} | ${appTitle}`
+    const attachedDescription = `${description} | ${appTitle}`
+
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
     const path = url.pathname as FullSlug
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
@@ -28,18 +32,13 @@ export default (() => {
     const ipadpro3 = joinSegments(splashPath, "ipadpro3_splash.png")
     const ipadpro2 = joinSegments(splashPath, "ipadpro2_splash.png")
 
-    console.log(iconPath)
-    console.log(splashPath)
-    console.log(iphone5)
-
-    const appTitle = cfg.appTitle
     return (
       <head>
-        <title>{title}</title>
+        <title>{attachedTitle}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:title" content={attachedTitle} />
+        <meta property="og:description" content={attachedDescription} />
         {cfg.baseUrl && <meta property="og:image" content={ogImagePath} />}
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="675" />
@@ -47,8 +46,9 @@ export default (() => {
         <link rel="apple-touch-icon" href={iconPath}></link>
         <link rel="icon" href={iconPath} />
         <link rel="manifest" href={manifest} />
-        <meta name="description" content={description} />
+        <meta name="description" content={attachedDescription} />
         <meta name="generator" content="Quartz" />
+        <meta name="author" content="최완식(Choi WanSik)" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content={appTitle} />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
