@@ -58,6 +58,7 @@ export const Offline: QuartzEmitterPlugin = () => {
             src: "static/icon-1024x1024.png",
             sizes: "1024x1024",
             type: "image/png",
+            purpose: "any",
           }
         ],
         start_url:
