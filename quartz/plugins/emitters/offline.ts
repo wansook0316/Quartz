@@ -32,7 +32,7 @@ export const Offline: QuartzEmitterPlugin = () => {
         description: cfg.configuration.description,
         background_color: cfg.configuration.theme.colors.lightMode.light,
         theme_color: cfg.configuration.theme.colors.lightMode.light,
-        display: "minimal-ui",
+        display: "standalone",
         icons: [
           {
             src: "static/icon-192x192.png",
