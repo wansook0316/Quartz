@@ -28,3 +28,4 @@ created: 2023-09-19
 
 * [Hugo](Knowledges/Productivity/Hugo.md)
 * [Static site generator](Static%20site%20generator.md)
+* [Splash Image Generator](Splash%20Image%20Generator)

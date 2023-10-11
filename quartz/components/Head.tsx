@@ -16,6 +16,23 @@ export default (() => {
     const ogImagePath = `https://${cfg.baseUrl}/static/og-image.png`
     const manifest = cfg.baseUrl == undefined ? "/manifest.json" : `https://${cfg.baseUrl}/manifest.json`
 
+    const splashPath = joinSegments(baseDir, "static/splashScreens")
+    const iphone5 = joinSegments(splashPath, "iphone5_splash.png")
+    const iphone6 = joinSegments(splashPath, "iphone6_splash.png")
+    const iphoneplus = joinSegments(splashPath, "iphoneplus_splash.png")
+    const iphonex = joinSegments(splashPath, "iphonex_splash.png")
+    const iphonexr = joinSegments(splashPath, "iphonexr_splash.png")
+    const iphonexsmax = joinSegments(splashPath, "iphonexsmax_splash.png")
+    const ipad = joinSegments(splashPath, "ipad_splash.png")
+    const ipadpro1 = joinSegments(splashPath, "ipadpro1_splash.png")
+    const ipadpro3 = joinSegments(splashPath, "ipadpro3_splash.png")
+    const ipadpro2 = joinSegments(splashPath, "ipadpro2_splash.png")
+
+    console.log(iconPath)
+    console.log(splashPath)
+    console.log(iphone5)
+
+    const appTitle = cfg.appTitle
     return (
       <head>
         <title>{title}</title>
@@ -32,6 +49,19 @@ export default (() => {
         <link rel="manifest" href={manifest} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content={appTitle} />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <link href={iphone5} media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href={iphone6} media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href={iphoneplus} media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+        <link href={iphonex} media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+        <link href={iphonexr} media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href={iphonexsmax} media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+        <link href={ipad} media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href={ipadpro1} media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href={ipadpro3} media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href={ipadpro2} media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         {css.map((href) => (
