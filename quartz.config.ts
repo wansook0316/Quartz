@@ -5,7 +5,7 @@ const config: QuartzConfig = {
   configuration: {
     pageTitle: "🥚",
     appTitle: "Wansook World 🥚",
-    description: "Goal, Plan, Execute.",
+    description: "Wansook's Digital Lake.",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
