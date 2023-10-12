@@ -1,6 +1,6 @@
 ---
 title: Splash Image Generator
-thumbnail: ''
+thumbnail: null
 draft: false
 tags:
 - PWA
