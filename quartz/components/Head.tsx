@@ -32,8 +32,6 @@ export default (() => {
     const ipadpro3 = joinSegments(splashDir, "ipadpro3_splash.png")
     const ipadpro2 = joinSegments(splashDir, "ipadpro2_splash.png")
 
-    console.log(iconPath)
-
     return (
       <head>
         <title>{title}</title>
