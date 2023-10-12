@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Wansook World 🥚",
+    pageTitle: "🥚",
     appTitle: "Wansook World 🥚",
     description: "Wansook's Digital Lake.",
     enableSPA: true,
