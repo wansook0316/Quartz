@@ -19,6 +19,7 @@ created: 2023-09-19
 * [Environment Setting Automation](Environment%20Setting%20Automation)
 * [Alfred Workflow](Alfred%20Workflow)
 * [Open multiple Application instances](Open%20multiple%20Application%20instances)
+* [C4D & Octane](C4D%20&%20Octane)
 
 # Trouble Shooting
 
