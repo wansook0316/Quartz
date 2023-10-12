@@ -14,3 +14,10 @@ created: 2023-10-12
 
 * https://m.blog.naver.com/writer0713/221533587416
 * https://appsco.pe/developer/splash-screens
+* https://www.pwabuilder.com/
+* https://web.dev/learn/pwa/welcome?hl=ko
+* https://codeburst.io/progressive-web-apps-customize-status-bar-23c4b2de590f
+* https://www.simicart.com/manifest-generator.html/
+* https://pinetools.com/round-corners-image
+* https://www.erase.bg/upload
+* https://www.iloveimg.com/
