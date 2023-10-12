@@ -20,17 +20,19 @@ export default (() => {
     const ogImagePath = `https://${cfg.baseUrl}/static/og-image.png`
     const manifest = cfg.baseUrl == undefined ? "/manifest.json" : `https://${cfg.baseUrl}/manifest.json`
 
-    const splashPath = joinSegments(baseDir, "static/splashScreens")
-    const iphone5 = joinSegments(splashPath, "iphone5_splash.png")
-    const iphone6 = joinSegments(splashPath, "iphone6_splash.png")
-    const iphoneplus = joinSegments(splashPath, "iphoneplus_splash.png")
-    const iphonex = joinSegments(splashPath, "iphonex_splash.png")
-    const iphonexr = joinSegments(splashPath, "iphonexr_splash.png")
-    const iphonexsmax = joinSegments(splashPath, "iphonexsmax_splash.png")
-    const ipad = joinSegments(splashPath, "ipad_splash.png")
-    const ipadpro1 = joinSegments(splashPath, "ipadpro1_splash.png")
-    const ipadpro3 = joinSegments(splashPath, "ipadpro3_splash.png")
-    const ipadpro2 = joinSegments(splashPath, "ipadpro2_splash.png")
+    const splashDir = joinSegments(baseDir, "static/splashScreens")
+    const iphone5 = joinSegments(splashDir, "iphone5_splash.png")
+    const iphone6 = joinSegments(splashDir, "iphone6_splash.png")
+    const iphoneplus = joinSegments(splashDir, "iphoneplus_splash.png")
+    const iphonex = joinSegments(splashDir, "iphonex_splash.png")
+    const iphonexr = joinSegments(splashDir, "iphonexr_splash.png")
+    const iphonexsmax = joinSegments(splashDir, "iphonexsmax_splash.png")
+    const ipad = joinSegments(splashDir, "ipad_splash.png")
+    const ipadpro1 = joinSegments(splashDir, "ipadpro1_splash.png")
+    const ipadpro3 = joinSegments(splashDir, "ipadpro3_splash.png")
+    const ipadpro2 = joinSegments(splashDir, "ipadpro2_splash.png")
+
+    console.log(iconPath)
 
     return (
       <head>
