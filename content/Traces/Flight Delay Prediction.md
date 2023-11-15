@@ -24,7 +24,6 @@ created: 2023-10-04
 
 # Project
 
-![](Flight-Delay-Prediction42%201.jpg)
 ![](Flight-Delay-Prediction01%201.jpg)
 ![](Flight-Delay-Prediction02%201.jpg)
 ![](Flight-Delay-Prediction03%201.jpg)

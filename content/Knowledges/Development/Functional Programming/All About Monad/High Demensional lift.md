@@ -243,6 +243,8 @@ func lift2d<T, U, V>(_ transform: @escaping (T, U) -> V) -> (T?, U?) -> V?? {
 
 # 3 Demensional lift
 
+^da1b16
+
 * 그럼 3차원도 가능하겠지?
 
  > 

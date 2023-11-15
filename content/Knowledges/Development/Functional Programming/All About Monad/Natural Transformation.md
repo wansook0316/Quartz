@@ -8,6 +8,7 @@ tags:
 created: 2023-09-29
 ---
 
+# 간단한? 설명
 
  > 
  > "자연성(naturality)"은 수학에서 함수나 변환자(transformer) 사이의 관계가 다른 수학적인 구조를 변형해도 변환의 특성을 유지하는 것을 의미합니다. 이러한 관계는 수학적인 구조 간에 일관성을 유지하며 변환을 적용할 수 있도록 해줍니다.
@@ -18,3 +19,5 @@ created: 2023-09-29
 # Reference
 
 * [Natural_transformation](https://en.wikipedia.org/wiki/Natural_transformation)
+* [모나드의 모든 것](https://www.youtube.com/@antel588)
+* [FunctionalProgramming](https://github.com/wansook0316/FunctionalProgramming)
