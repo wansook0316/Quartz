@@ -8,6 +8,7 @@ import popoverScript from "../../components/scripts/popover.inline"
 import styles from "../../styles/custom.scss"
 import popoverStyle from "../../components/styles/popover.scss"
 import { BuildCtx } from "../../util/ctx"
+import { StaticResources } from "../../util/resources"
 import { QuartzComponent } from "../../components/types"
 import { googleFontHref, joinStyles } from "../../util/theme"
 import { Features, transform } from "lightningcss"
@@ -68,8 +69,9 @@ async function joinScripts(scripts: string[]): Promise<string> {
   return res.code
 }
 
-function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentResources) {
+function addGlobalPageResources(ctx: BuildCtx, staticResources: StaticResources, componentResources: ComponentResources) {
   const cfg = ctx.cfg.configuration
+  const reloadScript = ctx.argv.serve
 
   // popovers
   if (cfg.enablePopovers) {
@@ -226,7 +228,7 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       // important that this goes *after* component scripts
       // as the "nav" event gets triggered here and we should make sure
       // that everyone else had the chance to register a listener for it
-      addGlobalPageResources(ctx, componentResources)
+      addGlobalPageResources(ctx, _resources, componentResources)
 
       const stylesheet = joinStyles(
         ctx.cfg.configuration.theme,
