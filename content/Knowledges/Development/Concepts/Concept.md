@@ -33,6 +33,7 @@ created: 2023-09-30
 * [Dependency](Dependency.md)
 * [Synchronization](Synchronization)
 * [Atomicity](Atomicity)
+* [Floating Point](Floating%20Point.md)
 
 # Thinking
 

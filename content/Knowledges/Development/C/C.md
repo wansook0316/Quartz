@@ -23,4 +23,6 @@ created: 2023-09-21
 # Pope
 
 1. [Environment Setting](Environment%20Setting.md)
-1. [C Grammar](C%20Grammar.md)
+1. [C Standard](C%20Standard.md)
+1. [C Grammar](C%20Grammar)
+1. [C char Type](C%20char%20Type.md)
