@@ -29,7 +29,6 @@ export function byFileNameAlphabetical(
   cfg: GlobalConfiguration,
 ): (f1: QuartzPluginData, f2: QuartzPluginData) => number {
   return (f1, f2) => {
-    console.log(f1.slug)
     const f1Title = f1.slug?.toLowerCase() ?? ""
     const f2Title = f2.slug?.toLowerCase() ?? ""
     return f1Title.localeCompare(f2Title)
