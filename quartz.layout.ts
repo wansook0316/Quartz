@@ -31,14 +31,15 @@ export const defaultHomePageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer({
       folderClickBehavior: "link"
     })),
+    Component.DesktopOnly(Component.RecentNotes({ 
+      limit: 3, 
+      linkToMore: "tags",
+    })),
   ],
   right: [
     Component.MobileOnly(Component.Explorer({
       folderClickBehavior: "link"
     })),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.DesktopOnly(Component.Backlinks()),
-    Component.DesktopOnly(Component.RecentNotes({ limit: 3 })),
   ],
 }
 
@@ -58,12 +59,15 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer({
       folderClickBehavior: "link"
     })),
+    Component.DesktopOnly(Component.RecentNotes({ 
+      limit: 3,
+      linkToMore: "tags",
+    })),
   ],
   right: [
-    Component.Graph(),
+    // Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.DesktopOnly(Component.Backlinks()),
-    Component.DesktopOnly(Component.RecentNotes({ limit: 3 })),
+    // Component.Backlinks(),
   ],
 }
 
@@ -81,12 +85,16 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer({
       folderClickBehavior: "link"
     })),
+    Component.DesktopOnly(Component.RecentNotes({ 
+      limit: 3,
+      linkToMore: "tags",
+    })),
   ],
   right: [
+    Component.Graph(),
     Component.MobileOnly(Component.Explorer({
       folderClickBehavior: "link"
     })),
-    Component.DesktopOnly(Component.RecentNotes({ limit: 3 })),
   ],
 }
 
@@ -100,9 +108,13 @@ export const defaulTagListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer({
       folderClickBehavior: "link"
     })),
+    Component.DesktopOnly(Component.RecentNotes({ 
+      limit: 3,
+      linkToMore: "tags",
+    })),
   ],
   right: [
     Component.Graph(),
-    Component.DesktopOnly(Component.RecentNotes({ limit: 3 })),
+    Component.Backlinks(),
   ],
 }
