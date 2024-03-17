@@ -2,7 +2,7 @@
 title: Tips
 thumbnail: ''
 draft: false
-tags: null
+tags: []
 created: 2024-03-17
 ---
 

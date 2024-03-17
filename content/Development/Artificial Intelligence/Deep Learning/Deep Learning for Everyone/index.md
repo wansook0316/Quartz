@@ -2,9 +2,7 @@
 title: Deep Learning for Everyone
 thumbnail: ''
 draft: false
-tags:
-- deep-learning
-- tensorflow
+tags: []
 created: 2023-10-04
 ---
 

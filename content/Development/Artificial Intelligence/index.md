@@ -2,7 +2,7 @@
 title: Artificial Intelligence
 thumbnail: ''
 draft: false
-tags: null
+tags: []
 created: 2023-10-03
 ---
 
