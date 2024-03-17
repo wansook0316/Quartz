@@ -4,6 +4,7 @@ thumbnail: null
 draft: false
 tags:
 - PWA
+- splash-image
 created: 2023-10-12
 ---
 

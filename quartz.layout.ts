@@ -28,13 +28,18 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      folderClickBehavior: "link"
+    })),
   ],
   right: [
-    Component.MobileOnly(Component.Explorer()),
+    Component.MobileOnly(Component.Explorer({
+      folderClickBehavior: "link"
+    })),
     Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.DesktopOnly(Component.Backlinks()),
+    Component.DesktopOnly(Component.RecentNotes({ limit: 3 })),
   ],
 }
 
@@ -46,10 +51,15 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      folderClickBehavior: "link"
+    })),
   ],
   right: [
-    Component.MobileOnly(Component.Explorer()),
+    Component.MobileOnly(Component.Explorer({
+      folderClickBehavior: "link"
+    })),
     Component.DesktopOnly(Component.Graph()),
+    Component.DesktopOnly(Component.RecentNotes({ limit: 3 })),
   ],
 }

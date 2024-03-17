@@ -2,7 +2,10 @@
 title: Alfred Workflow
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- Alfred
+- workflow
+- mac
 created: 2023-09-30
 ---
 

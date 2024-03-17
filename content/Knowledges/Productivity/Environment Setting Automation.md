@@ -6,6 +6,7 @@ tags:
 - environment
 - setting
 - automation
+- mac
 created: 2023-09-30
 ---
 

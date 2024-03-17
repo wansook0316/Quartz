@@ -2,7 +2,8 @@
 title: Static site generator
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- Static-site-generator
 created: 2023-09-19
 ---
 

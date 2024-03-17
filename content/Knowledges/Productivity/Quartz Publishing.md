@@ -5,6 +5,7 @@ draft: false
 tags:
 - obsidian
 - publishing
+- blog
 created: 2023-09-19
 ---
 

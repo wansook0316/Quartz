@@ -1,5 +1,5 @@
 ---
-title: 수확 체감의 원칙
+title: Diminishing returns
 thumbnail: ''
 draft: false
 tags:

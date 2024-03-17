@@ -5,6 +5,8 @@ draft: false
 tags:
 - window
 - application
+- mac
+- terminal
 created: 2023-09-30
 ---
 

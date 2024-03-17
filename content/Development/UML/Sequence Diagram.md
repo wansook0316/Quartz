@@ -25,8 +25,8 @@ created: 2023-10-01
 
 ## 구성 요소
 
-|Components|[UML](UML.md)|Description|
-|----------|---|-----------|
+|Components|[index](Development/UML/index.md)|Description|
+|----------|-----|-----------|
 |Actor (액터)|![](TechTalks_19_SequenceDiagram_0.png)|시스템으로부터 서비스를 요청하는 외부 요소로, 사람이나 외부 시스템을 뜻함|
 |Object (객체)|![](TechTalks_19_SequenceDiagram_1.png)|메시지를 주고받는 주체|
 |Lifelines (생명선)|![](TechTalks_19_SequenceDiagram_2.png)|- 객체가 메모리에 존재하는 기간으로, 객체 아래쪽에 점선을 그어 표현함 <br> - 객체 소멸(X)이 표시된 기간까지 존재함|
@@ -37,8 +37,8 @@ created: 2023-10-01
 
 ## 메시지
 
-|Type|[UML](UML.md)|Description|
-|----|---|-----------|
+|Type|[index](Development/UML/index.md)|Description|
+|----|-----|-----------|
 |Sync Message|![](TechTalks_19_SequenceDiagram_7.png)|동기적으로 메시지 전송|
 |Async Message|![](TechTalks_19_SequenceDiagram_8.png)|비동기적으로 메시지 전송|
 |Sync Return Message|![](TechTalks_19_SequenceDiagram_9.png)|동기적으로 메시지 호출 반환|

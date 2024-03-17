@@ -50,14 +50,14 @@ created: 2023-10-04
 
 ### 단위
 
-이 곳에서 모든 메모리는 **Page**라는 단위로 관리된다. HDD와 RAM을 왔다갔다 하는 단위이다. 이 중에는 Paged 될 수 있는 **페이징 풀** 영역과 절대로 Paged 되면 안되는 **비 페이징 풀** 영역이 있다. [Paging](Paging.md)
+이 곳에서 모든 메모리는 **Page**라는 단위로 관리된다. HDD와 RAM을 왔다갔다 하는 단위이다. 이 중에는 Paged 될 수 있는 **페이징 풀** 영역과 절대로 Paged 되면 안되는 **비 페이징 풀** 영역이 있다. [18. Paging](18.%20Paging.md)
 
 ### Virtual Memory의 구성
 
 집의 공간을 가족 구성원들이 나눠쓰듯이 프로세스의 가상 메모리 공간을 thread가 나눠서 사용한다. 이 나눠서 사용하는 공간을 **Stack**이라 한다. 이 thread에 할당된 메모리 공간이 stack을 사용하여 관리되기 때문에 Stack이라 불린다.
 
 프로세스는 Heap과 실행 코드 영역을 갖는다.  
-[Process Management](Process%20Management.md)
+[05. Process Management](05.%20Process%20Management.md)
 
 ### 동작 방법
 

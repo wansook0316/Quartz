@@ -2,7 +2,10 @@
 title: C4D & Octane
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- mac
+- octane
+- c4d
 created: 2023-10-12
 ---
 

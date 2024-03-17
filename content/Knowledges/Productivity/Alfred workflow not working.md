@@ -2,7 +2,10 @@
 title: Alfred workflow not working
 thumbnail: ''
 draft: false
-tags: null
+tags:
+- Alfred
+- workflow
+- python
 created: 2023-10-01
 ---
 
