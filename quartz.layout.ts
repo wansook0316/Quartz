@@ -91,7 +91,6 @@ export const defaultListPageLayout: PageLayout = {
     })),
   ],
   right: [
-    Component.Graph(),
     Component.MobileOnly(Component.Explorer({
       folderClickBehavior: "link"
     })),
