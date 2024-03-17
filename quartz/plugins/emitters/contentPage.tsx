@@ -10,7 +10,7 @@ import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { Argv } from "../../util/ctx"
 import { FilePath, isRelativeURL, joinSegments, pathToRoot } from "../../util/path"
-import { defaultContentPageLayout, sharedPageComponents } from "../../../quartz.layout"
+import { defaultHomePageLayout, defaultContentPageLayout, sharedPageComponents } from "../../../quartz.layout"
 import { Content } from "../../components"
 import chalk from "chalk"
 import { write } from "./helpers"
@@ -52,14 +52,26 @@ const parseDependencies = (argv: Argv, hast: Root, file: VFile): string[] => {
 }
 
 export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpts) => {
-  const opts: FullPageLayout = {
+  const contentPageLayout: FullPageLayout = {
     ...sharedPageComponents,
     ...defaultContentPageLayout,
     pageBody: Content(),
     ...userOpts,
   }
 
-  const { head: Head, header, beforeBody, pageBody, left, right, footer: Footer } = opts
+  const homePageLayout: FullPageLayout = {
+    ...sharedPageComponents,
+    ...defaultHomePageLayout,
+    pageBody: Content(),
+    ...userOpts,
+  }
+
+  const combinedPageLayout: FullPageLayout = {
+    ...homePageLayout,
+    ...defaultHomePageLayout
+  }
+
+  const { head: Head, header, beforeBody, pageBody, left, right, footer: Footer } = combinedPageLayout
   const Header = HeaderConstructor()
   const Body = BodyConstructor()
 
@@ -106,7 +118,9 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
           allFiles,
         }
 
-        const content = renderPage(cfg, slug, componentData, opts, externalResources)
+        const pageLayout: FullPageLayout = (file.data.slug == "index") ? homePageLayout : contentPageLayout
+
+        const content = renderPage(cfg, slug, componentData, pageLayout, externalResources)
         const fp = await write({
           ctx,
           content,

@@ -12,7 +12,7 @@ import {
   joinSegments,
   pathToRoot,
 } from "../../util/path"
-import { defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
+import { defaulTagListPageLayout, sharedPageComponents } from "../../../quartz.layout"
 import { TagContent } from "../../components"
 import { write } from "./helpers"
 import { i18n } from "../../i18n"
@@ -21,7 +21,7 @@ import DepGraph from "../../depgraph"
 export const TagPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
-    ...defaultListPageLayout,
+    ...defaulTagListPageLayout,
     pageBody: TagContent(),
     ...userOpts,
   }
