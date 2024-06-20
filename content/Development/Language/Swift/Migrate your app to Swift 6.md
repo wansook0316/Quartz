@@ -13,14 +13,14 @@ WWDC 24의 Swift 6 migration guide를 정리해본다.
 
 # Queue 사용
 
-![Screen Shot 2024-06-20 at 4.51.29 PM.png](Assets/Screen%20Shot%202024-06-20%20at%204.51.29%20PM.png)
+![](swift6-migation-1.png)
 
 # Swift Concurrency
 
 * Swift Concurrency에서는, 동시성 문제를 발생시킬 수 있는 객체를 Actor로 변경하고,
 * 그 사이에서는 thread safe한 Value 타입을 통해 통신함으로써 보다 간결한 구조를 가질 수 있었다.
 
-![Screen Shot 2024-06-20 at 4.52.09 PM.png](Assets/Screen%20Shot%202024-06-20%20at%204.52.09%20PM.png)
+![](swift6-migation-3.png)
 
 # 문제
 
@@ -284,14 +284,14 @@ public struct C {
 
 # Annotation 전파의 문제
 
-![Screen Shot 2024-06-20 at 6.23.41 PM.png](Assets/Screen%20Shot%202024-06-20%20at%206.23.41%20PM.png)
+![](swift6-migation-8.png)
 
 * 특정 시스템 라이브러리를 사용하고 있다고 가정해보자.
 * 이전에는 `my function`이 있는 `class`에서 그냥 사용했으면 됐다.
 
-![Screen Shot 2024-06-20 at 6.20.38 PM.png](Assets/Screen%20Shot%202024-06-20%20at%206.20.38%20PM.png)
-![Screen Shot 2024-06-20 at 6.20.41 PM.png](Assets/Screen%20Shot%202024-06-20%20at%206.20.41%20PM.png)
-![Screen Shot 2024-06-20 at 6.20.45 PM.png](Assets/Screen%20Shot%202024-06-20%20at%206.20.45%20PM.png)
+![](swift6-migation-5.png)
+![](swift6-migation-6.png)
+![](swift6-migation-7.png)
 
 * 그런데 swift 버전이 올라가면서 특정 메서드 자체가 호출되어야 하는 스레드가 제약된다면,
 * 이를 사용하는 함수들에서도 어떤 스레드에서 실행이 되어야 하는지 명시적으로 결정해주어야 하는 문제가 생긴다.
