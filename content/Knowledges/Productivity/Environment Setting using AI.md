@@ -1,7 +1,7 @@
 ---
 title: Environment Setting using AI
 thumbnail: ''
-draft: true
+draft: false
 tags:
 - AI
 - LLM
