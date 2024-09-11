@@ -1,5 +1,5 @@
 ---
-title: index
+title: Wansook World
 draft: false
 tags: null
 thumbnail: null
