@@ -1,7 +1,9 @@
 ---
-title: Wansook World.
+title: index
 draft: false
 tags: null
+thumbnail: null
+created: 2023-08-01
 ---
 
 
