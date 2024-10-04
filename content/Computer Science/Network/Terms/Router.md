@@ -19,7 +19,7 @@ created: 2023-10-04
 * 수동 등록은 소규모 네트워크에 적합하다.
 * 자동 등록은 대규모 네트워크에 적합
 * 자동으로 할 경우, 라우터 간에 경로정보를 서로 교환하여 라우팅 테이블 정보를 자동으로 수정한다.
-* 이렇게 라우팅 정보를 교환하기 위한 프로토콜을 라우팅 [Protocol](Development/Network/Terms/Protocol.md) 이라 한다.
+* 이렇게 라우팅 정보를 교환하기 위한 프로토콜을 라우팅 [Protocol](Computer%20Science/Network/Terms/Protocol.md) 이라 한다.
 
 ![](Pasted%20image%2020231004134322.png)
 

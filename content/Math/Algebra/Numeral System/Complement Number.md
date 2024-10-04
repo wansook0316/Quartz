@@ -1,5 +1,5 @@
 ---
-title: Complement Number (보수)
+title: Complement Number
 thumbnail: ''
 draft: false
 tags: null

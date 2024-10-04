@@ -10,7 +10,7 @@ created: 2023-10-04
 
 * 다른 네트워크로 들어가는 입구 역할을 하는 네트워크 포인트
 * 종류가 다른 네트워크 간의 통로 역할을 하는 장치
-* [Protocol](Development/Network/Terms/Protocol.md)을 적절히 변환해주기도 함
+* [Protocol](Computer%20Science/Network/Terms/Protocol.md)을 적절히 변환해주기도 함
 * 다른 언어를 사용하는 사람 사이의 통역가, 번역기라 생각
 * 톨게이트와 유사
   * 한국에서 일본으로 넘어가는 톨게이트가 있다 해보자.

@@ -30,7 +30,7 @@ created: 2023-10-04
 한정된 자원으로 많은 프로그램들이 동작해야 한다. 어쩔 수 없이 나눠서 사용해야 한다.
 
 아래 단어들의 의미를 모른다면, 용어를 알고 다시 읽자.
-[Introduction](Development/Computer%20Structure/Introduction.md)
+[Introduction](Computer%20Science/Computer%20Structure/Introduction.md)
 
 ### Scheduling
 
