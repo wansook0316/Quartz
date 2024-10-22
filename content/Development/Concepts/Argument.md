@@ -21,6 +21,6 @@ someFunction(a: 3, b: 5)
 
 # Reference
 
-* [Parameter](Parameter.md)
+* [Parameter](Development/Concepts/Parameter.md)
 * [argument와 parameter 차이점](http://taewan.kim/tip/argument_parameter/)
 * ["Parameter" vs "Argument" \[duplicate\]](https://stackoverflow.com/questions/1788923/parameter-vs-argument)
