@@ -29,6 +29,18 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
+          // Default
+          // light: "#faf8f8",
+          // lightgray: "#e5e5e5",
+          // gray: "#b8b8b8",
+          // darkgray: "#4e4e4e",
+          // dark: "#2b2b2b",
+          // secondary: "#284b63",
+          // tertiary: "#84a59d",
+          // highlight: "rgba(143, 159, 169, 0.15)",
+          // textHighlight: "#fff23688",
+          
+          // Custom 1
           light: "#faf8f8",
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
@@ -38,20 +50,54 @@ const config: QuartzConfig = {
           // secondary: "#284b63",
           secondary: "#556c19",
           tertiary: "#84a59d",
-          // highlight: "rgba(143, 159, 169, 0.15)",
           highlight: "#556c191f",
+          
+          // Custom2
+          // light: "#faf8f8",
+          // lightgray: "#e5e5e5",
+          // gray: "#b8b8b8",
+          // darkgray: "#4e4e4e",
+          // dark: "#2b2b2b",
+          // secondary: "#284b63",
+          // tertiary: "#84a59d",
+          // highlight: "rgba(143, 159, 169, 0.15)",
+          // textHighlight: "#fff23688",
         },
         darkMode: {
+          // Default
+          // light: "#161618",
+          // lightgray: "#393639",
+          // gray: "#646464",
+          // darkgray: "#d4d4d4",
+          // dark: "#ebebec",
+          // secondary: "#7b97aa",
+          // tertiary: "#84a59d",
+          // highlight: "rgba(143, 159, 169, 0.15)",
+          // textHighlight: "#b3aa0288",
+
+          // Custom 1
+          // light: "#161618",
+          // lightgray: "#393639",
+          // gray: "#646464",
+          // darkgray: "#d4d4d4",
+          // dark: "#ebebec",
+          // strong: "#F1FA8C",
+          // // secondary: "#7b97aa",
+          // secondary: "#F6C999",
+          // tertiary: "#84a59d",
+          // highlight: "#221E18",
+
+          // Custom 2
           light: "#161618",
           lightgray: "#393639",
           gray: "#646464",
           darkgray: "#d4d4d4",
           dark: "#ebebec",
           strong: "#F1FA8C",
-          // secondary: "#7b97aa",
-          secondary: "#F6C999",
+          secondary: "#7b97aa",
           tertiary: "#84a59d",
           highlight: "#221E18",
+          textHighlight: "#b3aa0288",
         },
       },
     },

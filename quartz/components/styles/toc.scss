@@ -9,7 +9,7 @@
   }
 }
 
-@media all and not ($mobile) {
+@media all and not #{$mobile} {
   .toc {
     display: flex;
   }

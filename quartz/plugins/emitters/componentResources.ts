@@ -8,7 +8,6 @@ import popoverScript from "../../components/scripts/popover.inline"
 import styles from "../../styles/custom.scss"
 import popoverStyle from "../../components/styles/popover.scss"
 import { BuildCtx } from "../../util/ctx"
-import { StaticResources } from "../../util/resources"
 import { QuartzComponent } from "../../components/types"
 import { googleFontHref, joinStyles } from "../../util/theme"
 import { Features, transform } from "lightningcss"
@@ -69,9 +68,8 @@ async function joinScripts(scripts: string[]): Promise<string> {
   return res.code
 }
 
-function addGlobalPageResources(ctx: BuildCtx, staticResources: StaticResources, componentResources: ComponentResources) {
+function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentResources) {
   const cfg = ctx.cfg.configuration
-  const reloadScript = ctx.argv.serve
 
   // popovers
   if (cfg.enablePopovers) {
@@ -169,31 +167,11 @@ function addGlobalPageResources(ctx: BuildCtx, staticResources: StaticResources,
     componentResources.afterDOMLoaded.push(spaRouterScript)
   } else {
     componentResources.afterDOMLoaded.push(`
-        window.spaNavigate = (url, _) => window.location.assign(url)
-        const event = new CustomEvent("nav", { detail: { url: document.body.dataset.slug } })
-        document.dispatchEvent(event)`)
-  }
-
-  componentResources.afterDOMLoaded.push(`
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-  }`)
-
-  let wsUrl = `ws://localhost:${ctx.argv.wsPort}`
-
-  if (ctx.argv.remoteDevHost) {
-    wsUrl = `wss://${ctx.argv.remoteDevHost}:${ctx.argv.wsPort}`
-  }
-
-  if (reloadScript) {
-    staticResources.js.push({
-      loadTime: "afterDOMReady",
-      contentType: "inline",
-      script: `
-          const socket = new WebSocket('${wsUrl}')
-          socket.addEventListener('message', () => document.location.reload())
-        `,
-    })
+      window.spaNavigate = (url, _) => window.location.assign(url)
+      window.addCleanup = () => {}
+      const event = new CustomEvent("nav", { detail: { url: document.body.dataset.slug } })
+      document.dispatchEvent(event)
+    `)
   }
 }
 
@@ -260,7 +238,7 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       // important that this goes *after* component scripts
       // as the "nav" event gets triggered here and we should make sure
       // that everyone else had the chance to register a listener for it
-      addGlobalPageResources(ctx, _resources, componentResources)
+      addGlobalPageResources(ctx, componentResources)
 
       const stylesheet = joinStyles(
         ctx.cfg.configuration.theme,
