@@ -31,3 +31,7 @@ $$
 * 매우 작을 경우 분모가 0에 가까워져 전체값이 발산해버릴 것이고,
 * 매우 클 경우 전체값이 0에 수렴할 것이다.
 * 이러한 문제를 해결하기 위해서는 **적절한 스케일링**이 필요하다.
+
+# Reference
+
+* [Condition Number](../../Math/Algebra/Linear%20Algebra/Condition%20Number.md)\]
