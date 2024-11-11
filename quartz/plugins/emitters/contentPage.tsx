@@ -68,7 +68,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
 
   const combinedPageLayout: FullPageLayout = {
     ...homePageLayout,
-    ...defaultHomePageLayout
+    ...contentPageLayout
   }
 
   const { head: Head, header, beforeBody, pageBody, afterBody, left, right, footer: Footer } = combinedPageLayout
